@@ -1,13 +1,15 @@
 \documentclass[10pt,a4paper]{article}
 \usepackage{preamble}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
 
 \def\FS{Formelsammlung}
 \def\Fach{Signale und Systeme}
+\def\FachAkz{SUS}
 \title{\FS \ \Fach}
-\author{Ayham Alhalaibi}
+\author{Tony Pham}
 \date{\today}
-\def\MatNr{SECRET} % DONT PUSH TO PUBLIC REMOTE REPO
-\def\Semester{Wintersemster 21/22}
+\def\Semester{SoSe 2024}
 
 \begin{document}
 
@@ -15,22 +17,26 @@
 \begin{titlepage}
 \thispagestyle{empty}
 
-\begin{center}
-\includegraphics[width=0.7\textwidth]{~/texmf/tex/latex/oth/logos/OTHR_OTHR_Logo.pdf}\\
-\vspace*{\stretch{1}}
-\Huge
-\textsc{\MyTitle}\\
-\vspace*{\stretch{0.25}}
-\normalsize
-\Semester
+	\begin{center}
+		\vspace*{\stretch{0.5}}
+		\includegraphics[width=0.5\textwidth]{./Bilder/Logo/OTHR_FakEI_Logo.pdf}\\
+		\vspace*{\stretch{0.25}}
+		\Huge
+		\textsc{\FS}\\
+		\textsc{\Fach \hspace*{1pt} (\FachAkz)}\\
+		\large
+		\vspace*{\stretch{0.5}}
+		{nach Vorlesungsunterlagen von \\S.Hipp, R.Sattler, R.Huber}\\
+		\vspace*{\stretch{0.5}}
 
 \vspace*{\stretch{2}}
 {\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{l l}
-    Name:  & \hspace{4cm}\MyAuthor \\
-    Matrikelnummer:  & \hspace{4cm}\MatNr\\
-    Letzte Änderung:  & \hspace{4cm}\MyDate\\
-    Lizenz:  & \hspace{4cm}GPLv3
+	Originalversion: & \hspace{4cm} \href{https://ayhamcloud.de/}{Ayham Alhulaibi}\\
+    Überarbeitet von:  & \hspace{4cm} \href{https://github.com/Vibeskanzler}{Tony Pham}\\
+    %Matrikelnummer:  & \hspace{4cm}\MatNr\\
+    Letzte Änderung:  & \hspace{4cm} \MyDate\\
+    Lizenz:  & \hspace{4cm} GPLv3
 \end{tabular}
 }
 \vspace*{\stretch{1}}
@@ -38,16 +44,19 @@
 \end{center}
 \end{titlepage}
 
-\newpage
 
+\newpage
 
 \tableofcontents\clearpage
 
 \pagestyle{fancy}
-\lhead{\MyAuthor}
-\rhead{\Semester}
-\cfoot{\vspace{-20pt}\thepage}
+%\renewcommand{\sectionmark}[1]{\markboth{#1}}
+\fancyhead[L]{\FachAkz}
+\fancyhead[R]{\nouppercase{\leftmark}}
+%\rhead{\leftmark}
+%\cfoot{\vspace{-20pt}\thepage}
 \pagenumbering{arabic}
+\fancyfoot[c]{\thepage \hspace{1pt} von \pageref{LastPage}}
 % \setlength{\columnsep}{1pt}
 \raggedcolumns
 \begin{multicols*}{2}
