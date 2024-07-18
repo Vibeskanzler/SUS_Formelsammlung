@@ -2,6 +2,9 @@
 \usepackage{preamble}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{pdfpages}
+\usepackage{}
 
 \def\FS{Formelsammlung}
 \def\Fach{Signale und Systeme}
@@ -26,7 +29,7 @@
 		\textsc{\Fach \hspace*{1pt} (\FachAkz)}\\
 		\large
 		\vspace*{\stretch{0.5}}
-		{nach Vorlesungsunterlagen von \\S.Hipp, R.Sattler, R.Huber}\\
+		{nach Vorlesungsunterlagen von\\ R.Huber, S.Hipp, A.Maier, R.Sattler, A.Sehr, T.St\"ucke}\\
 		\vspace*{\stretch{0.5}}
 
 \vspace*{\stretch{2}}
@@ -60,7 +63,7 @@
 % \setlength{\columnsep}{1pt}
 \raggedcolumns
 \begin{multicols*}{2}
-
+\input{Grundlagen}
 \input{Signale_im_Zeitbereich}
 \input{Systeme}
 \input{Zweitore}

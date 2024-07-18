@@ -1,109 +1,174 @@
+\clearpage
 \section{Systeme}
 \subsection{Eigenschaften}
 \begin{enumerate}
+\small
   \item{\textbf{Speicher}}\\
       % \begin{mdframed}[style=exercise]
-          \bulletpt Frei: wird durch eine xy-Kennlinie vollständig
-          beschrieben
+          \textbf{-frei}: Vollständige Beschreibung durch xy-Kennlinie, Ausgang $y(t=t_0)$ nur von aktuellen Eingangswerten $x(t=t_0)$ abhängig $\rightarrow$ gedächtnislos.\\
           \[
               \text{z.B. \ }y(t)=\frac{R_1}{R_1+R_2}\cdot x(t)
           \]
-          \bulletpt behaftet: Bei diesen Systemen ist keine
-          vollständige Beschreibung durch eine xy-Kennline möglich
+          \textbf{-behaftet}: Ausgang inkl. vergangene Werte, keine vollständige Beschreibung durch xy-Kennlinie.\\
           \[
-              \text{z.B. \ }y(t) = x(t)+2x(t-1)
+              \text{z.B. \ }y(t) = x(t)\cdot 2x(t-1)
           \]
       % \end{mdframed}
   \item{\textbf{Kausalit\"at}}\\
       % \begin{mdframed}[style=exercise]
-           Ausgangssignal hängt nur vom aktuellen und vorherigen
-           Eingangssignal ab
+           Ausgang $y(t=t_0)$ hängt nur von aktuellen + vorherigen
+           Eingangswerten $x(t\le t_0)$ ab. Keine Zukunftswerte! \\
+           Impulsantwort $h(t)$ beginnt ab $t=0: t<0 \rightarrow h(t)=0$.
           \[
-              \text{Kausal: z.B. \ }y(t) =
+              \text{z.B.\ }y(t) =
               \int\displaylimits_{t-5}^{t}x(\tau)d\tau
           \]
-          \[
-              \text{Akausal: z.B. \ }y(t) = x(t+1)-x(t-1)
-          \]
       % \end{mdframed}
-
-      \underline{Speicherfreiheit \& Kausalit\"at:} Aus Speicherfreiheit
-      folgt Kausalität, aber nicht umgekehrt.
-  \item{\textbf{Stabilit\"at}}\\
-  (Bounded Input $\rightarrow$ Bounded Output)\\BIBO Stabilit\"at:
-  kleines/beschr\"anktes Eingangssignal $\rightarrow$ kleine/beschr\"ankte
-  Antwort.\\
-  \includegraphics[width=.9\columnwidth]{Systeme/BIBO_anschaulich}\\
-  % \begin{mdframed}[style=exercise]
-      z.B. f\"ur stabiles System
-  \[
-      y(t) = 50\cdot x^3(t)
-  \]\\
-      z.B. f\"ur instabiles System
-  \[
-      y(t) = e^{t}\cdot x(t)
-  \]
-  % \end{mdframed}
-  \item{\textbf{Zeitinvariant$\leftrightarrow$Zeitvariant}}\\
-  \bulletpt invariant: Systeme \"andern sich \textbf{nicht} bei einer
-  Zeitverschiebung.\\
-  \bulletpt variant: Verschobenes Eingangssignal $\rightarrow$
-  verschobenes Ausgangssignal
-  \item{\textbf{Liniarit\"at}}\\
-      Ein System ist linear, wenn das Superpositionsprinzip gilt:
-      Linearkombination von Eingangssignalen ruft entsprechende
-      Linearkombination der Ausgangssignale hervor
-      \begin{mdframed}[style=exercise,frametitle=Bedeutung Liniarit\"at]
-          eine Verdopplung der Eingangsgröße (z.B. Spannung) führt auch zu
-          einer Verdopplung der Ausgangsgröße.
-      \end{mdframed}
-\end{enumerate}
-\subsection{LTI-Systeme (Linear time-invariant Systems)}
-\subsubsection{Ein-/Ausgangsbeziehung}
-\begin{itemize}
-  \item Addition
-  \item Multiplikation
-  \item Differentiation
-  \item Integration
-  \item Zeitverschiebung(Verz\"ogerung)
-\end{itemize}
-\subsubsection{Faltung}
-Aus der Impulsantwort eines LTI-Systems und dem Eingangssignal lässt sich das
-Ausgangssignal durch Faltung bestimmen:
+ Aus Speicherfreiheit folgt Kausalität, \underline{nicht} umgekehrt.
+ \textbf{Kausale} gebr. rationale Fkt.: Nennergrad $\ge$ Zählergrad.
+ 
+  \item {\textbf{(BIBO-)Stabilit\"at}}\\
+  \small BIBO: beschr\"ankter Eingang $\rightarrow$ beschr\"ankter Ausgang.\\
+  %\includegraphics[width=.9\columnwidth]{Systeme/BIBO_anschaulich}\\
 \begin{mdframed}[style=exercise]
+   System ist \textbf{stabil}, wenn
+   \begin{itemize}
+   	   \item $h(t)$ absolut integrierbar ist: $\int_{-\infty}^{\infty} |h(t)| dt <\infty$
+   	   \item P/N-Diagramm: alle Pole links der $\omega$-Achse
+   	   \item gebr. rationale Fkt.: Nennergrad $\ge$ Zählergrad
+   	   \item \textit{zeitdiskret (ZD)}: EK $\in$ Kb
+   	   \item \textit{ZD}: alle Pole innerhalb
+   	   des EK
+   	    \item \textit{ZD}: absolut summierbar: $\sum_{n=-\infty}^{\infty} |h(n)|<\infty$
+   \end{itemize}
+   z.B.: $y(t) = 50\cdot x^3(t)$, instabil: $y(t) = e^{t}\cdot x(t)$
+  \end{mdframed}
+  \normalsize
+  \item{\textbf{Zeitinvarianz}}\\
+		{\small
+		  	Eingang zeitverschoben $\rightarrow$ Ausgang zeitverschoben.
+		}
+		\[ 
+		x(t-t_0) = y(t-t_0)
+		 \]
+		 
+		 {\small z.B. $y(t)=t\cdot \sin(t)$}
+  \item{\textbf{Linearit\"at}}\\
+		  {\small
+		      Lineares System: Superpositionsprinzip gilt $\rightarrow$ siehe Ausblendeeigenschaft, Zerlegung in gerades/ungerades Signal.
+		  }
+\end{enumerate}
+\normalsize
+\subsection{LTI-Systeme}
+\subsubsection{Beschreibung}
+LTI-Systeme: Linear, Zeitinvariant (time-invariant).\\
+Operatoren: $+, -, \frac{d}{dt}, \int, t-t_0$ (Verz\"ogerung)\\
+
+Beschreibung des Ein- und Ausgangsverhalten im
+\begin{itemize}
+	\item Zeitbereich $x(t)$: DGL, Signalflussplan, Impulsantwort
+	\item Frequenz- $\underline{X}(\omega)$ bzw. Bildbereich $\underline{X}(s)$: Übertragungs-Fkt., Frequenzgang, Bode- und P/N-Diagramm.
+\end{itemize}
+\subsubsection{DGL}
+\begin{itemize}
+	\small
+	\item Bestimmung Eingangs-/Ausgangsgr\"o\ss en der Schaltung.
+	\item Gleichgewicht: Maschengleichung für $u$,\par Knotengleichungen f\"ur $i$ aufstellen.
+	\item DGL enth\"alt nur Konstanten ($C,L$), $u$ bzw. $i$ in der Grundform und beliebiger Ableitung (bzw. deren Integrale). Integrale durch Ableiten eliminieren.
+	\item $u,i$ durch Systemgr\"o\ss en mithilfe von Bauteilgleichungen ausdr\"ucken, Schaltung beachten!
+	\normalsize
+	\item Bauteil-/Zweipolgleichungen:
+	\begin{gather*}
+		u_R = R \cdot i \quad \boxed{i_c = C \cdot \frac{du_C}{dt}} \quad \boxed{u_L = L \cdot \frac{di_L}{dt}}
+	\end{gather*}
+	\item DGL 2.Ordnung allgemein:
+\begin{gather*}
+		\underbrace{a_2 \ddot{x}_a + a_1 \dot{x}_a + a_0 x_a}_{\texttt{Ausgangsgr\"o\ss en}} = \underbrace{b_2 \ddot{x}_e + b_1 \dot{x}_e + b_0 x_e}_{\texttt{Eingangsgr\"o\ss en}}
+\end{gather*}
+\end{itemize}
+
+\subsubsection{Impuls \& Sprungantwort}
+\small
+\begin{centering}
+	\setlength{\abovedisplayskip}{-10pt}
+	\setlength{\belowdisplayskip}{-5pt}
+	\begin{tabularx}{\columnwidth}{|X|X|}
+		\hline
+		Impulsanregung & Impulsantwort\\
+		\hline
+		$x(t)=\delta(t)$ & $y(t)= h(t) = S\{ \delta(t) \}$ \\
+		\hline
+		{
+			\begin{align*}
+				x(t) &= \int_{-\infty}^{\infty}x(\tau) \cdot \delta(t-\tau) \, d\tau\\
+				\delta(t) &= \frac{d}{dt} \, \varepsilon(t)
+			\end{align*}
+		}	 &
+		{
+			\begin{align*}	
+				y(t) &= \int_{-\infty}^{\infty}x(\tau) \cdot h(t-\tau) \, d\tau\\
+				&= x(t) * h(t)\\
+				h(t) &= \frac{d}{dt} \, g(t)
+			\end{align*}
+		}	\\
+		\hline\hline
+		Sprunganregung & Sprungantwort \\
+		\hline
+		$x(t)=\varepsilon(t)$ & $y(t)= g(t) = S\{ \varepsilon(t) \}$ \\
+		\hline
+		{
+			\begin{align*}	
+				\varepsilon(n) &= \int_{-\infty}^{\infty} \delta(t) \, dt
+			\end{align*}
+		} &
+		{
+			\begin{align*}	
+			g(t) &= \int_{-\infty}^{\infty} h(t) \, dt
+			\end{align*}
+		}\\
+		\hline
+	\end{tabularx}
+\end{centering}
+\normalsize
+\subsubsection{Faltung}
+\small
+Aus $h(t)$ eines LTI-Systems und Eingang $x(t)$ lässt sich
+Ausgang $y(t)$ durch Faltung bestimmen:
+\normalsize
   \[
-      y(t)=x(t)*h(t) \rightarrow (*)\text{ Faltung Operator}
+      y(t) = \int_{-\infty}^{+\infty} x(\tau)\cdot h(t-\tau)d\tau = \boxed{x(t)*h(t)}
   \]
-  \[
-      \boxed{y(t) = \int_{-\infty}^{+\infty} x(\tau)\cdot h(t-\tau)d\tau}
-  \]
-  \bulletpt Der Dirac-Impuls ist das neutrale Element der Faltung
-  \[
-      x(t)*\delta(t)=x(t)
-  \]
-  \bulletpt Eine Faltung mit einem verschobenen Dirac-Impuls führt zur Verschiebung
-  des Signals:
-  \[
-      x(t)* \delta(t - a) = x(t - a)
-  \]
-\end{mdframed}
+  \begin{itemize}
+  	  \item $\delta(t)$: \underline{neutrales} Element der Faltung
+  	  \[
+  	  x(t)* \delta(t) = x(t)
+  	  \]
+  	\item Faltung mit verschobenen Dirac-Impuls \\$\rightarrow$ Verschiebung des Signals:
+  	\[
+  	x(t)* \delta(t - t_0) = x(t - t_0)
+  	\]
+  \end{itemize}
+
 \begin{mdframed}[style=exercise,frametitle=Rechenregeln]
   \begin{itemize}
-      \item{$x_1(t)*x_2(t)=x_2(t)*x_1(t)$}
-      \item{$x_1(t)*[x_2(t)*x_3(t)]=[x_1(t)*x_2(t)]*x_3(t)$}
-      \item{$x_1(t)*[x_2(t)+x_3(t)]=x_1(t)*x_2(t)+x_1(t)*x_3(t)$}
+	\item {$a*b=b*a$} {\small \qquad kommutativ}
+	\item $a*[b*c]=[a*b]*c$
+	\item $a\cdot(f*g)=(a\cdot f) * g = f * (a\cdot g)$
+	\item $a*[b+c]=a*b+a*c$
   \end{itemize}
 \end{mdframed}
-\subsection{Frequenzgang \& \"Ubertragungsfunktion}
-\begin{mdframed}[style=exercise]
+\clearpage
+\subsection{Frequenzgang}
   \begin{itemize}
       \item{\textbf{Frequenzgang}}\\
+      \small{$\underline{H}(w)$ existiert nur, wenn $\omega$-Achse $\in$ Kb.\\ im PN-Diagramm.}
           \[
               \underline{H}(\omega) =
               \frac{\underline{Y}(\omega)}{\underline{X}(\omega)} =
-              \frac{\underline{U_2}(\omega)}{\underline{U_1}(\omega)}
+              \frac{\underline{U_2}(\omega)}{\underline{U_1}(\omega)} = |\underline{H}(\omega)|\cdot e^{j\varphi_H(\omega)}
           \]
-      \item{\textbf{Amplitudengang}}\\
+      \item{\textbf{Amplitudengang}}, Betragsfrequenzgang\\
+      \small{LTI-System ändert Eingangssignal um Faktor $A(\omega)$}.
           \[
               A(\omega) = |\underline{H}(\omega)| =
               \frac{|\underline{Y}(\omega)|}{|\underline{X}(\omega)|}
@@ -112,7 +177,7 @@ Ausgangssignal durch Faltung bestimmen:
                   < 1 & \text{D\"ampfung}
               \end{cases}
           \]
-      \item{\textbf{Phasengang}}\\
+      \item{\textbf{Phasengang}}, Phasenfrequenzgang\\
           \[
               \varphi_H(\omega) = \text{arg}\{\underline{H}(\omega)\} =
               \varphi_Y(\omega) - \varphi_X(\omega)
@@ -120,6 +185,9 @@ Ausgangssignal durch Faltung bestimmen:
           \[
               \varphi_H = \text{arctan}\left(\frac{\mathfrak{Im}}{\mathfrak{Re}}\right)
           \]
+  \end{itemize}
+  \subsection{Übertragungsfunktion (Ü-Fkt.)}
+  \begin{itemize}      
       \item{\textbf{Eigenfunktion}}\\
           \[
               y(t) = \lambda\cdot x(t)
@@ -128,24 +196,23 @@ Ausgangssignal durch Faltung bestimmen:
                   \lambda: & \text{Eigenwert}(\lambda\in\mathbb{C})
               \end{cases}
           \]
-  \end{itemize}
-\end{mdframed}
-\begin{mdframed}[style=exercise]
-  jede komplexe Exponentialfunktion $x(t) = \e^{st}$ ist Eigenfunktion
-  jedes beliebigen LTI-Systems $S$:
-  \[
-      y(t) = S\left\{ \e^{st} \right\} = \lambda\cdot \e^{st}
-  \]
-  Eigenwert kann wie folgt berechnet werden:
-  \[
-      \lambda = \underline{H}(s) = \int_{-\infty}^{+\infty} h(\tau)\  \e^{-st} d\tau
-  \]
-  \begin{itemize}
-      \item{\textbf{Erweiterung der komplexen Wechselstromrechnung}}\\
-          Die harmonische Exponentialfunktion $e^{j\omega t}$ ist ein
-          sonderfall von $e^{st}$ mit $s=j\omega$
+            Jede komplexe Exponentialfunktion $x(t) = \e^{st}$ ist\\ Eigenfunktion
+          jedes beliebigen LTI-Systems $S$:
           \[
-              \sigma \triangleq Amplitude
+          y(t) = S\left\{ \e^{st} \right\} = \lambda\cdot \e^{st}
+          \]
+          \[
+          \lambda = \underline{H}(s) = \int_{-\infty}^{+\infty} h(\tau)\  \e^{-st} d\tau
+          \]
+  \end{itemize}
+
+  \begin{itemize}\small
+      \item{\textbf{Erweiterung der KWR}}\\
+      KWR: komplexe Wechselstromrechnung. \\
+          Die harmonische Exponentialfunktion $e^{j\omega t}$ ist ein
+          \\Sonderfall von $e^{st}$ mit $s=j\omega+\sigma$, wenn $\sigma=0$.
+          \[
+              \sigma \triangleq \text{Amplitude}
               \begin{cases}
                   \sigma \leq 0 & \text{exponentiell abklingend}\\
                   \sigma = 0 & \text{konstante Amplitude}\\
@@ -153,15 +220,15 @@ Ausgangssignal durch Faltung bestimmen:
               \end{cases}
           \]
           \[
-              \omega \triangleq Rotation
+              \omega \triangleq \text{Rotation}
               \begin{cases}
                   \omega \leq 0 & \text{Zeiger rotiert mit UZS}\\
                   \omega = 0 & \text{Zeiger rotiert nicht}\\
                   \omega \geq 0 & \text{Zeiger rotiert gegen UZS}
               \end{cases}
           \]
-  \end{itemize}
-\end{mdframed}
+          \normalsize
+  
 % \[
 %   \boxed{
 %   \begin{circuitikz}[scale=1,transform shape]
@@ -172,51 +239,92 @@ Ausgangssignal durch Faltung bestimmen:
 %   }
 % \]
 
-\begin{mdframed}[style=exercise,frametitle=Komplexe \"Ubertragungsfunktion]
+\item \textbf{komplexe \"Ubertragungsfunktion}
   \footnotesize
   \[
       \underline{H}(s)=\frac{\underline{Y}(s)}{\underline{X}(s)}=\frac{\underline{U_2}(s)}{\underline{U_1}(s)}=\frac{\text{komplexer
-      Zeiger des Ausgangssignals}}{\text{komplexer Zeiger des
-      Eingangssignals}}
+      Zeiger Ausgang}}{\text{komplexer Zeiger
+      Eingang}}
   \]
   \normalsize
-  Die Übertragungsfunktion hängt von der komplexen\linebreak Frequenz
-  $s=\sigma+j\omega$ ab.
-\end{mdframed}
-
-\subsubsection{Pegel}
-    \begin{mdframed}[style=exercise]
-        Energiegröße: $\quad a = 10\cdot \lg\dfrac{P_1}{P_2}dB $\\
-        Feldgröße: $\qquad a = 20\cdot \lg\dfrac{U_1}{U_2}dB $
-    \end{mdframed}
-
-\subsection{Pole und Nullstellen}
+  Übertragungsfunktion $H(s)$ mit komplexer Frequenz
+  $s=\sigma+j\omega$ $\rightarrow$ Ersetze $jw$ durch $s$.
+\end{itemize}
+  
+\subsubsection{Gebrochen-rationale Ü-Fkt.}
+\small{Grad \textbf{N} des Nennerpolynoms: Ordnung des LTI-Systems =\\ Anzahl unabhäng. Energiespeicher (L, C).\\
+\textbf{Kausales} System, wenn Nennergrad $N\ge M$ Z\"ahlergrad}.
 \[
-    H(s)=\frac{\sum_{m=0}^{M} b_{m} \cdot s^{m}}{\sum_{n=0}^{N} a_{n} \cdot s^{n}}
+H(s)=\frac{\sum_{m=0}^{M} b_{m} \cdot s^{m}}{\sum_{n=0}^{N} a_{n} \cdot s^{n}}
 \]
-Die Koeffizienten an und bm ergeben sich aus den Bauelementen und sind reell.
-\begin{mdframed}[style=exercise]
-    \begin{align*}
-        \underline{H}(s) &= \frac{\textsc{Summe aller Nullstellen}}{\textsc{Summe aller Pole}}\\
-        &=\frac{b_{M}}{a_{N}} \cdot \frac{\left(s-s_{o 1}\right) \cdot\left(s-s_{o
-        2}\right) \cdot \ldots \cdot\left(s-s_{o M}\right)}{\left(s-s_{x 1}\right)
-        \cdot\left(s-s_{x 2}\right) \cdot \ldots \cdot\left(s-s_{x N}\right)}
-    \end{align*}
-    $k=\dfrac{b_M}{a_N}$ ist der Maßstabfaktor
-\end{mdframed}
-\textbf{Bei stabilen Systemen müssen alle Pole in der linken komplexen Halbebene liegen.}
-
-\subsection{Elementare Übertragungsglieder}
-\footnotesize
-    P-Glied , D-Glied , I-Glied , PT1-Glied
-\normalsize
-Für mehr sehe externe Tabelle.
-
-\subsection{Zusammenschalten von Übertragungsgliedern}
-\begin{mdframed}[style=exercise]
+Beispiel: DGL 2.Ordnung im Zeitbereich:
+\[
+a_2\ddot{y}(t)+a_1\dot{y}(t)+a_0 y(t)=b_2\ddot{x}(t)+b_1\dot{x}(t)+b_0 x(t)
+\]
+$\rightarrow$ Ü-Funktion im Bildbereich (System 2.Ordnung):
+\[
+\underline{H}(s)=\frac{\underline{Y}(s)}{\underline{X}(s)}=\frac{b_2 s^2+b_1 s+b_0}{a_2 s^2 +a_1 s +a_0}
+\]
+\subsection{Pol-Nullstellen-Diagramm}
+\small{Grafische Darstellung der s-Ebene: P/N-Diagramm.\\
+$K$: Maßstabs-/Verstärkungsfaktor.}
+	\[
+	 \underline{H}(s) =\frac{b_M}{a_N} \frac{\prod_{o=1}^{M} (s-z_o)}{\prod_{x=1}^{N} (s-z_x)} \text{ mit } K=\frac{b_M}{a_N}
+	\]
 \begin{itemize}
-    \item Kettenschaltung\\
-        \textbf{Multiplikation} der Einzelübertragungsfunktionen.
+\item $\mathfrak{Im}$-Achse = $\omega$, \quad $\mathfrak{Re}$-Achse = $\sigma$
+\item Alle Pole links der $\omega$-Achse: \textbf{stabiles} + \textbf{kausales} System.
+\item Pole \& Nullstellen sind entweder reell (nur auf $\sigma$-Achse) oder \textbf{paarweise} komplex-konjungiert.
+\end{itemize}
+\subsubsection{Frequenzgang aus dem P/N-Diagramm}
+\textbf{Näherungsweise} Bestimmung:
+\begin{itemize}
+\item An der $\omega$-Achse von 0 nach oben entlang gehen.
+\item Polstelle: \textbf{Maxima}/Erhöhung im Amplitudengang.
+\begin{itemize}
+	\item PST nah an s-Ebene: hohe Totzeit, dominant.
+	\item stabiler Pol: links der $\omega$-Achse.
+	\item Verhalten: ideales \textbf{I-Glied}: $+20dB$/Dek., +90\textdegree.
+\end{itemize}
+\item Nullstelle: \textbf{Minima}/Absenkung im Amplitudengang.
+\begin{itemize}
+	\item Nullstelle (NST) auf $\omega$-Achse: NST im Amplitudengang.
+	\item Verhalten: ideales \textbf{D-Glied}:  $-20dB$/Dek, -90\textdegree.
+\end{itemize}
+
+\end{itemize}
+\textbf{Genaue} Bestimmung:
+\begin{itemize}
+	\item An der $\omega$-Achse von 0 nach oben entlang gehen.
+	\item Jede Pos. auf $\omega$-Achse: Längen und Winkel der kompl. Zeiger $c_{o,i}$ und $c_{zp,i}$ messen mit Geodreieck.
+	\[
+	|\underline{H}(\omega)|=\frac{\prod_{o=1}^{M}\text{alle Längen } |c_o,i|}{\prod_{p=1}^{N}\text{alle Längen } |c_p,i|}
+	\]
+	\[
+	\varphi_H(w)=(\text{Summe } \angle \underline{c}_{o,i}{\omega})-(\text{Summe } \angle \underline{c}_{p,i}{\omega})
+	\]
+\end{itemize}
+\textbf{Minimal}phasiges System:
+\begin{itemize}
+	\item Alle NST links der $\omega$ und $\sigma$-Achse.
+	\item Sehr geringe Phasen\"anderung \"uber Frequenz.
+	\item Geringe Signalverz\"ogerung.
+\end{itemize}
+\subsection{Bode-Diagramm}
+\begin{itemize}
+	\item \textbf{Kettenschaltung}
+	
+	\textbf{Addition} der Einzel-Bode-Diagramme beim \par Amplituden- und Phasengang.
+	
+	\item \textbf{Inverses System}
+	
+	Durch \textbf{Spiegelung} an der X-Achse.
+\end{itemize}
+
+\subsection{Zusammenschaltung LTI-Systeme}
+\begin{itemize}
+    \item \textbf{Kettenschaltung}\\
+        \textit{Produkt} der Ü-Fkt. der Einzelsysteme.
         \[
             \boxed{\underline{H}_{e}(s)=\underline{H}_{B}(s) \cdot \underline{H}_{A}(s)=\underline{H}_{A}(s) \cdot \underline{H}_{B}(s)}
         \]
@@ -226,9 +334,12 @@ Für mehr sehe externe Tabelle.
                 \underline{Y}_{B}=\underline{H}_{B}(s) \cdot \underline{X}_{B}=\underline{H}_{B}(s) \cdot \underline{Y}_{A}=\underline{H}_{B}(s) \cdot \underline{H}_{A}(s) \cdot \underline{X}_{A}
             \]
         \end{center}
-        Rückwirkungsfreiheit gewährleistet sein.
-    \item Parallelschaltung\\
-        \textbf{Summe} der Einzelübertragungsfunktionen.
+        \begin{itemize}
+	        \item Voraussetzung: Rückwirkungsfreiheit (mit Trennverstärker) zwischen $\underline{H}_A(s)$ und $\underline{H}_B(s)$.
+        	\item \textbf{Bodediagramm}: \textit{Addition} der einzelnen Glieder beim Amplituden-/Phasengang.
+        \end{itemize}      
+    \item \textbf{Parallelschaltung}\\
+        \textit{Summe} der einzelnen Ü-Glieder.
         \[
             \boxed{\underline{H}_{e}(s)=\underline{H}_{B}(s) + \underline{H}_{A}(s)}
         \]
@@ -240,23 +351,27 @@ Für mehr sehe externe Tabelle.
                              &=\left(\underline{H}_{A}(s)+\underline{H}_{B}(s)\right) \cdot \underline{X}
             \end{align*}
         \end{center}
-    \item Rückkopplung
-        \[
-            \boxed{\underline{H}_{e}(s)=\frac{\underline{H}_{A}(s)}{1\pm\underline{H}_{A}(s) \cdot \underline{H}_{B}(s)}}
-        \]
-        \begin{center}
-            \includegraphics[width=0.6\columnwidth]{Rueckkopplung_Uebertragungsglieder}\\
-            Mitkopplung: $y_A$ vergrößert $x_A$\\
-            Gegenkopplung $y_A$ verkleinert $x_A$
-        \end{center}
+    \item \textbf{Rückkopplung}\\
+    Mitkopplung mit $-$: $y_A$ vergrößert $x_A$ (BSB: $+$)\\
+    Gegenkopplung mit $+$: $y_A$ verkleinert $x_A$ (BSB: $-$)
+    \[
+    \boxed{\underline{H}_{e}(s)=\frac{\underline{H}_{A}(s)}{1\mp\underline{H}_{A}(s) \cdot \underline{H}_{B}(s)}}
+    \]
+            \begin{center}
+    	\includegraphics[width=0.6\columnwidth]{Rueckkopplung_Uebertragungsglieder}
+    \end{center}
+    Beispiel: nicht-inventierender Verst\"arker, Kettenschaltung zweier $PT_2$-Glieder ohne Trennverst\"arker.
+    \end{itemize}
 
-\end{itemize}
-\end{mdframed}
+\subsection{Elementare \"Ubertragungsglieder}
+	\begin{center}
+		\includepdf[pages={-},scale=0.9]{./Bilder/Systeme/GliederHuberEigenschaften.pdf}	
+	\end{center}
+	
+\subsection{Übersicht \"Ubertragungsglieder}
+	\includegraphics[width=0.825\textwidth]{Systeme/Glieder_Tabelle_mit_Anmerkungen_neu_V3}
 
-\subsection{Bode Diagramm}
-\begin{itemize}
-    \item Bode Diagramm von Kettenschaltung\\
-        Ergibt sich durch \textbf{Addition der Bodediagramme} der einzelnen Glieder.
-    \item Bode Diagramm der inversen Übertragungsfunktion\\
-        Ergibt sich durch \textbf{Spiegelung an der X-Achse}.
-\end{itemize}
+
+
+
+
