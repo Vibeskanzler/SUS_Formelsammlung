@@ -197,17 +197,22 @@ Entspricht einer VCVS.\\
 \includegraphics[width=1.2\columnwidth]{Zweipole/Trennverstaerker}
 \end{minipage}
 \begin{minipage}{0.5\columnwidth}
+	\renewcommand*{\arraystretch}{1.7}
 	\[
-	[A] = \begin{pmatrix}
+	[\underline{A}] = \begin{pmatrix}
 		\dfrac{1}{\text{v}_U} & 0 \\
 		0        & 0
 	\end{pmatrix}
 	\]
 \end{minipage}
+
 \begin{equation*}
 	\boxed{
-	\underline{Z}_E \rightarrow \infty \quad \underline{Z}_A = 0 \quad \underline{\text{v}}_{\text{D}}=\underline{\text{v}}_U \rightarrow \infty }
+	\underline{Z}_E \rightarrow \infty \quad \underline{Z}_A = 0 \quad \underline{\text{v}}_{\text{D}}\rightarrow \infty \quad \text{v}_U = \text{gegeben, konst.}}
 \end{equation*}
+{\small
+	$Z_{E/A}$: Ein-/Ausgangswiderstand, $v_D$: Differenzverstärkung.
+}
 \subsubsection{OP-Verstärker}
 \begin{itemize}[leftmargin=*]
 	\item nicht-inventierender OP\\
@@ -215,10 +220,11 @@ Entspricht einer VCVS.\\
 				\includegraphics[width=\columnwidth]{Zweipole/nichtinventierender_op}
 			\end{minipage}
 			\begin{minipage}{0.6\columnwidth}
+				\renewcommand*{\arraystretch}{1.7}
 				\begin{equation*}
-					A = \begin{pmatrix}
-						\frac{1}{\nu_D} + \frac{Z_2}{Z_1 + Z_2} & \frac{Z_A}{\nu_D} \\
-						\frac{1}{\nu_D Z_E} & \frac{Z_A}{\nu_D Z_E}
+					[\underline{A}] = \begin{pmatrix}
+						\frac{1}{\nu_D} + \frac{\underline{Z}_2}{\underline{Z}_1 + \underline{Z}_2} & \frac{\underline{Z}_A}{\nu_D} \\
+						\frac{1}{\nu_D \underline{Z}_E} & \frac{\underline{Z}_A}{\nu_D \underline{Z}_E}
 					\end{pmatrix}
 				\end{equation*}
 			Für idealen OP $\rightarrow$ \\
@@ -228,19 +234,20 @@ Entspricht einer VCVS.\\
 			ideale Spannungs-Verstärkung:
 			\begin{equation*}
 				\text{v}_u=\frac{\underline{U}_2}{\underline{U}_1}=
-				\frac{1}{\underline{A}_{11}}=\frac{\underline{Z}_1+\underline{Z}_2}{\underline{Z}_2} = 1 + \frac{Z_1}{Z_2}
+				\frac{1}{\underline{A}_{11}}=\frac{\underline{Z}_1+\underline{Z}_2}{\underline{Z}_2} = 1 + \frac{\underline{Z}_1}{\underline{Z}_2}
 			\end{equation*}
 	\item inventierender OP\\
 	\begin{minipage}{0.4\columnwidth}
 		\includegraphics[width=\columnwidth]{Zweipole/inventierender_op}
 	\end{minipage}
 	\begin{minipage}{0.6\columnwidth}
+		\renewcommand*{\arraystretch}{1.7}
 		Allgemein, für idealen OP $\rightarrow$ \\
-		$Z_E\rightarrow\infty, Z_A=0, v_D\rightarrow\infty$.
+		$Z_E\rightarrow\infty,\, Z_A=0,\, v_D\rightarrow\infty$.
 		\begin{equation*}
-			A = \begin{pmatrix}
-				\frac{1}{\nu_D} + \frac{Z_2}{Z_1 + Z_2} & \frac{Z_A}{\nu_D} \\
-				\frac{1}{\nu_D Z_E} & \frac{Z_A}{\nu_D Z_E}
+			[\underline{A}] \approx - \begin{pmatrix}
+				\frac{\underline{Z}_1}{\underline{Z}_2} & 0 \\
+				\frac{1}{\underline{Z}_2} & 0
 			\end{pmatrix}
 		\end{equation*}
 			\vspace{1em}
