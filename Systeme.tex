@@ -161,9 +161,9 @@ Ausgang $y(t)$ durch Faltung bestimmen:
 \subsection{Frequenzgang}
   \begin{itemize}
       \item{\textbf{Frequenzgang}}\\
-      \small{$\underline{H}(w)$ existiert nur, wenn $\omega$-Achse $\in$ Kb.\\ im PN-Diagramm.}
+      \small{$\underline{H}(w)$ existiert nur, wenn $\omega$-Achse $\in$ Kb.\\ im PN-Diagramm bzw. alle Pole links der $\omega$-Achse.}
           \[
-              \underline{H}(\omega) =
+              \underline{H}(\omega) = \frac{1}{\underline{A}_{11}} =
               \frac{\underline{Y}(\omega)}{\underline{X}(\omega)} =
               \frac{\underline{U_2}(\omega)}{\underline{U_1}(\omega)} = |\underline{H}(\omega)|\cdot e^{j\varphi_H(\omega)}
           \]
@@ -252,7 +252,7 @@ Ausgang $y(t)$ durch Faltung bestimmen:
 \end{itemize}
   
 \subsubsection{Gebrochen-rationale Ü-Fkt.}
-\small{Grad \textbf{N} des Nennerpolynoms: Ordnung des LTI-Systems =\\ Anzahl unabhäng. Energiespeicher (L, C).\\
+\small{Grad \textbf{N} des Nennerpolynoms: Ordnung des LTI-Systems =\\ Anzahl unabhäng. Energiespeicher ($L, C$).\\
 \textbf{Kausales} System, wenn Nennergrad $N\ge M$ Z\"ahlergrad}.
 \[
 H(s)=\frac{\sum_{m=0}^{M} b_{m} \cdot s^{m}}{\sum_{n=0}^{N} a_{n} \cdot s^{n}}
@@ -264,6 +264,7 @@ a_2\ddot{y}(t)+a_1\dot{y}(t)+a_0 y(t)=b_2\ddot{x}(t)+b_1\dot{x}(t)+b_0 x(t)
 $\rightarrow$ Ü-Funktion im Bildbereich (System 2.Ordnung):
 \[
 \underline{H}(s)=\frac{\underline{Y}(s)}{\underline{X}(s)}=\frac{b_2 s^2+b_1 s+b_0}{a_2 s^2 +a_1 s +a_0}
+=\frac{b_2 s^2+b_1 s+b_0}{a_2 s^2 +a_1 s +a_0}
 \]
 \subsection{Pol-Nullstellen-Diagramm}
 \small{Grafische Darstellung der s-Ebene: P/N-Diagramm.\\
@@ -274,7 +275,7 @@ $K$: Maßstabs-/Verstärkungsfaktor.}
 \begin{itemize}
 \item $\mathfrak{Im}$-Achse = $\omega$, \quad $\mathfrak{Re}$-Achse = $\sigma$
 \item Alle Pole links der $\omega$-Achse: \textbf{stabiles} + \textbf{kausales} System.
-\item Pole \& Nullstellen sind entweder reell (nur auf $\sigma$-Achse) oder \textbf{paarweise} komplex-konjungiert.
+\item Pole \& Nullstellen sind entweder reell (nur auf Re-Achse) oder \textbf{paarweise} komplex-konjungiert.
 \end{itemize}
 \subsubsection{Frequenzgang aus dem P/N-Diagramm}
 \textbf{Näherungsweise} Bestimmung:
@@ -284,12 +285,12 @@ $K$: Maßstabs-/Verstärkungsfaktor.}
 \begin{itemize}
 	\item PST nah an s-Ebene: hohe Totzeit, dominant.
 	\item stabiler Pol: links der $\omega$-Achse.
-	\item Verhalten: ideales \textbf{I-Glied}: $+20dB$/Dek., +90\textdegree.
+	\item Verhalten: ideales \textbf{I-Glied}: $+20dB$/Dek., $\varphi=+$ 90\textdegree.
 \end{itemize}
 \item Nullstelle: \textbf{Minima}/Absenkung im Amplitudengang.
 \begin{itemize}
 	\item Nullstelle (NST) auf $\omega$-Achse: NST im Amplitudengang.
-	\item Verhalten: ideales \textbf{D-Glied}:  $-20dB$/Dek, -90\textdegree.
+	\item Verhalten: ideales \textbf{D-Glied}:  $-20dB$/Dek, $ \varphi=-$ 90\textdegree.
 \end{itemize}
 
 \end{itemize}
@@ -310,17 +311,8 @@ $K$: Maßstabs-/Verstärkungsfaktor.}
 	\item Sehr geringe Phasen\"anderung \"uber Frequenz.
 	\item Geringe Signalverz\"ogerung.
 \end{itemize}
-\subsection{Bode-Diagramm}
-\begin{itemize}
-	\item \textbf{Kettenschaltung}
-	
-	\textbf{Addition} der Einzel-Bode-Diagramme beim \par Amplituden- und Phasengang.
-	
-	\item \textbf{Inverses System}
-	
-	Durch \textbf{Spiegelung} an der X-Achse.
-\end{itemize}
 
+\clearpage
 \subsection{Zusammenschaltung LTI-Systeme}
 \begin{itemize}
     \item \textbf{Kettenschaltung}\\
@@ -336,7 +328,7 @@ $K$: Maßstabs-/Verstärkungsfaktor.}
         \end{center}
         \begin{itemize}
 	        \item Voraussetzung: Rückwirkungsfreiheit (mit Trennverstärker) zwischen $\underline{H}_A(s)$ und $\underline{H}_B(s)$.
-        	\item \textbf{Bodediagramm}: \textit{Addition} der einzelnen Glieder beim Amplituden-/Phasengang.
+        	\item \textbf{Bodediagramm}: \textit{Addition} der einzelnen Glieder beim Amplituden- und Phasengang.
         \end{itemize}      
     \item \textbf{Parallelschaltung}\\
         \textit{Summe} der einzelnen Ü-Glieder.
@@ -357,20 +349,95 @@ $K$: Maßstabs-/Verstärkungsfaktor.}
     \[
     \boxed{\underline{H}_{e}(s)=\frac{\underline{H}_{A}(s)}{1\mp\underline{H}_{A}(s) \cdot \underline{H}_{B}(s)}}
     \]
-            \begin{center}
+    \begin{center}
     	\includegraphics[width=0.6\columnwidth]{Rueckkopplung_Uebertragungsglieder}
     \end{center}
-    Beispiel: nicht-inventierender Verst\"arker, Kettenschaltung zweier $PT_2$-Glieder ohne Trennverst\"arker.
+    Beispiel: Kettenschaltung zweier $PT_2$-Glieder ohne Trennverst\"arker.
     \end{itemize}
-
+ 
+ \subsection{Bode-Diagramm}
+ \subsubsection{Merkmale}
+ \begin{itemize}
+ 	\item \textbf{Kettenschaltung}
+ 	
+ 	\textbf{Addition} der Einzel-Bode-Diagramme beim \par Amplituden- und Phasengang. 
+ 	
+ 	\item \textbf{Inverses System}
+ 	
+ 	Durch \textbf{Spiegelung} an der X-Achse. 
+ \end{itemize}
+ 
+ \subsubsection{Vorgehen}
+ \begin{enumerate}
+ 	\item Ü-Fkt. des LTI-Systems aufstellen.\\
+ 	Bsp.: Spannungs-Ü-Fkt: $$\underline{H}(s)=\frac{1}{\underline{A}_{11}} = \frac{\underline{U}_2}{\underline{U}_1}$$
+ 	
+ 	\item Konstante Faktoren $K$ vor dem Bruch stellen!
+ 	\item Bauteilelemente in Zeitkonstanten $T=\dfrac{L}{R}$ bzw. $T=RC$ ausdrücken.
+ 	\item Ü-Fkt. in bekannte Einzelglieder trennen, \\in Normalform mit $T$ ausdrücken $\rightarrow$ siehe Kap. \ref{tabelle_glieder}.\\
+ 	Bsp.: PDT$_1$-Glied: $$\underline{H}(s)=K\,\frac{1+sT_1}{1+sT_2}$$
+ 	\item Berechnen der Eck-/Grenzkreisfrequenzen $\omega_0 = \dfrac{1}{T}$ und jeweils im Bode-Diagramm eintragen.
+ 	\item Amplitudengang:
+ 	$\underline{H}(s)$ mit $\omega_0=\frac{1}{T}$ \textbf{umformen}:\\ $\Rightarrow$ \textbf{Wichtig}: höchste Potenz von $s$ \textbf{ohne} Vorfaktoren!\\
+ 	Ersetze $s=j\omega$. \quad Merke:  $\omega\neq\omega_0$.\\
+ 	
+  	Betragsbildung: Zähler und Nenner jeweils Betrag setzen, $j$ fallen lassen.
+ 	$$ |\underline{H}(\omega)| = \frac{|\underline{Z}|}{|\underline{N}|} = \frac{\sqrt{\text{Re}^2+\text{Im}^2}}{\sqrt{\text{Re}^2+\text{Im}^2}} $$
+ 	
+ 	Allgm. Berechnung in $dB$, Grenzfallbestimmung mit: 
+ 	$$H(\omega) = 20\cdot\log_{10}|\underline{H}(\omega)| \text{ für }\omega=0 \text{ und } \omega \rightarrow \infty $$
+ 	Zeichnen: Geradennäherung der Glieder in Kap. \ref{tabelle_glieder}.\\
+ 	Polstelle: Steigung nach oben 20db/Dek.\\
+ 	Nullstelle: Senkung nach unten -20db/Dek.
+ 	
+ 	\item Phasengang allgemein:
+ 	$$\varphi(\omega) = \arctan \left( \frac{\text{Imaginärteil}}{\text{Realteil}} \right)$$
+ 	Zeichnen: Geradennäherung der Glieder in Kap. \ref{tabelle_glieder}.\\
+ 	Vorzeichen $\pm K$: Beginn bei 0\textdegree \, oder 180\textdegree.
+ 	
+ 	\item Merke: Polstelle: 
+ \end{enumerate}
+% 1. Übertragungsfunktion aufstellen: H(j!) = U2
+% U1
+% =
+% 1
+% A11
+% ! gebrochen rationale Funktion
+% 2. Das j! durch s ersetzen ! man erhält H(s)
+% 3. Konstante Faktoren vor den Bruch ziehen
+% 4. Berechnung der Grenzkreisfrequenzen:
+% Zähler = 0 ergibt Nullstellen, ! nach s auflösen ! !gx
+% Nenner = 0 ergibt Polstellen, ! nach s auflösen ! !gx2
+% 5. Übertragungsfunkion H(s) in bekannte Glieder (s. Tabelle) aufteilen (Produkt in Zeitbereich ergibt
+% Summe in Bildbereich)
+% 6. Berechnung des Amplitudengangs: |H(!)|: Von dein einzelnen Gliedern s wieder durch ! ersetzen,
+% und den Betrag bilden (Zähler und Nenner getrennt)
+% ���x + zy
+% ��� =
+% p
+% x2 + z2y2
+% Logarithmische Skalierung: |H(!)|dB = 20 · log10 |H(!)|
+% auch ! ! 0 und ! ! 1 betrachten!
+% 7. Berechnen desPhasengangs: '(!): AufteilunginImaginärteilundRealteil
+ 
+ 
+\end{multicols*}
+\begin{center}
+	\includegraphics[page=1,width=\textwidth]{Systeme/Bode_Diagramm_Foliensatz}
+\end{center}
 \subsection{Elementare \"Ubertragungsglieder}
-	\begin{center}
-		\includepdf[pages={-},scale=0.9]{./Bilder/Systeme/GliederHuberEigenschaften.pdf}	
-	\end{center}
-	
-\subsection{Übersicht \"Ubertragungsglieder}
-	\includegraphics[width=0.825\textwidth]{Systeme/Glieder_Tabelle_mit_Anmerkungen_neu_V3}
+\begin{center}
+\raggedright
+\includegraphics[page=1,width=0.95\columnwidth]{Systeme/GliederHuberEigenschaften}\\
+\clearpage
+\includegraphics[page=2,width=1\textwidth]{Systeme/GliederHuberEigenschaften}
+\includegraphics[page=3,width=1\columnwidth]{Systeme/GliederHuberEigenschaften}\clearpage
+\end{center}
 
+\subsection{Übersicht wichtiger \"Ubertragungsglieder}\label{tabelle_glieder}
+\includegraphics[width=0.82\textwidth]{Systeme/Glieder_Tabelle_mit_Anmerkungen_neu_V3}
+
+\begin{multicols*}{2}
 
 
 

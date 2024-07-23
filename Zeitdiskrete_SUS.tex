@@ -1,21 +1,22 @@
 \newpage
-\end{multicols*}
+%\end{multicols*}
 \section{Zeitdiskrete Systeme}
 \subsection{Elementare, zeitdiskrete Signale}
-	\begin{itemize}
+	\begin{itemize}[leftmargin=*]
 		\item \textbf{Einheitsimpuls}, Impulsfolge, Delta-Impuls $\delta(n)$\\
-		      \makebox[\textwidth][c]
+		      \makebox[\columnwidth][c]
 		      {
 			      \begin{minipage}{0.3\columnwidth}
-				      \[
+				      \[ \boxed{
 					      \delta(n) =
 					      \begin{cases}
 						      1 & n = 0    \\
 						      0 & n \neq 0
 					      \end{cases}
+					    }
 				      \]
 			      \end{minipage}
-			      \begin{minipage}{0.7\textwidth}
+			      \begin{minipage}{0.7\columnwidth}
 				      \centering
 				      \begin{tikzpicture}[baseline=0.8,scale=0.5]
 					      \draw[->] (0,-0.2) -- (0,1.4) node[above]{$x[n]$}; %y
@@ -29,22 +30,24 @@
 					      \filldraw[black] (3,0) circle (2pt) node[below]{3};
 				      \end{tikzpicture}
 			      \end{minipage}
-		      }
+		      }\\
+		      
 		      Eigenschaften:
 		      \begin{itemize}
-		      	  \item $\sum^{\infty}_{n=-\infty}\delta(n)=1$
-		      	  \item $\varepsilon(n)=\sum_{k=-\infty}^{n} \delta(n)$
+		      	  \item Zusammenhang mit Einheitssprung:
+		      	  $$\sum^{\infty}_{n=-\infty}\delta(n)=1 \qquad \boxed{ \varepsilon(n)=\sum_{k=-\infty}^{n} \delta(n) } $$
 			      \item Anregung der Impulsantwort
 			      \item konstantes Spektrum
-		      \end{itemize}
-		      Ausblendeeigenschaft:
-		      \[
+			      \item Ausblendeigenschaft:
+			      \[
 			      x(n) = \sum_{k=-\infty}^{\infty} x(k)\cdot\delta(n-k)
-		      \]
+			      \]
+		      \end{itemize}
+
 		\item \textbf{Einheitssprung}\\
-		      \makebox[\textwidth][c]
+		      \makebox[\columnwidth][c]
 		      {
-			      \begin{minipage}{0.3\textwidth}
+			      \begin{minipage}{0.3\columnwidth}
 				      \[
 					      \varepsilon(n) =
 					      \begin{cases}
@@ -53,7 +56,7 @@
 					      \end{cases}
 				      \]
 			      \end{minipage}
-			      \begin{minipage}{0.7\textwidth}
+			      \begin{minipage}{0.7\columnwidth}
 				      \centering
 				      \begin{tikzpicture}[baseline=0.8,scale=0.5]
 					      \draw[->] (0,-0.2) -- (0,1.4) node[above]{$x[k]$}; %y
@@ -69,13 +72,13 @@
 			      \end{minipage}
 		      }
 		      Zusammenhang mit Einheitsimpuls:
-		      \[
-			      \delta(n) = \varepsilon(n) - \varepsilon(n-1)
+		      \[ \boxed{
+			      \delta(n) = \varepsilon(n) - \varepsilon(n-1) }
 		      \]
 		\item \textbf{Rechteckfolge}\\
-		      \makebox[\textwidth][c]
+		      \makebox[\columnwidth][c]
 		      {
-			      \begin{minipage}{0.3\textwidth}
+			      \begin{minipage}{0.3\columnwidth}
 				      \[
 					      \operatorname{rect}_N(n) =
 					      \begin{cases}
@@ -84,7 +87,7 @@
 					      \end{cases}
 				      \]
 			      \end{minipage}
-			      \begin{minipage}{0.7\textwidth}
+			      \begin{minipage}{0.7\columnwidth}
 				      \centering
 				      \begin{tikzpicture}[baseline=0.8,scale=0.5]
 					      \draw[->] (0,-0.2) -- (0,1.4) node[above]{$x[k]$}; %y
@@ -99,26 +102,35 @@
 				      \end{tikzpicture}
 			      \end{minipage}
 		      }
-		      Zusammenhang mit Dirac- und Einheitsimpuls:
+		      Zusammenhang mit Einheitsimpuls bzw. -sprung:
 		      \begin{align*}
 			      \operatorname{rect}(n) & = \varepsilon(n) + \varepsilon(n-N)       \\
 			                             & = \varepsilon(n) \cdot \varepsilon(N-1-n)
+			                             \\
+			                             & = \sum_{k=0}^{N-1} \delta(n-k)
 		      \end{align*}
 		\item \textbf{Zeitdiskreter Sinus}\\
-		      \makebox[\textwidth][c]
+		      \makebox[\columnwidth][c]
 		      {
-			      \begin{minipage}{0.3\textwidth}
+			      \begin{minipage}{0.3\columnwidth}
 				      \[
-					      x(n) = A \cdot \sin(\Omega n+\varphi)
+					      x(n) = A \cdot \sin(\Omega\, n+\varphi)
 				      \]
+				      \small
 				      
-  		      \begin{align*}
-				      	A       & :\texttt{Amplitude}               \\
-				      	\Omega  & :\texttt{normierte Kreisfrequenz} \\
-				      	\varphi & :\texttt{Anfangsphase}
-  			\end{align*}
+				      $A$       : Amplitude            \\
+				      $\Omega$  : normierte\\ Kreisfrequenz \\
+				      $\varphi$ : Anfangsphase
+				      
+				      \normalsize
+				      
+%  		      \begin{align*}
+%				      	A       & :\texttt{Amplitude}               \\
+%				      	\Omega  & :\texttt{normierte Kreisfrequenz} \\
+%				      	\varphi & :\texttt{Anfangsphase}
+%				\end{align*}
 			      \end{minipage}
-			      \begin{minipage}{0.7\textwidth}
+			      \begin{minipage}{0.7\columnwidth}
 				      \centering
 				      \begin{tikzpicture}[baseline=1,scale=0.5]
 					      \draw[->] (0,-0.2) -- (0,1.4) node[above]{$x[k]$}; %y
@@ -138,23 +150,17 @@
 				      \end{tikzpicture}
 			      \end{minipage}
 		      }
-		      \footnotesize
-		      \begin{align*}
-			      A       & :\texttt{Amplitude}               \\
-			      \Omega  & :\texttt{normierte Kreisfrequenz} \\
-			      \varphi & :\texttt{Anfangsphase}
-		      \end{align*}
-		      \normalsize
+
 		\item \textbf{komplexe Exponentialfolge}\\
-		      \makebox[\textwidth][c]
+		      \makebox[\columnwidth][c]
 		      {
-			      \begin{minipage}{0.3\textwidth}
+			      \begin{minipage}{0.3\columnwidth}
 				      \begin{align*}
 					      x(n) & = \underline{A} \cdot e^{Sn}                \\
 					           & = \underline{A} \cdot e^{(\Sigma+j\Omega)n}
 				      \end{align*}
 			      \end{minipage}
-			      \begin{minipage}{0.7\textwidth}
+			      \begin{minipage}{0.7\columnwidth}
 				      \centering
 				      \begin{tikzpicture}[baseline=0.8,scale=0.5]
 					      \draw[->] (0,-0.2) -- (0,1.4) node[above]{$x[k]$}; %y
@@ -174,8 +180,8 @@
 			      \texttt{normierte Kreisfrequenz }\Omega & = \omega T =  2\pi \frac{f_0}{f_A}
 		      \end{align*}
 	\end{itemize}
-	\clearpage
-\begin{multicols*}{2}
+%	\clearpage
+%\begin{multicols*}{2}
 \subsection{A/D-Wandlung}
 \small
 \begin{itemize}
@@ -195,11 +201,12 @@
 	\boxed{\omega_a \ge 2 \omega_g} \text{ bzw. } f_a \ge 2 f_g\\
 	\boxed{\omega_g \le \frac{\omega_a}{2}} = \frac{1}{2} \cdot \frac{2\pi}{t_a} \text{ bzw. } f_g \ge \frac{f_a}{2}
 \end{gather*}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\columnwidth]{Bilder/Abtasttheorem_Uebrlappung}\\
-	\raggedright
-\end{figure}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=\columnwidth]{Bilder/Abtasttheorem_Uebrlappung}
+%\end{figure}
+{\footnotesize Merke: zeitbegrenztes Signal: $\infty$ langes Spektrum $\rightarrow$ Aliasing\\
+Dirac-Sprung im Signal $\infty$ hohe $f$ im Spektrum $\rightarrow$ Aliasing}
 
 \item Spektrum $U_a(\omega)$ eines abgetasteten Signals $u_a(t)$ mit $T=t_a = \frac{1}{f_a}$ aus einem Analogsignal $u(t)$:
 \begin{align*}
@@ -210,7 +217,7 @@ U_a(\omega) &= 2\pi \cdot \sum_{k=-\infty}^{+\infty} \underline{c}_k \cdot \delt
 \end{align*}
 
 \end{itemize}
-
+\clearpage
 \vspace{-1.5em}
 \subsection{Zeitdiskrete LTI-Systeme}
 \subsubsection{Systemeigenschaften}
@@ -274,6 +281,32 @@ U_a(\omega) &= 2\pi \cdot \sum_{k=-\infty}^{+\infty} \underline{c}_k \cdot \delt
 %\begin{align*}
 %	x(n) &= \sum_{k=-\infty}^{\infty}x(k) \cdot \delta(n-k) & & x(n) = \sum_{k=-\infty}^{\infty}x(k) \cdot \delta(n-k)&
 %\end{align*}
+\subsubsection{Faltung mit Hilfstabelle}
+%Faltung: $y(n)=\sum_{0}^{\infty} x(k)\cdot h(n-k)$ \\
+
+Beispiel:
+\begin{align*}
+	x(n)&=\delta(n)+2\delta(n-1)+2\delta(n-2)\\
+	y(n)&=h(n)+2h(n-1)+2h(n-2)
+\end{align*}
+
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+	\hline
+	$n$ & -1 & 0 & 1 & 2 & 3 & 4 & 5  \\
+	\toprule
+	\hline
+	$h(n)$ & 0 & 2 & 1 & 1 & 3 &  &  \\
+	\hline
+	$2\,h(n-1)$ & 0 & 0 & 4 & 2 & 2 & 6 & \\
+	\hline
+	$2\,h(n-2)$ & 0 & 0 & 0 & 4 & 2 & 2 & 6\\
+	\hline
+	\bottomrule
+	$y(n)$ & 0 & 2 & 5 & 7 & 7 & 8  & 6 \\
+	\hline
+\end{tabular}
+\end{center}
 \subsubsection{Differenzengleichung $\Leftrightarrow$ Ü-Fkt.}
 \textbf{Allgemein:}
 \begin{gather*}
@@ -292,20 +325,25 @@ z-Transformation: $z^{-k} = x(n-k)$.
 			\underline{H}(z)  =  \frac{b_M}{a_N}=\frac{\underline{Y}(z)}{\underline{X}(z)} &= \frac{b_0 \cdot z^{2} + b_1 \cdot z + b_2}{z^{2}+a_1 \cdot z + a_2}\\
 			 &= \frac{b_0 + b_1 \cdot z^{-1} + b_2 \cdot z^{-2}}{1 + a_1 \cdot z^{-1} + a_2 \cdot  z^{-2}}
 \end{align*}
-
-
-
 \begin{align*}
-\begin{split}
-y(n) = \frac{1}{a_0} \cdot [ b_0 \cdot x(n) + b_1 \cdot x(n-1) + b_2 \cdot (n-2) \\ - a_1 \cdot y(n-1) - a_2 \cdot y(n-2)]
-\end{split}
+		 & a_2 \cdot y(n-2) + a_1 \cdot y(n-1) + a_0 \cdot y(n)\\ 
+		 =\, & b_2 \cdot x(n-2) + b_1 \cdot x(n-1) + b_0 \cdot x(n)\\
+		 \begin{split}
+		 \Rightarrow y(n) = \frac{1}{a_0} \cdot [ b_0 \cdot x(n) + b_1 \cdot x(n-1) + b_2 \cdot (n-2) \\ - a_1 \cdot y(n-1) - a_2 \cdot y(n-2)]
+		 \end{split}
 \end{align*}
-
-
 
 \subsubsection{Signalflussplan/-graph}
 $-a_k$: Wert muss negativ sein, ansonsten VZ-Wechsel in der Ü-Fkt bzw. DGL.\\
-\includegraphics[width=\columnwidth]{Bilder/Signalfluss_plan-graph}
+\begin{minipage}{0.4\columnwidth}
+	\includegraphics[width=\columnwidth]{Bilder/Signalfluss_plan-graph}
+\end{minipage}
+\begin{minipage}{0.5\columnwidth}
+\includegraphics[width=\columnwidth]{Bilder/Signalflussdiagramm}
+\end{minipage}
+
+\subsection{Zeitdiskrete Signale im Spektrum}
+\includegraphics[width=\columnwidth]{Bilder/uebersicht_abtastung_frequenzbereich}
 \clearpage
 \subsection{Zeitdiskrete Fouriertransformation}
 \begin{itemize}
@@ -322,7 +360,7 @@ x(n) = \frac{1}{2\pi}\int_{-\pi}^{\pi} X(\Omega) \cdot  e^{j\Omega n} \, d\Omega
 \[ \boxed{
 \Omega = \omega T = 2\pi f T = 2\pi \frac{f}{f_a} }
 \]
-{\small Spektrum $\underline{X}(\omega)$ ist freq.-kontinuierlich und\\ periodisch mit $T=2\pi$.}
+{\small Spektrum $\underline{X}(\Omega)$ ist freq.-kontinuierlich und\\ periodisch mit $T=2\pi$. $\rightarrow$ $X(\Omega)=X(\Omega+2\pi)$}
 \item Einheit des Spektrums/Signals: $[\underline{X}(\omega)] = x(n)$
 \end{itemize}
 
@@ -348,7 +386,7 @@ Partialbruchzerlegung allgemein:
 \textbf{Einfache} Polstellen $p_n$:
 \begin{align*}
 	\Aboxed{\frac{\underline{X}(z)}{z} & =\frac{c_{0}}{z}+\frac{c_{1}}{z-z_{x 1}}+\frac{c_{2}}{z-z_{x 2}}+\cdots+\frac{c_{N}}{z-z_{x N}}} \\
-	\Rightarrow \underline{X}(z) &= c_0 + \sum_{n=1}^{N} c_n \frac{z}{z-p_n}
+	\Rightarrow \underline{X}(z) &= c_0 + \sum_{n=1}^{N} c_n \frac{z}{z-p_n} \quad c_0=0, \text{wenn } b_0=0
 \end{align*}
 Sonderfall: n-fache Polstellen bei z=0:
 \begin{align*}
@@ -362,18 +400,20 @@ Sonderfall: n-fache Polstellen bei z=0:
 
 \subsubsection{Eigenschaften der z-Transformation}
 \renewcommand{\arraystretch}{1.7}
-\begin{tabularx}{\columnwidth}{|X|X|X|}
+{\small 
+\begin{tabularx}{\columnwidth}{|c|c|c|}
 	\hline
 	& $\mathbf{x[n]}$ & \underline{$\mathbf{X}$}$\mathbf{(z)}$\\
 	\hline Linearität & $a x_{1}[n]+b x_{2}[n]$ & $a \underline{X}_{1}(z)+b\underline{X}_{2}(z)$ \\
-	\hline Verschiebung	& $x[n-i]$ & $z^{-i} \underline{X}(z)$ \\
+	\hline Verschiebung	& $x[n-k]$ & $z^{-k} \underline{X}(z)$ \\
 	\hline Modulation & $a^{n} \, x[n]$ & $\underline{X}\left(\frac{z}{a}\right)$ \\
 	\hline Multiplikation & $n \cdot x[n] $ & $-z \frac{d}{d z} \underline{X}(z)$ \\
 	\hline Faltung & $x_{1}[n] * x_{2}[n] $ & $ \underline{X}_{1}(z) \cdot \underline{X}_{2}(z)$ \\
+	\hline Faltung im BB & $x_{1}[n] \cdot x_{2}[n] $ & $ \frac{1}{2\pi j} \int \underline{X}_1(\eta)\underline{X}_2(\frac{z}{\eta})\frac{1}{\eta}\, d\eta$ \\
 	\hline Differenzbildung & $x[n]-x[n-1] $ & $ \frac{z-1}{z} \underline{X}(z)$ \\
 	\hline Summenbildung & $\sum_{i=0}^{n} x[i] $ & $ \frac{z}{z-1} \underline{X}(z)$ \\
 	\hline
-\end{tabularx}
+\end{tabularx} }
 
 \subsubsection{Korrespondenzen der z-Transformation}
 Normierte Kreisfrequenz $\Omega_1 = \omega T$\\
@@ -409,7 +449,7 @@ Normierte Kreisfrequenz $\Omega_1 = \omega T$\\
 \subsection{LTI-Systeme im Bildbereich}
 \subsubsection{Impuls- und Sprungantwort im BB}
 $$
-	\boxed{\underline{H}(z) = \underline{G}(z) \cdot \frac{z-1}{z} } \qquad \boxed{
+	h(n) \, \laplace \, \boxed{\underline{H}(z) = \underline{G}(z) \cdot \frac{z-1}{z} } \qquad \boxed{
 	\underline{G}(z) = \underline{H}(z) \cdot \frac{z}{z-1} }
 $$
 
@@ -417,9 +457,9 @@ $$
 
 
 \subsubsection{PN-Diagramm $\Rightarrow$ Frequenzgang}
-Wenn zeitdiskretes LTI-System stabil: Ersetze $z=e^{j\Omega}$:\\
+Wenn zeitdiskretes LTI-System \textbf{stabil}: Ersetze $z=e^{j\Omega}$:\\
 \[ \boxed{
-	\underline{H}(\Omega)=\left.\underline{H}(z)\right|_{z=e^{j \Omega}} }
+	\underline{H}(\Omega)=\left.\underline{H}(z)\right|_{z=e^{j \Omega}} } \quad \text{wenn \textbf{alle} Pole innerhalb des EK.}
 \]
 \textbf{Ermittlung} $\underline{H}(\Omega)$: Am Einheitskreis des PN-Diagramms \textit{entlang} gegen den UZS für $\Omega > 0$ gehen.\\
 
@@ -432,7 +472,8 @@ $z_o$: Nullstellen, \quad $z_x$: Polstellen
 \includegraphics[width=0.7\columnwidth]{Bilder/PN-FreqGang}
 
 \raggedright
-\textbf{Betragsfrequenzgang}, Amplitudengang
+\textbf{Betragsfrequenzgang}, Amplitudengang\\
+Pole/Nullstellen $\rightarrow$ Amplitude steigt/sinkt.
 \[
 |\underline{H}(\Omega)| = H(\Omega)=\frac{A_{o}(\Omega)}{A_{x}(\Omega)} = \frac{Y(\Omega)}{X(\Omega)}
 \]
@@ -468,11 +509,13 @@ Beispiele:
 }
 
 \subsubsection{Systemantwort auf harm. Eingangssignale}	
-LTI-System verändert \textbf{nur} Amplitude und Phase von $x(t)$.
+LTI-System verändert \textbf{nur} Amplitude und Phase von $x(t)$.\\
+Normierte Frequenz $\Omega_1 = \omega T$ bleibt gleich.
 
-Gegeben: $x(n) = \hat{x} \cdot \sin(\Omega_1n+\varphi_x)$\\
-
-Gesucht: $y(n) = \hat{y} \cdot \sin(\Omega_1n+\varphi_y)$\\
+\begin{tabular}{cc}
+	Gegeben: & $x(n) = \hat{x} \cdot \sin(\Omega_1n+\varphi_x)$\\
+	Gesucht: & $y(n) = \hat{y} \cdot \sin(\Omega_1n+\varphi_y)$
+\end{tabular}
 \begin{gather*}
 \boxed{
 \hat{y} = \hat{x} \cdot |\underline{H}(\Omega_1)|} \qquad
@@ -496,8 +539,9 @@ Gesucht: $y(n) = \hat{y} \cdot \sin(\Omega_1n+\varphi_y)$\\
 
 \subsubsection{Klassifizierung von Systemen}
 % Die mathematischen Beschreibung fehlen. wurden nie gebraucht während lernen. Kap6S63 6.5.7
-\begin{itemize}
-	\item \textbf{Transversale Systeme}, FIR, AR:\\
+\begin{itemize}[leftmargin=*]
+	\item \textbf{Transversale Systeme}, FIR, AR:
+	
 	{\small Finite Impulse Response (FIR), Auto-Regressive (AR)\\
 		Keine Rückführung von Ausgang $y(n)$ auf Eingang $x(n)$.}\\
 	$\Rightarrow$ $a_k=0 \texttt{ für } k>0$.\\
@@ -513,9 +557,9 @@ Gesucht: $y(n) = \hat{y} \cdot \sin(\Omega_1n+\varphi_y)$\\
 		\end{minipage}
 	}
 	
-	\item \textbf{Rekursive Systeme}, IIR, MA:\\
-	{\small Infinite Impulse Response(IIR), Moving-Average (AR)\\
-		Keine Rückführung von Ausgang $y(n)$ auf Eingang $x(n)$.\\
+	\item \textbf{Rekursive Systeme}, IIR, MA:
+	
+	{\small Infinite Impulse Response (IIR), Moving-Average (AR)\\
 		Aktueller Ausgangswert hängt nur vom aktuellen Eingangswert
 		und früheren Ausgangswerten ab.}\\
 	$\Rightarrow$ $b_k=0 \texttt{ für } k>0$.\\

@@ -35,7 +35,6 @@
 			b_k = A_k \cos(\alpha_k) = A_k \sin(\beta_k) = - A_k \sin(\varphi_k)\\
 			\tan(\alpha_k)=\frac{a_k}{b_k} \quad \tan(\beta_k)=\frac{b_k}{a_k} \quad \tan(\varphi_k)=\frac{-b_k}{a_k}
 		\end{gather*}
-		Vereinfachung durch Nutzung der Symmetrieeigenschaften $\rightarrow$ siehe Kap. XX.
 	\end{itemize}
 
 \subsection{Komplexe Fourierreihe}
@@ -145,6 +144,13 @@ Sie fügen \underline{keine} neuen Frequenzen hinzu.}
 \includegraphics[page=8,width=\columnwidth]{./Bilder/Fourierreihen_Bischoff_V2}\\
 \includegraphics[page=9,width=\columnwidth]{./Bilder/Fourierreihen_Bischoff_V2}\\
 
+\end{multicols*}
+\begin{center}
+	\includegraphics[page=1,width=1\columnwidth]{./Bilder/FR_Tabelle_2_Funkschau}
+	\includegraphics[page=2,width=1\columnwidth]{./Bilder/FR_Tabelle_2_Funkschau}
+\end{center}
+\begin{multicols*}{2}
+
 
 \newpage
 \subsection{Kenngrößen periodischer Signale}
@@ -154,7 +160,7 @@ Sie fügen \underline{keine} neuen Frequenzen hinzu.}
 	{\small Wert einer Gleichgröße, die im Mittel die gleiche elek. Leistung an einem $R$ umsetzt.}
 \begin{gather*}
 		      U_{\mathit{eff}} = U = \sqrt{\frac{1}{T} \int_\tau^{\tau+T} u(t)^2 dt} = \sqrt{U_{\sim}^2+U_{0}^2}\\
-		      \text{Sinusf\"ormige Signale: }U_k = \frac{\hat{u}_k}{\sqrt{2}}
+		      \text{harmonische Signale: }U_k = \frac{\hat{u}_k}{\sqrt{2}}
 \end{gather*}
 $U_\sim:$ Wechselanteil \quad $U_0$: Gleichanteil, Mittelwert
  	\item Effektivwert mit \textbf{Fourier-Reihe}:\\
@@ -176,11 +182,11 @@ $U_\sim:$ Wechselanteil \quad $U_0$: Gleichanteil, Mittelwert
 	      \]
 	      - Welligkeit:
 	      \[
-		      w = \frac{U_\sim}{\bar{U}} = \frac{\texttt{Effektivwert des Wechselanteils}}{\texttt{Gleichanteil}}
+		      w = \frac{U_\sim}{U_0} = \frac{\texttt{Effektivwert des Wechselanteils}}{\texttt{Gleichanteil}}
 	      \]
 	      - Riffelfaktor:
 	      \[
-		      R = \frac{\hat{U}_\sim}{\bar{U}} = \frac{\texttt{Scheitelwert des Wechselanteils}}{\texttt{Gleichanteil}}
+		      R = \frac{\hat{u}_\sim}{U_0} = \frac{\texttt{Scheitelwert des Wechselanteils}}{\texttt{Gleichanteil}}
 	      \]
 \end{itemize}
 \subsubsection{Leistungen}
@@ -371,6 +377,7 @@ $U_\sim:$ Wechselanteil \quad $U_0$: Gleichanteil, Mittelwert
 %	\end{itemize}
 \clearpage
 \subsection{Eigenschaften der FT}
+{	\renewcommand{\arraystretch}{1.9}
 \begin{tabularx}{1.03\columnwidth}{|X|c|c|}
 	\hline & $x(t)$ & $\mathbf{\underline{X}(\omega)}$ \\
 	\hline Linearität & $A x_{1}(t)+B x_{2}(t)$ & $A \underline{X}_{1}(\omega)+B \underline{X}_{2}(\omega)$ \\
@@ -403,20 +410,29 @@ $U_\sim:$ Wechselanteil \quad $U_0$: Gleichanteil, Mittelwert
 	\end{tabular} \\
 	\hline Parsevalsches Theorem & $\int_{-\infty}^{\infty}|x(t)|^{2} d t$ & $\frac{1}{2 \pi} \int_{-\infty}^{\infty} \left|\underline{X}(\omega) \right| $\\
 	\hline	
-\end{tabularx}
+\end{tabularx} }
 
+\subsection{Symmetrieeigenschaften}
+\begin{mdframed}[style=exercise, nobreak=true]
+	\begin{wrapfigure}[10]{R}{0.27\columnwidth}
+		\vspace{-1.4em}
+		\includegraphics[width=0.3\columnwidth]{FT_Symmetrie.png}
+	\end{wrapfigure}
+	\setlength{\parindent}{0pt}
+	Realteil \& Betrag: \textbf{gerade}\\
+	Imaginärteil \& Phase: \textbf{ungerade}.
+	\[
+	\underline{X}(-\omega) = \underline{X}^*(\omega)
+	\]
+	
+	$x(t)$ reell \& gerade $\leftrightarrow$\\ $\underline{X}(\omega)$  reell \& gerade
+	$$\underline{X}(\omega) = 2\int_0^\infty x(t)\cos(\omega t)\,dt$$
+	$x(t)$ reell \& ungerade $\leftrightarrow$ $\underline{X}(\omega)$ imaginär \& ungerade
+	$$\underline{X}(\omega) = -2j\int_0^\infty x(t)\sin(\omega t)\,dt$$
+\end{mdframed}
 
-\subsection{Faltungsregeln}
-\normalsize
-\begin{itemize}
-	\item {$a*b=b*a$} {\small \qquad kommutativ}
-	\item $a*[b*c]=[a*b]*c$
-	\item $a\cdot(f*g)=(a\cdot f) * g = f * (a\cdot g)$
-	\item $a*[b+c]=a*b+a*c$
-	\item $x(t) * \delta(t-t_0) = x(t-t_0)$ {\small \qquad Ausblendeigenschaft}
-\end{itemize}
-
-\subsection{Transformationspaare der FT}
+\subsection{Korrespondenzen der FT}
+{	\renewcommand{\arraystretch}{1.8}
 \begin{tabularx}{0.95\columnwidth}{|c|X|}
 	\hline$x(t)$ & $\mathbf{\underline{X}(\omega)}$ \\
 	\hline$\delta(t)$ & 1 \\
@@ -435,21 +451,16 @@ $U_\sim:$ Wechselanteil \quad $U_0$: Gleichanteil, Mittelwert
 	\hline$e^{-\alpha|t|}, \alpha>0$ & $\frac{2 \alpha}{\alpha^{2}+\omega^{2}}$ \\
 	\hline$e^{-a^{2} t^{2}}$ & $\frac{\sqrt{\pi}}{a} e^{-\frac{\omega^{2}}{4 a^{2}}}$ \\
 	\hline
-\end{tabularx}
-\subsection{Symmetrie im Spektrum}
-\begin{mdframed}[style=exercise, nobreak=true]
-	\begin{wrapfigure}[10]{R}{0.27\columnwidth}
-		\vspace{-1.4em}
-		\includegraphics[width=0.3\columnwidth]{FT_Symmetrie.png}
-	\end{wrapfigure}
-		Realteil \& Betrag: \textbf{gerade}\\
-		Imaginärteil \& Phase: \textbf{ungerade}.
-	\[
-	\underline{X}(-\omega) = \underline{X}^*(\omega)
-	\]
+\end{tabularx} }
 
-		$x(t)$ reell \& gerade $\leftrightarrow$\\ $\underline{X}(\omega)$  reell \& gerade
-		$$\underline{X}(\omega) = 2\int_0^\infty x(t)\cos(\omega t)\,dt$$
-		$x(t)$ reell \& ungerade $\leftrightarrow$ $\underline{X}(\omega)$ imaginär \& ungerade
-		$$\underline{X}(\omega) = -2j\int_0^\infty x(t)\sin(\omega t)\,dt$$
-\end{mdframed}
+\subsection{Faltungsregeln}
+\normalsize
+\begin{itemize}
+	\item {$a*b=b*a$} {\small \qquad kommutativ}
+	\item $a*[b*c]=[a*b]*c$
+	\item $a\cdot(f*g)=(a\cdot f) * g = f * (a\cdot g)$
+	\item $a*[b+c]=a*b+a*c$
+	\item $x(t) * \delta(t-t_0) = x(t-t_0)$ {\small \qquad Ausblendeigenschaft}
+\end{itemize}
+
+\clearpage

@@ -1,15 +1,15 @@
 \clearpage
 \section{Zweitore, Vierpole}
 \subsection{Zweitorgleichungen}
-\small
+%\small
 % \includegraphics[width=\columnwidth]{Zweipole/Zweitorgleichungen}
-    \begin{itemize}
+    \begin{itemize}[leftmargin=*]
         \item{Admittanzform/ Admittanzmatrix \textbf{Y}:}
         \begin{align*}
             \begin{split}
                 \underline{I}_1 &= \underline{Y}_{11}\cdot\underline{U}_1 + \underline{Y}_{12}\cdot\underline{U}_2\\
                 \underline{I}_2 &= \underline{Y}_{21}\cdot\underline{U}_1 + \underline{Y}_{22}\cdot\underline{U}_2
-            \end{split}
+            \end{split} \qquad
             {\small\begin{pmatrix}
                 \underline{I}_1 \\
                 \underline{I}_2
@@ -24,8 +24,7 @@
                 \begin{split}
                 \underline{U}_1 &=\underline{Z}_{11}\cdot\underline{I}_1 + \underline{Z}_{12}\cdot\underline{I}_2 \\
                 \underline{U_2} &=\underline{Z}_{21}\cdot\underline{I}_1 + \underline{Z}_{22}\cdot\underline{I}_2
-                \end{split}
-            \left\} \
+                \end{split}\qquad
                 \begin{pmatrix}
                     \underline{U}_1 \\
                     \underline{U}_2
@@ -33,8 +32,7 @@
                 \begin{pmatrix}
                     \underline{I}_1 \\
                     \underline{I}_2
-                \end{pmatrix}
-            \right.
+                \end{pmatrix}  
             \end{align*}
         \item{Hybridform 1/ Reihenparallelmatrix \textbf{H}:}
             \begin{align*}
@@ -42,7 +40,7 @@
                     \underline{U}_1 &= \underline{H}_{11}\cdot\underline{I}_1 + \underline{H}_{12}\cdot\underline{U}_2 \\
                     \underline{I}_2 &= \underline{H}_{21}\cdot\underline{I}_1 + \underline{H}_{22}\cdot\underline{U}_2
                 \end{split}
-            \left\} \
+				\qquad	
                 \begin{pmatrix}
                     \underline{U}_1 \\
                     \underline{I}_2
@@ -51,7 +49,6 @@
                     \underline{I}_1 \\
                     \underline{U}_2
                 \end{pmatrix}
-            \right.
             \end{align*}
             \item{Hybridform 2/ Parallelreihenmatrix \textbf{C}:}
             \begin{align*}
@@ -59,7 +56,7 @@
                     \underline{I}_1 &= \underline{C}_{11}\cdot\underline{U}_1 + \underline{C}_{12}\cdot\underline{I}_2 \\
                     \underline{U}_2 &= \underline{C}_{21}\cdot\underline{U}_1 + \underline{C}_{22}\cdot\underline{I}_2
                 \end{split}
-            \left\} \
+				\qquad
                 \begin{pmatrix}
                     \underline{I}_1 \\
                     \underline{U}_2
@@ -68,7 +65,6 @@
                     \underline{U}_1 \\
                     \underline{I}_2
                 \end{pmatrix}
-            \right.
             \end{align*}
             
             \item{Kettenform/ Kettenmatrix \textbf{A}:}
@@ -77,7 +73,7 @@
                         \underline{U}_1 &= \underline{A}_{11}\cdot\underline{U}_2 + \underline{A}_{12}\cdot-\underline{I}_2 \\
                         \underline{I}_1 &= \underline{A}_{21}\cdot\underline{U}_2 + \underline{A}_{22}\cdot-\underline{I}_2
                     \end{split}
-                \left\} \
+	               \qquad
                     \begin{pmatrix}
                         \underline{U}_1 \\
                         \underline{I}_2
@@ -86,7 +82,6 @@
                         \underline{U}_2 \\
                         -\underline{I}_2
                     \end{pmatrix}
-                \right.
                 \end{align*}
                 \item{Kettenform rückwärts/ Kettenmatrix \textbf{B}:}
                     \begin{align*}
@@ -94,7 +89,7 @@
                             \underline{U}_2 &= \underline{B}_{11}\cdot\underline{U}_1 + \underline{B}_{12}\cdot-\underline{I}_1\\
                             \underline{I}_2 &= \underline{B}_{21}\cdot\underline{U}_1 + \underline{B}_{22}\cdot-\underline{I}_1
                         \end{split}
-                    \left\} \
+                    \qquad
                     \begin{pmatrix}
                         \underline{U}_2\\
                         \underline{I}_2
@@ -103,10 +98,9 @@
                         \underline{U}_1 \\
                         -\underline{I}_1
                     \end{pmatrix}
-                \right.
                     \end{align*}
     \end{itemize}
-    
+   \normalsize
 \subsubsection{Parameterumrechnung}
 \input{parameterumrechnung}
 
@@ -131,7 +125,7 @@
 \end{tabularx}\\
 \begin{itemize}[leftmargin=*]
 	\item Umkehrbares (reziprokes) ZT: nur 3 Parameter.
-	\item (Widerstands-)symmetrisches ZT: Eingangswiderstände in beiden Betriebsarten gleich.
+	\item (Widerstands-)symmetrisches ZT: Eingangswiderstände in beiden Betriebsarten gleich, Ein- und Ausgang vertauschbar.
 	\item Umkehrbares und symmetrisches ZT = längssymmetrisch: nur 2 Parameter.
 	\item Passives ZT aus R,L,C,M-Bauteilen ist immer umkehrbar.
 	\item Rückwirkungsfreies (unilaterales) ZT: nur 3 Parameter, Energieübertragung nur von Eingang auf Ausgang.
@@ -195,7 +189,7 @@ Torbedingung muss für ZT-Schaltungen erfüllt sein!\\
 	\end{center}
 	\normalsize Reihenfolge beachten! \textbf{Nicht} kommutativ!
 \end{itemize}
-\subsubsection{Idealer Trennverst\"arker/OP}
+\subsubsection{Idealer Trennverst\"arker/OP} \label{trennverstärker}
 Idealer Trennverstärker  $\text{v}_U$ als idealer OP.\\ 
 Zweck: Rückwirkungsfreiheit der Kettenschaltung.\\
 Entspricht einer VCVS.\\
@@ -211,7 +205,8 @@ Entspricht einer VCVS.\\
 	\]
 \end{minipage}
 \begin{equation*}
-	\underline{Z}_E \rightarrow \infty \quad \underline{Z}_A = 0 \quad \underline{\text{v}}_{\text{D}}=\underline{\text{v}}_U \rightarrow \infty
+	\boxed{
+	\underline{Z}_E \rightarrow \infty \quad \underline{Z}_A = 0 \quad \underline{\text{v}}_{\text{D}}=\underline{\text{v}}_U \rightarrow \infty }
 \end{equation*}
 \subsubsection{OP-Verstärker}
 \begin{itemize}[leftmargin=*]
@@ -226,28 +221,33 @@ Entspricht einer VCVS.\\
 						\frac{1}{\nu_D Z_E} & \frac{Z_A}{\nu_D Z_E}
 					\end{pmatrix}
 				\end{equation*}
-			Für idealen OP $\rightarrow$ \\setze obige Werte ein:
+			Für idealen OP $\rightarrow$ \\
+			$Z_E\rightarrow\infty, Z_A=0, v_D\rightarrow\infty$.
+			\vspace{1.1em}
 			\end{minipage}
-			ideal:
+			ideale Spannungs-Verstärkung:
 			\begin{equation*}
-				v_u=\frac{U_2}{U_1}=\frac{Z_1+Z_2}{Z_2}
+				\text{v}_u=\frac{\underline{U}_2}{\underline{U}_1}=
+				\frac{1}{\underline{A}_{11}}=\frac{\underline{Z}_1+\underline{Z}_2}{\underline{Z}_2} = 1 + \frac{Z_1}{Z_2}
 			\end{equation*}
 	\item inventierender OP\\
 	\begin{minipage}{0.4\columnwidth}
 		\includegraphics[width=\columnwidth]{Zweipole/inventierender_op}
 	\end{minipage}
 	\begin{minipage}{0.6\columnwidth}
-		Allgemein, für idealen OP $\rightarrow$ \\setze obige Werte ein:
+		Allgemein, für idealen OP $\rightarrow$ \\
+		$Z_E\rightarrow\infty, Z_A=0, v_D\rightarrow\infty$.
 		\begin{equation*}
 			A = \begin{pmatrix}
 				\frac{1}{\nu_D} + \frac{Z_2}{Z_1 + Z_2} & \frac{Z_A}{\nu_D} \\
 				\frac{1}{\nu_D Z_E} & \frac{Z_A}{\nu_D Z_E}
 			\end{pmatrix}
 		\end{equation*}
+			\vspace{1em}
 	\end{minipage}
-			ideal:
+			ideale Spannungs-Verstärkung:
 	\begin{equation*}
-		v_u=\frac{U_2}{U_1}=-\frac{Z_2}{Z_1}
+		\text{v}_u=\frac{1}{\underline{A}_{11}}=\frac{\underline{U}_2}{\underline{U}_1}=-\frac{\underline{Z}_2}{\underline{Z}_1}
 	\end{equation*}
 \end{itemize}
 
@@ -317,6 +317,8 @@ Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln! Andere
         VCCS:& $\underline{I}=\underline{Y}_T\cdot \underline{U}_1$
     \end{tabular}
     \end{minipage}
+    
+ \subsubsection{Matrizen für gesteuerte Quellen}   
 
 \subsubsection{Ersatzschaltbilder (ESB)}
 \begin{itemize}
@@ -333,12 +335,13 @@ Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln! Andere
         \raggedright
         
     \item  \textbf{Hybrid-ESB} bei gegebener [\underline{$H$}]-Matrix\\
+    {\footnotesize Bsp.: ESB für NPN-Transistor.}
         \includegraphics[width=0.7\columnwidth]{Zweipole/esb_hybrid-mit_cs}
 \end{itemize}
 
 \subsection{Beschaltete Zweitore}
 \subsubsection{Ein- und Ausgangsimpedanz an Seite 1/2}
-{\small $Z_V$: Last an Seite 2/ZT-Ausgang $\rightarrow$ Eingangsimpedanz, Betrieb von Seite 1\\ $Z_i$: Last an Seite 1/ZT-Eingang $\rightarrow$ Ausgangsimpedanz, Betrieb von Seite 2}\\
+{\footnotesize $Z_V$: Last an Tor 2/ZT-Ausgang $\rightarrow$ Eingangsimpedanz, Betrieb von Seite 1\\ $Z_i$: Last an Tor 1 1/ZT-Eingang $\rightarrow$ Ausgangsimpedanz, Betrieb von Seite 2}\\
 \setlength{\parindent}{0pt}
 \begin{minipage}{0.5\columnwidth}
 \includegraphics[width=\columnwidth]{Zweipole/Eingangsimpedanz}
@@ -346,8 +349,9 @@ Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln! Andere
 \begin{minipage}{0.5\columnwidth}
 	\includegraphics[width=\columnwidth]{Zweipole/Ausgangsimpedanz}
 \end{minipage}
-
+	\renewcommand{\arraystretch}{1.8}
 \begin{tabularx}{\columnwidth}{|X|l|l|}
+
 	\hline  & Last an Tor 2 & Last an Tor 1 \\
 	\hline$Z$ & $ \underline{Z}_{e1} =  \underline{Z}_{11}-\frac{\underline{Z}_{12} \underline{Z}_{21}}{\underline{Z}_{22}+\underline{Z}_{V}}$ & $\underline{Z}_{e 2}=\underline{Z}_{22}-\frac{\underline{Z}_{12} \underline{Z}_{21}}{\underline{Z}_{11}+\underline{Z}_{i}}$ \\
 	\hline
@@ -384,7 +388,7 @@ Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln! Andere
 %\raggedright
 
 \subsubsection{Ersatzquelle}
-Berechnung Innenwiderstand eines Ersatz-Zweipols:\\ 
+Berechnung Innenwiderstand $\underline{Z}_i$ eines Ersatz-Zweipols:\\ 
 Quellen $U_q$ kurzschließen. $I_q$ unterbrechen.\\
 Gilt nicht bei gesteuerten Quellen.\\
 \begin{center}
@@ -428,36 +432,46 @@ siehe Ausgangsimpedanz $Z_{e2} = Z_A$ (Quelle an Tor 1).
   	\underline{Z}_{w2} = \frac{\underline{A}_{22}\underline{Z}_{w1} + \underline{A}_{12}}{\underline{A}_{21}\underline{Z}_{w1}+\underline{A}_{11}}
   	}
 \end{gather*}
-    	\renewcommand{\arraystretch}{2.5}
-    	symmetrische ZT: $\underline{Z}_{w1}=\underline{Z}_{w2}$\\
-        \begin{tabular}{|c|c|c|}
-        	\hline
-            & $\boldsymbol{\underline{Z}_{w1}}$ & $\boldsymbol{\underline{Z}_{w2}}$
-           \\
-            \hline
-            $\underline{\boldsymbol{Z}}$ & $\sqrt{\frac{\underline{Z}_{11}\operatorname{det}\underline{Z}}{\underline{Z}_{22}}}$ & $\sqrt{\frac{\underline{Z}_{22}\operatorname{det}\underline{Z}}{\underline{Z}_{11}}}$
-            \\
-            \hline
-            $\underline{\boldsymbol{Y}}$ & $\sqrt{\frac{\underline{Y}_{22}}{\underline{Y}_{11}\operatorname{det}\underline{Y}}}$ & $\sqrt{\frac{\underline{Y}_{11}}{\underline{Y}_{22}\operatorname{det}\underline{Y}}}$
-            \\
-            \hline
-            $\underline{\boldsymbol{A}}$ & $\sqrt{\frac{\underline{A}_{11}\cdot\underline{A}_{12}}{\underline{A}_{21}\cdot\underline{A}_{22}}}$ & $\sqrt{\frac{\underline{A}_{22}\cdot\underline{A}_{12}}{\underline{A}_{21}\cdot\underline{A}_{11}}}$
-            \\
-            \hline
-            $\underline{\boldsymbol{H}}$ & $\sqrt{\frac{\underline{H}_{11}\operatorname{det}\underline{H}}{\underline{H}_{22}}}$ & $\sqrt{\frac{\underline{H}_{11}}{\underline{H}_{22}\operatorname{det}\underline{H}}}$
-            \\
-            \hline
-            $\underline{\boldsymbol{C}}$ & $\sqrt{\frac{\underline{C}_{22}}{\underline{C}_{11}\operatorname{det}\underline{C}}}$ & $\sqrt{\frac{\underline{C}_{11}\operatorname{det}\underline{C}}{\underline{C}_{11}}}$
-            \\
-            \hline
-        \end{tabular}\\
-        \normalsize
-    
-Messtechnische Ermittlung:\\
-$Z_{01}$: Leerlauf an Seite 1 \qquad $Z_{k1}$: Kursschluss an Seite 1
-    \begin{equation*}
-    \underline{Z}_{w1} = \sqrt{\underline{Z}_{k1}\cdot\underline{Z}_{01}}=\sqrt{\frac{\underline{A}_{11}\cdot\underline{A}_{12}}{\underline{A}_{21}\cdot\underline{A}_{22}}}
-    \end{equation*}
+\begin{minipage}{0.5\columnwidth}
+\renewcommand{\arraystretch}{2}
+	symmetrische ZT: $\underline{Z}_{w1}=\underline{Z}_{w2}$\\
+	\begin{tabular}{|c|c|c|}
+		\hline
+		& $\boldsymbol{\underline{Z}_{w1}}$ & $\boldsymbol{\underline{Z}_{w2}}$
+		\\
+		\hline
+		$\underline{\boldsymbol{Z}}$ & $\sqrt{\frac{\underline{Z}_{11}\operatorname{det}\underline{Z}}{\underline{Z}_{22}}}$ & $\sqrt{\frac{\underline{Z}_{22}\operatorname{det}\underline{Z}}{\underline{Z}_{11}}}$
+		\\
+		\hline
+		$\underline{\boldsymbol{Y}}$ & $\sqrt{\frac{\underline{Y}_{22}}{\underline{Y}_{11}\operatorname{det}\underline{Y}}}$ & $\sqrt{\frac{\underline{Y}_{11}}{\underline{Y}_{22}\operatorname{det}\underline{Y}}}$
+		\\
+		\hline
+		$\underline{\boldsymbol{A}}$ & $\sqrt{\frac{\underline{A}_{11}\cdot\underline{A}_{12}}{\underline{A}_{21}\cdot\underline{A}_{22}}}$ & $\sqrt{\frac{\underline{A}_{22}\cdot\underline{A}_{12}}{\underline{A}_{21}\cdot\underline{A}_{11}}}$
+		\\
+		\hline
+		$\underline{\boldsymbol{H}}$ & $\sqrt{\frac{\underline{H}_{11}\operatorname{det}\underline{H}}{\underline{H}_{22}}}$ & $\sqrt{\frac{\underline{H}_{11}}{\underline{H}_{22}\operatorname{det}\underline{H}}}$
+		\\
+		\hline
+		$\underline{\boldsymbol{C}}$ & $\sqrt{\frac{\underline{C}_{22}}{\underline{C}_{11}\operatorname{det}\underline{C}}}$ & $\sqrt{\frac{\underline{C}_{11}\operatorname{det}\underline{C}}{\underline{C}_{11}}}$
+		\\
+		\hline
+	\end{tabular}
+\end{minipage}
+\begin{minipage}{0.5\columnwidth}
+	\small
+	\begin{itemize}
+	\item Messtechnische\\ Ermittlung:
+	
+	$Z_{01}$: Leerlauf - Tor 1\\
+	$Z_{k1}$: Kurzschluss - Tor 1
+	\end{itemize}
+
+	\begin{align*}
+		\underline{Z}_{w1} &= \sqrt{\underline{Z}_{k1}\cdot\underline{Z}_{01}}\\
+		&=\sqrt{\frac{\underline{A}_{11}\cdot\underline{A}_{12}}{\underline{A}_{21}\cdot\underline{A}_{22}}}
+	\end{align*}
+\end{minipage}
+
     
 \subsubsection{Scheinleistungsanpassung}
 \begin{minipage}{0.55\columnwidth}

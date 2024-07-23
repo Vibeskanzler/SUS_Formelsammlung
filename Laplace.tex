@@ -7,7 +7,7 @@
 	\[
 		 \mathcal{L}^{-1}\left\{ \underline{X}(s) \right\} = x(t) =  \frac{1}{2\pi j}\int_{\sigma-j\infty}^{\sigma+j\infty} \underline{X}(s) \cdot e^{-st} ds
 	\]
-LPT mit Partialbruchzerlegung (PBZ) + Tabelle.
+Rücktransformation mit Partialbruchzerlegung (PBZ) + Tabelle in Kap. \ref{lpt_tabelle}.
 
 \normalsize
 \subsection{LTI-Systeme im Bildbereich (BB)}
@@ -38,11 +38,11 @@ g(t) = \int_0^t h(\tau) d\tau \quad \laplace\ \quad \boxed{\underline{G}(s) = \f
 
 \subsection{P/N-Diagramm: Systemeigenschaften}
 \begin{itemize}
-	\item \textbf{Stabilität}: \textbf{Alle} Pole von $\underline{H}(s)$ liegen links der $\omega$-Achse. Bei Ü-Fkt.:  Nennergrad $\ge$ Zählergrad.
-	\item Minimalphasiges System: Alle Nullstellen liegen links der $\omega$-Achse.
+	\item \textbf{Stabilität}: \textbf{Alle} Pole von $\underline{H}(s)$ liegen links der $\omega$-Achse.
+	\item \textbf{Minimalphasiges} System: \textbf{Alle} Nullstellen liegen links der $\omega$-Achse.
 \end{itemize}
 \subsection{Partialbruchzerlegung (PBZ)}
-Für die inverse bzw. Rücktransformation in Zeitbereich. Beispiele siehe Papula FS. S.157f.
+Für die inverse bzw. Rücktransformation in den Zeitbereich. Beispiele siehe Papula FS. S.157f.
 \begin{itemize}
 	\item Einfache Polstellen:
 		\begin{align*}
@@ -85,7 +85,7 @@ Für die inverse bzw. Rücktransformation in Zeitbereich. Beispiele siehe Papula
 \clearpage
 \end{multicols*}
 \begin{table}[h!]
-	\subsection{Korrespondenzen der LPT}
+	\subsection{Korrespondenzen der LPT}\label{lpt_tabelle}
 	\renewcommand{\arraystretch}{1.7}
 \begin{minipage}[t]{0.5\columnwidth}
 	\begin{tabularx}{\columnwidth}{|l|l|X|}
@@ -179,80 +179,81 @@ Für die inverse bzw. Rücktransformation in Zeitbereich. Beispiele siehe Papula
 \end{minipage}
 \end{table}
 \noindent
-\begin{minipage}{0.68\columnwidth}
-	\renewcommand{\arraystretch}{1.7}
-	\begin{tabularx}{\columnwidth}{|l|c|X|}
+\begin{minipage}{0.7\columnwidth}
+	\renewcommand{\arraystretch}{1.5}
+	\begin{tabular}{|l|c|c|}
 		\hline Nr  & $\mathbf{x(t)}$ für $t \geq 0$ & $\mathbf{\underline{X}(s)}$ \\
 		\hline 46  & \begin{tabular}{l}
 			\begin{tabular}{l}
-				$a^2>b^2: \frac{1}{2 W} \cdot\left(\mathrm{e}^{\lambda_1 t}-\mathrm{e}^{\lambda_2 t}\right)$ \\
-				$a^2=b^2: t \cdot \mathrm{e}^{-a t}$ \\
-				$a^2<b^2: \frac{1}{\omega_d} \cdot \mathrm{e}^{-a t} \cdot \sin \omega_{\mathrm{d}} t$
+				$a^2>b^2: \quad \frac{1}{2 W} \cdot\left(\mathrm{e}^{\lambda_1 t}-\mathrm{e}^{\lambda_2 t}\right)$ \\
+				$a^2=b^2: \quad t \cdot \mathrm{e}^{-a t}$ \\
+				$a^2<b^2: \quad \frac{1}{\omega_d} \cdot \mathrm{e}^{-a t} \cdot \sin \omega_{\mathrm{d}} t$
 			\end{tabular}
 		\end{tabular} & $\dfrac{1}{s^2+2 a s+b^2}$\\
 		\hline 47   & \begin{tabular}{l}
 			\begin{tabular}{l}
-				$a^2>b^2: \frac{1}{2 W} \cdot\left(\lambda_1 \mathrm{e}^{\lambda_1 t}-\lambda_2 \mathrm{e}^{\lambda_2 t}\right)$ \\
-				$a^2=b^2:(1-a t) \cdot \mathrm{e}^{-a t}$ \\
-				$a^2<b^2:\left(\cos \omega_{\mathrm{d}} t-\frac{a}{\omega_{\mathrm{d}}} \cdot \sin \omega_{\mathrm{d}} t\right) \cdot \mathrm{e}^{-a t}$
+				$a^2>b^2: \quad \frac{1}{2 W} \cdot\left(\lambda_1 \mathrm{e}^{\lambda_1 t}-\lambda_2 \mathrm{e}^{\lambda_2 t}\right)$ \\
+				$a^2=b^2: \quad (1-a t) \cdot \mathrm{e}^{-a t}$ \\
+				$a^2<b^2: \quad \left(\cos \omega_{\mathrm{d}} t-\frac{a}{\omega_{\mathrm{d}}} \cdot \sin \omega_{\mathrm{d}} t\right) \cdot \mathrm{e}^{-a t}$
 			\end{tabular}
 		\end{tabular} & 
 			$\dfrac{s}{s^2+2 a s+b^2}$ \\
 		\hline 48 & \begin{tabular}{l}
 			\begin{tabular}{l}
-				$a^2>b^2: \frac{1}{b^2}\left(1+\frac{\lambda_2}{2 W} \cdot \mathrm{e}^{\lambda_1 t}-\frac{\lambda_1}{2 W} \cdot \mathrm{e}^{\lambda_2 t}\right)$ \\
-				$a^2=b^2: \frac{1}{a^2}\left[1-(1+a t) \cdot \mathrm{e}^{-a t}\right]$ \\
-				$a^2<b^2: \frac{1}{b^2}\left[1-\left(\cos \omega_{\mathrm{d}} t+\frac{a}{\omega_{\mathrm{d}}} \cdot \sin \omega_{\mathrm{d}} t\right) \cdot \mathrm{e}^{-a t}\right]$
+				$a^2>b^2: \quad \frac{1}{b^2}\left(1+\frac{\lambda_2}{2 W} \cdot \mathrm{e}^{\lambda_1 t}-\frac{\lambda_1}{2 W} \cdot \mathrm{e}^{\lambda_2 t}\right)$ \\
+				$a^2=b^2: \quad \frac{1}{a^2}\left[1-(1+a t) \cdot \mathrm{e}^{-a t}\right]$ \\
+				$a^2<b^2: \quad \frac{1}{b^2}\left[1-\left(\cos \omega_{\mathrm{d}} t+\frac{a}{\omega_{\mathrm{d}}} \cdot \sin \omega_{\mathrm{d}} t\right) \cdot \mathrm{e}^{-a t}\right]$
 			\end{tabular}
 		\end{tabular} & 
 			$\dfrac{1}{s\left(s^2+2 a s+b^2\right)}$
 		 \\
 		\hline 49 &
 			\begin{tabular}{l}
-				$a^2>b^2: \frac{\cos (\omega_0 t+\varphi)+k_1 \cdot \mathrm{e}^{-\lambda_1 t}+k_2 \cdot \mathrm{e}^{-\lambda_2 t}}{\sqrt{x^2+y^2}}$ \\
-				$a^2=b^2: \frac{\cos (\omega_0 t+\varphi)+(z t-\cos \varphi) \cdot \mathrm{e}^{-a t}}{\sqrt{x^2+y^2}}$ \\
-				$a^2<b^2: \frac{\cos (\omega_0 t+\varphi)-k \cdot \cos \left(\omega_{\mathrm{d}} t+\beta\right) \cdot \mathrm{e}^{-a t}}{\sqrt{x^2+y^2}}$
+				$a^2>b^2: \quad \frac{\cos (\omega_0 t+\varphi)+k_1 \cdot \mathrm{e}^{-\lambda_1 t}+k_2 \cdot \mathrm{e}^{-\lambda_2 t}}{\sqrt{x^2+y^2}}$ \\
+				$a^2=b^2: \quad \frac{\cos (\omega_0 t+\varphi)+(z t-\cos \varphi) \cdot \mathrm{e}^{-a t}}{\sqrt{x^2+y^2}}$ \\
+				$a^2<b^2: \quad \frac{\cos (\omega_0 t+\varphi)-k \cdot \cos \left(\omega_{\mathrm{d}} t+\beta\right) \cdot \mathrm{e}^{-a t}}{\sqrt{x^2+y^2}}$
 			\end{tabular}
 		 & 
 			$\frac{s \cos \psi-\omega \sin \psi}{\left(s^2+\omega^2\right) \cdot\left(s^2+2 a s+b^2\right)}$
 		\\
 		\hline
-	\end{tabularx}
+	\end{tabular}
 \end{minipage}
-\begin{minipage}{0.33\columnwidth}
-{\centering
-\begin{itemize}
+\begin{minipage}{0.25\columnwidth}
+%{\centering
+%\small
+\begin{itemize}[leftmargin=*]
 	\item Aperiodischer Kriechfall:\\
-	$a^2>b^2 \, \leftrightarrow \, \vartheta>1$
+	$a^2>b^2 \quad \leftrightarrow \quad \vartheta>1$
 	
 	\item Aperiodischer \textbf{Grenzfall:}\\
-	$a^2=b^2 \, \leftrightarrow \, \vartheta=1$
+	$a^2=b^2 \quad \leftrightarrow \quad \vartheta=1$
 	
 	\item Periodischer Schwingfall:\\
-	$a^2<b^2 \, \leftrightarrow \, 0<\vartheta<1$
+	$a^2<b^2 \quad \leftrightarrow \quad 0<\vartheta<1$
 	
 	\item Abklingkonstante:\\
-	$a=\delta =\frac{\vartheta}{T} = \frac{R}{2L}$
+	$a=\delta =\dfrac{\vartheta}{T} = \vartheta\,\omega_0 = \dfrac{R}{2L}$
 	
 	\item Resonanz-Kreisfrequenz:\\
-	$b=\omega_0=\frac{1}{T} =\frac{1}{\sqrt{LC}}$
+	$b=\omega_0=\dfrac{1}{T} =\dfrac{1}{\sqrt{LC}}$
 	
 	\item Eigen-Kreisfrequenz:\\
-	$\omega_d = \sqrt{b^2-a^2}$ \\
-	wenn $\vartheta=0 \rightarrow \omega_0 = \omega_d$
+	$\omega_d = \sqrt{b^2-a^2} \\
+	= \sqrt{\omega_0^2-\delta^2} = \omega_0\sqrt{1-\vartheta^2}$
 	
-	\item Dämpfungsgrad:\\
-	$D = \vartheta = \frac{\delta}{\omega_0} = \frac{a}{b}$
+	\item Dämpfungsgrad,-maß, -konstante:\\
+	$D = \vartheta = \dfrac{\delta}{\omega_0} = \dfrac{a}{b}$
 \end{itemize} 
-}
-\end{minipage}
+%}
+\end{minipage}\\
 $\arraycolsep=1.7pt\def\arraystretch{1.7}
 \begin{array}{cccc}
 	\lambda_{1,2}=-a\pm W = -a\pm j\omega_d & \quad W=\sqrt{a^2-b^2}=j\omega_d & \quad x=b^2-\omega^2$ \qquad $y=2a\omega & \quad z=\omega \sin\varphi - a \cos \varphi\\
 	\varphi=\arctan\dfrac{x\sin\varphi-y\cos\varphi}{y\sin\varphi+x\cos\varphi} & k=\dfrac{\cos\varphi}{\cos\beta} & k_1=\dfrac{\lambda_2\cos\varphi-\omega\sin\varphi}{2W} & k_2=\dfrac{\omega\sin\varphi-\lambda_1\cos\varphi}{2W}
 \end{array}$\\
-\vspace{5em}
-$\beta=\arctan\frac{z}{\omega_d \, \cos\varphi}$
+\vspace{1.5em}
+$\beta=\arctan\dfrac{z}{\omega_d \, \cos\varphi}$
 \newpage
 \begin{multicols*}{2}
 %\begin{mdframed}[style=exercise,nobreak=false]
