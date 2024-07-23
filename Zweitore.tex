@@ -103,11 +103,23 @@
    \normalsize
 \subsubsection{Parameterumrechnung}
 \input{parameterumrechnung}
-
-\subsection{Betriebsarten}
-
-\subsection{Bezugspfeilsystem}
-
+\columnbreak
+\subsection{Betriebsarten, Bezugspfeilsystem}
+\begin{minipage}{0.5\columnwidth}
+	\small
+	Betrieb von Seite 1,\\ Last an Tor 2.\\
+	
+	\includegraphics[width=\columnwidth]{Zweipole/betrieb_seite_1}
+\end{minipage}
+%\vspace{1em}
+\begin{minipage}{0.5\columnwidth}
+	\small
+	Betrieb von Seite 2,\\ Last an Tor 1.\\
+	
+	\includegraphics[width=\columnwidth]{Zweipole/betrieb_seite_2}
+\end{minipage}\\
+\setlength{\parindent}{0pt}\\
+Symmetrisches Bezugspfeilsystem im Bild.
 \subsection{ZT-Eigenschaften}
 \small
 \begin{tabularx}{0.85\columnwidth}{|c|c|c|X|}
@@ -191,7 +203,7 @@ Torbedingung muss für ZT-Schaltungen erfüllt sein!\\
 \end{itemize}
 \subsubsection{Idealer Trennverst\"arker/OP} \label{trennverstärker}
 Idealer Trennverstärker  $\text{v}_U$ als idealer OP.\\ 
-Zweck: Rückwirkungsfreiheit der Kettenschaltung.\\
+Zweck: Rückwirkungsfreiheit einer Kettenschaltung.\\
 Entspricht einer VCVS.\\
 \begin{minipage}{0.5\columnwidth}
 \includegraphics[width=1.2\columnwidth]{Zweipole/Trennverstaerker}
@@ -276,6 +288,7 @@ VCVS: Spannungsgesteuerte\\ Spannungsquelle
  \footnotesize
 	CCVS: Stromgesteuerte \\ Spannungsquelle
 	\normalsize
+	\vspace{-0.4em}
 	\begin{center}
 		\includegraphics[width=0.9\columnwidth]{Zweipole/strm-spg-gestuert}\\
 		\begin{tabular}{cc}
@@ -283,6 +296,7 @@ VCVS: Spannungsgesteuerte\\ Spannungsquelle
 		\end{tabular}
 	\end{center}
 \end{minipage}
+\\
 \begin{minipage}[t]{0.5\columnwidth}
 	\footnotesize
 	VCCS: Spannungsgesteuerte\\ Stromquelle
@@ -313,15 +327,15 @@ Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln! Andere
         \includegraphics[width=0.9\columnwidth]{Zweipole/spg-spg-gestuert_linear}\\
     \begin{tabular}{ll}
         VCVS:& $\underline{U}=\alpha\cdot \underline{U}_1$\\
-        CCVS:& $\underline{U}=\underline{Z}_T\cdot \underline{I}_1 $
+        VCCS:& $\underline{I}=\underline{Y}_T\cdot \underline{U}_1$
     \end{tabular}
     \end{minipage}
     \begin{minipage}{0.5\columnwidth}
     	\renewcommand{\arraystretch}{1.3}
         \includegraphics[width=0.9\columnwidth]{Zweipole/strm-strm-gesteuert_linear}\\
     \begin{tabular}{ll}
-        CCCS:& $\underline{I}=\beta\cdot \underline{I}_1$\\
-        VCCS:& $\underline{I}=\underline{Y}_T\cdot \underline{U}_1$
+    	        CCVS:& $\underline{U}=\underline{Z}_T\cdot \underline{I}_1 $\\
+        CCCS:& $\underline{I}=\beta\cdot \underline{I}_1$
     \end{tabular}
     \end{minipage}
     
