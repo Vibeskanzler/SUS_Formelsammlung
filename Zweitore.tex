@@ -102,8 +102,31 @@
     \end{itemize}
    \normalsize
 \subsubsection{Parameterumrechnung}
-\input{parameterumrechnung}
+{\small
+\input{parameterumrechnung} }
+%\includegraphics[width=\columnwidth]{Zweipole/matrizen_umrechnung}
 \columnbreak
+\subsubsection{Matrizenrechnung}
+siehe Papula FS S.204f.
+   \[ A\cdot B = C \rightarrow  \begin{bmatrix}
+	a_{11} & a_{12}\\ 
+	a_{21} & a_{22} 
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+	b_{11} & b_{12}\\ 
+	b_{21} & b_{22}  
+\end{bmatrix}
+=
+\begin{bmatrix}
+	c_{11} & c_{12}\\ 
+	c_{21} & c_{22}   
+\end{bmatrix} \] 
+Bsp.: $c_{21}=a_{21}\cdot b_{11} + a_{22} \cdot b_{21}$\\
+\setlength{\parindent}{0pt}
+
+Determinante:\quad  wenn $\det(A)=0 \rightarrow$ nicht inventierbar.
+   \[ \det(A)=a_{11}\cdot a_{22} - a_{12} \cdot a_{21} \]
 \subsection{Betriebsarten, Bezugspfeilsystem}
 \begin{minipage}{0.5\columnwidth}
 	\small
@@ -134,6 +157,8 @@ Symmetrisches Bezugspfeilsystem im Bild.
 	\hline
 	$H$&  $H_{12} = -H_{21}$& $\operatorname{det}[H]=1$ & $H_{12} = 0$ \\
 	\hline
+	$C$&  $C_{12} = -C_{21}$& $\operatorname{det}[C]=1$ & $C_{12} = 0$ \\
+		\hline
 \end{tabularx}\\
 \begin{itemize}[leftmargin=*]
 	\item Umkehrbares (reziprokes) ZT: nur 3 Parameter.
