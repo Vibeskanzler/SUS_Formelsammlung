@@ -19,7 +19,7 @@
               \includegraphics[width=0.43\textwidth]{Signale/gerade_ungerade_signal}
           \end{center}
       \item{\textbf{Energie \hfill $\longleftrightarrow$ \hfill Leistung}}\\
-              (Gesamt-)Energie: \[E_x=\int_{t=-\infty}^{+\infty}\lvert x(t)\rvert^2 dt\]
+              (Gesamt-)Energie: \[E_x=\int_{t=-\infty}^{+\infty}\lvert x(t)\rvert^2 dt\ \quad (0<E_x<\infty)\]
               Mittlere Leistung: \[P_x=\lim_{T\to\infty}\frac{1}{2T}\int_{-T}^{+T}\lvert x(t)\rvert^2 dt \quad (0<P_x<\infty)\]
                 {\small Ein Signal ist nie Energie- und Leistungssignal gleichzeitig!}
           
@@ -32,7 +32,7 @@
       \item{\textbf{Signaloperationen}}\\
         {\small Manipulation/Transformation mit folgenden Parametern:}
             \[ \boxed{
-				f(t) = A \cdot f(\pm b \cdot t \mp t_0) \leftrightarrow A \cdot f\left(\frac{t\mp t_0}{b}\right)
+				f(t) = A \cdot f(\pm b \cdot (t \mp t_0)) \leftrightarrow A \cdot f\left(\frac{t\mp t_0}{b}\right)
 				}
 			\]
 		 \renewcommand{\labelitemii}{$\bullet$}
@@ -62,6 +62,13 @@
                  1 & \text{f\"ur } t \geq 0
              \end{cases}
           \]
+Verschoben, Start bei $t_0$:
+        \[ \varepsilon(t-t_0) = 
+          \begin{cases}
+          	0 & \text{f\"ur } t_0 < 0\\
+          	1 & \text{f\"ur } t_0 \geq 0
+          \end{cases}
+          \]
           \item{Dirac-Impuls $\delta$}
           \[
               \int_{t=-\infty}^{\infty} \delta(t) \, dt = 1
@@ -75,16 +82,17 @@
                   \delta(t)}$
               \item{\textbf{Ausblend}eigenschaft}:
                   \[
-                      \delta(t-t_0)\cdot y(t) = \delta(t-t_0)\cdot y(t_0)
+                      \int_{-\infty}^{\infty}\delta(t-t_0)\cdot y(t) = y(t_0)
                   \]
               \item{Zeitskalierung: }
-                  $\delta(at)=\frac{1}{\lvert a\rvert}\delta(t)$
+                  $\delta(at)=\dfrac{1}{\lvert a\rvert}\,\delta(t)$
           \end{itemize}
           \item{Dreieckimpuls $\Lambda$}
+          Fläche = 1.
           \[ \Lambda(t) =
              \begin{cases}
                  0 & \text{f\"ur } \vert t\rvert > 1\\
-                 1 & \text{f\"ur } \vert t\rvert \leq 1
+                 1-|t| & \text{f\"ur } \vert t\rvert \leq 1
              \end{cases}
           \]
           \item{Rechteckfunktion $\operatorname{rect}$}\\
@@ -96,19 +104,17 @@
              \end{cases}
           \]
           Darstellbar durch:\\ $1\cdot  \operatorname{rect}(t) = \varepsilon\cdot\left( t+\frac{1}{2} \right)-\varepsilon\cdot\left( t-\frac{1}{2} \right)$
-          \item{Komplexe Exponentialfunktion}
-          \[ \Lambda(t) =
-             \begin{cases}
-                 0 & \text{f\"ur } \vert t\rvert > 1\\
-                 1 & \text{f\"ur } \vert t\rvert \leq 1
-             \end{cases}
+          \item{Komplexe Exponentialfunktion}\\
+          siehe Kap. \ref{ufkt}.
+          \[ x(t)=\underline{A}\cdot e^{st} = \underline{A}\cdot e^{(\sigma+j\omega)t} = |\underline{A}|\cdot e^{j\varphi} \cdot e^{(\sigma+j\omega)t}
           \]
           \item Si-Funktion
-                    \[ si(x) =
+                    \[ \operatorname{si}(x) =
           \begin{cases}
           	\dfrac{\sin(x)}{x} & \text{f\"ur } x\neq 0\\
           	1 & \text{f\"ur } x = 0
           \end{cases}
           \]
+          Nullstellen: $\operatorname{si}(k\pi)=0$ für $k\ge1,\, k\in \mathbb{Z}$
       \end{itemize}
   \end{mdframed}

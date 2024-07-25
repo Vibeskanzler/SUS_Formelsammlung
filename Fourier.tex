@@ -37,17 +37,18 @@
 		\end{gather*}
 	\end{itemize}
 
-\subsection{Komplexe Fourierreihe}
+\subsection{Komplexe Fourierreihe}\label{komplexe_fr}
 	\begin{itemize}
 		\item Synthese: $\omega \rightarrow t$
 		{\small\quad $\underline{c}_k$: Gewichte}
 		\[
 		x(t)= \sum_{k=-\infty}^{\infty} \underline{c}_k\cdot e^{jk \omega_1  t} \text{ mit } \underline{c}_k = |\underline{c}_k|\cdot e^{j\varphi_k}
 		\]
-		\item Analyse: $t \rightarrow \omega$
+		\item Analyse: $t \rightarrow \omega$ (vgl. Kap. \ref{ft_periodischer_signale}.)
 		\begin{align*}
 			\underline{c}_k & = \frac{1}{T}\int_{t_0}^{t_0+T} x(t)\cdot e^{-jk\omega_1  t}dt
-			& = \boxed{\frac{1}{T} \cdot \underline{X}(k\omega_1) }
+			& = \boxed{\frac{1}{T} \cdot \underline{X}(k\omega_1) }\\
+			\underline{X}(\omega)&=2\pi \sum_{k=-\infty}^{\infty} \underline{c}_k \cdot \delta(\omega-k\omega_1)
 		\end{align*}
 	\item Umwandlung Komplex $\Leftrightarrow$ Reell.
 	\begin{gather*}
@@ -256,13 +257,13 @@ $U_\sim:$ Wechselanteil \quad $U_0$: Gleichanteil, Mittelwert
 	\[
 		x(t) \quad \laplace  \quad \underline{X}(\omega)
 	\]
-	Hintransformation - Analysegleichung:
+	Hintransformation - Analyse:
 	\[
-		\underline{X}(\omega)=\mathcal{F}\left\{ x(t) \right\} = \int_{-\infty}^{\infty} x(t) \cdot e^{-j\omega t} dt
+		\mathcal{F}\left\{ x(t) \right\} = \underline{X}(\omega) = \int_{-\infty}^{\infty} x(t) \cdot e^{-j\omega t} dt
 	\]
-	Rücktransformation - Synthesegleichung:
+	Rücktransformation - Synthese:
 	\[
-		x(t) = \mathcal{F}^{-1}\left\{ \underline{X}(\omega) \right\} = \frac{1}{2\pi}\int_{-\infty}^{\infty} \underline{X}(\omega) \cdot e^{j\omega t} d\omega
+		 \mathcal{F}^{-1}\left\{ \underline{X}(\omega) \right\} = x(t) = \frac{1}{2\pi}\int_{-\infty}^{\infty} \underline{X}(\omega) \cdot e^{j\omega t} d\omega
 	\]
 	Komplexwertige Fouriertransformierte:
 	\[
@@ -274,7 +275,7 @@ $U_\sim:$ Wechselanteil \quad $U_0$: Gleichanteil, Mittelwert
 	
 \end{mdframed}
 
-\subsection{FT periodischer Signale}
+\subsection{FT periodischer Signale}\label{ft_periodischer_signale}
 \begin{itemize}
 
 	\item Übergang FR $\rightarrow$ FT:
@@ -284,7 +285,7 @@ $U_\sim:$ Wechselanteil \quad $U_0$: Gleichanteil, Mittelwert
 	&= \frac{2\pi}{t_a} \cdot \sum_{k=-\infty}^{+\infty} \underline{U}(\omega) \cdot \delta(\omega-k\omega_a) \\
 	& =  \omega_a \cdot \sum_{k=-\infty}^{+\infty} \underline{U}(\omega-k\omega_a)
 \end{align*}
-	\item Übergang FT $\rightarrow$ FR, Komplexe Fourierkoeffizienten, periodische Fortsetzung:
+	\item Übergang FT $\rightarrow$ FR, Komplexe Fourierkoeffizienten, periodische Fortsetzung (vgl. Kap. \ref{komplexe_fr}):
 	\[ \boxed{
 		\quad \underline{c}_k =
 		\frac{1}{T} \cdot \underline{X}(k\omega_1) } =
