@@ -14,6 +14,7 @@
 	\end{tabularx}
 \end{table}
 \subsection{Quadratische Formeln}
+\vspace{-1em}
 \begin{gather*}
 x^2+px+q=0 \, \rightarrow \, x_{1/2}=-\frac{p}{2}\pm \sqrt{\left(\frac{p}{2}\right)^2-q}\\
 ax^2+bx+c=0 \, \rightarrow x_{1/2} = \frac{-b\pm\sqrt{b^2-4ac}}{2a} \\
@@ -59,9 +60,18 @@ a^2 - b^2 = (a + b)(a - b)\\
 Rechenregeln für Logarithmen (10er-Basis): \quad $ x,y,a > 0 $
 \begin{flalign*}
 	\log (x\cdot y) & = \log (x) + \log (y)            & \log (\tfrac{x}{y}) & = \log (x) - \log (y)              & \\
-	\log (x^a)      & = a\cdot \log(x)                 & \log \sqrt[a]{x}    & = \frac{1}{a} \cdot \log (x)       & 
+	\log (x^{\pm a})      & = \pm a\cdot \log(x)                 & \log \sqrt[a]{x}    & = \frac{1}{a} \cdot \log (x)       & 
 \end{flalign*}
-\columnbreak
+
+\subsection{Rechnen mit Potenzen}
+$a$: Basis \qquad $m,n$: Exponent
+\begin{flalign*}
+	& a^m \cdot a^n=a^{m+n}                                      & \frac{a^m}{a^n} & =a^{m-n} \quad(a \neq 0) & \\
+	& \left(a^m\right)^n=\left(a^n\right)^m=a^{m \cdot n}        & a^n \cdot b^n   & =(a \cdot b)^n           & \\
+	& \frac{a^n}{b^n}=\left(\frac{a}{b}\right)^n \quad(b \neq 0) & a^b             & = e^{b \cdot \ln a}      & \\
+	& a^0 =1                                                     & a^{-n}          & = \frac{1}{a^n}          &
+\end{flalign*}
+
 \subsection{Rechnen mit Wurzeln}
 $a$: Radikant \qquad $n$: Wurzelexponent\\
 
@@ -73,14 +83,7 @@ Merke: $\sqrt[n]{a \pm b} \neq \sqrt[n]{a} \pm \sqrt[n]{b}$ \qquad $ x = \sqrt[n
 	 & \frac{\sqrt[n]{a}}{\sqrt[n]{b}}=\frac{a^{\frac{1}{n}}}{b^{\frac{1}{n}}}=\left(\frac{a}{b}\right)^{\frac{1}{n}}=\sqrt[n]{\frac{a}{b}} \quad(b>0)
 \end{flalign*}
 
-\subsection{Rechnen mit Potenzen}
-$a$: Basis \qquad $m,n$: Exponent
-\begin{flalign*}
-	 & a^m \cdot a^n=a^{m+n}                                      & \frac{a^m}{a^n} & =a^{m-n} \quad(a \neq 0) & \\
-	 & \left(a^m\right)^n=\left(a^n\right)^m=a^{m \cdot n}        & a^n \cdot b^n   & =(a \cdot b)^n           & \\
-	 & \frac{a^n}{b^n}=\left(\frac{a}{b}\right)^n \quad(b \neq 0) & a^b             & = e^{b \cdot \ln a}      & \\
-	 & a^0 =1                                                     & a^{-n}          & = \frac{1}{a^n}          &
-\end{flalign*}
+
 
 \subsection{Trigonometrische Formeln}
 {\small siehe Papula Mathe-FS. S.94 \& S.238 (komplexe Fkt.)}\\
@@ -108,5 +111,6 @@ $a$: Basis \qquad $m,n$: Exponent
 	& \cos(2a)=\cos^2(a)-\sin^2(a)=1-2\sin^2(a) = 2\cos^2(a)-1  &\\
 	& \sin(2a)=2\sin(a)\cos(a)  &
 \end{flalign*}
+\includegraphics[width=\columnwidth]{Sinus_Kosinus_Eigenschaften}	\includegraphics[width=0.65\columnwidth]{einheitskreis}
 \clearpage
 \newpage
