@@ -11,7 +11,7 @@
                 \underline{I}_1 &= \underline{Y}_{11}\cdot\underline{U}_1 + \underline{Y}_{12}\cdot\underline{U}_2\\
                 \underline{I}_2 &= \underline{Y}_{21}\cdot\underline{U}_1 + \underline{Y}_{22}\cdot\underline{U}_2
             \end{split} \qquad
-            {\small\begin{pmatrix}
+            {\begin{pmatrix}
                 \underline{I}_1 \\
                 \underline{I}_2
             \end{pmatrix}} = \textbf{\underline{Y}}\cdot
@@ -298,7 +298,7 @@ Entspricht einer VCVS.\\
 
 \subsection{Ersatzschaltbilder}
 \subsubsection{Ideale gesteuerte Quellen}
-Ideale gesteuerte Quellen \textbf{nicht} ineinander umwandelbar! Andere Matrizen sind nicht definiert.\\
+Ideale gesteuerte Quellen \textbf{nicht} ineinander umwandelbar!\\
 \begin{minipage}[t]{0.5\columnwidth}
 \footnotesize
 VCVS: Spannungsgesteuerte\\ Spannungsquelle
@@ -310,6 +310,7 @@ VCVS: Spannungsgesteuerte\\ Spannungsquelle
 	\end{tabular}
 \end{center}
 \end{minipage}
+\vspace{1em}
 \begin{minipage}[t]{0.5\columnwidth}
  \footnotesize
 	CCVS: Stromgesteuerte \\ Spannungsquelle
@@ -345,9 +346,50 @@ VCVS: Spannungsgesteuerte\\ Spannungsquelle
 		\end{tabular}
 	\end{center}
 \end{minipage}
+ \vspace{1em}
 
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	& VCVS& VCCS & CCVS & CCCS\\
+	\hline
+	[\underline{A}]& $\begin{matrix}
+		\alpha^{-1} & 0 \\
+		0 & 0
+	\end{matrix}$ & $\begin{matrix}
+		0 & -\underline{Y}_T^{-1} \\
+		0 & 0
+	\end{matrix}$ & $\begin{matrix}
+	0 & 0 \\
+\underline{Z}_T^{-1} & 0
+	\end{matrix}$ & $\begin{matrix}
+	0 & 0 \\
+	0 & -\beta^{-1}
+	\end{matrix}$\\
+	\hline
+	[\underline{Z}]& & & $\begin{matrix}
+		\underline{Z}_T & 0 \\
+		0 & 0
+	\end{matrix}$ &\\
+	\hline
+	[\underline{Y}]& & $\begin{matrix}
+		0 & 0 \\
+		-\underline{Y}_T & 0
+	\end{matrix}$ & & \\
+	\hline
+	[\underline{H]}& & & & $\begin{matrix}
+		0 & 0 \\
+		-\beta & 0
+	\end{matrix}$\\
+	\hline
+	[\underline{C}]& $\begin{matrix}
+		0 & 0 \\
+		\alpha & 0
+	\end{matrix}$ & & &\\
+	\hline
+\end{tabular}
 \subsubsection{Lineare gesteuerte Quellen}
-Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln! Andere Matrizen sind nicht definiert.\\
+Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln!\\
     \begin{minipage}{0.5\columnwidth}
     	\renewcommand{\arraystretch}{1.3}
         \includegraphics[width=0.9\columnwidth]{Zweipole/spg-spg-gestuert_linear}\\
@@ -364,9 +406,8 @@ Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln! Andere
         CCCS:& $\underline{I}=\beta\cdot \underline{I}_1$
     \end{tabular}
     \end{minipage}
-    
- \subsubsection{Matrizen für gesteuerte Quellen}  
- 
+   
+ \columnbreak
  
 
 \subsubsection{Ersatzschaltbilder (ESB)}
@@ -377,7 +418,7 @@ Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln! Andere
         \includegraphics[width=0.7\columnwidth]{Zweipole/esb_t-mit_cs}
         \raggedright
         
-    \item \textbf{$\Pi$-ESB} bei gegebener $[\underline{Y}]$-Matrix:
+    \item \textbf{$\mathbf{\Pi}$-ESB} bei gegebener $[\underline{Y}]$-Matrix:
     
         $Y_{12} \neq Y_{21}$ mit gesteuerter Quelle.
         \includegraphics[width=0.8\columnwidth]{Zweipole/esb_pi-mit_cs}
@@ -509,7 +550,7 @@ siehe Ausgangsimpedanz $Z_{e2} = Z_A$ (Quelle an Tor 1).
 \begin{minipage}{0.5\columnwidth}
 	\small
 	\begin{itemize}
-	\item Messtechnische\\ Ermittlung:
+	\item[] Messtechnische\\ Ermittlung:
 	
 	$Z_{01}$: Leerlauf - Tor 1\\
 	$Z_{k1}$: Kurzschluss - Tor 1
