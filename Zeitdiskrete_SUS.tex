@@ -310,14 +310,20 @@ Beispiel:
 \subsubsection{Differenzengleichung $\Leftrightarrow$ Ü-Fkt.}
 \textbf{Allgemein:}
 \begin{gather*}
-	\underline{H}(z)=\frac{\underline{Y}(z)}{\underline{X}(z)}=\frac{\sum_{k=0}^{M} b_{k} \cdot z^{-k}}{1+\sum_{k=1}^{N} a_{k} \cdot z^{-k}}=\frac{\sum_{k=0}^{M} b_{k} \cdot z^{N-k}}{z^{N}+\sum_{k=1}^{N} a_{k} \cdot z^{N-k}}
+	\underline{H}(z)=\frac{\underline{Y}(z)}{\underline{X}(z)}=\frac{\sum_{k=0}^{M} b_{k} \cdot z^{-k}}{1+\sum_{k=1}^{N} a_{k} \cdot z^{-k}}=\frac{\sum_{k=0}^{M} b_{k} \cdot z^{M-k}}{z^{N}+\sum_{k=1}^{N} a_{k} \cdot z^{N-k}}
 \end{gather*}
 
-z-Transformation: $z^{-k} = x(n-k)$.
+$z$-Transformation: $x(n-k) \, \laplace \, \underline{X}(z)\cdot z^{-k}  $.
 \begin{align*}
 	\begin{split}
 		a_{0} \cdot y(n)+a_{1} \cdot y(n-1)+\ldots+a_{N} \cdot y(n-N)=\\
 		b_{0} \cdot x(n)+b_{1}  \cdot x(n-1)+\ldots+b_{M} \cdot x(n-M)
+	\end{split}
+\end{align*}
+\begin{align*}
+	\begin{split}
+		a_{0} \cdot \underline{Y}(z)+a_{1} \cdot \underline{Y}(z)\cdot z^{-1}+\ldots+a_{N} \cdot \underline{Y}(z)\cdot z^{-N}=\\
+		b_{0} \cdot \underline{X}(z)+b_{1}  \cdot \underline{X}(z)\cdot z^{-1}+\ldots+b_{M} \cdot \underline{X}(z)\cdot z^{-M}
 	\end{split}
 \end{align*}
 \textbf{Systeme 2. Ordnung:}
@@ -388,7 +394,7 @@ Partialbruchzerlegung allgemein:
 	\Aboxed{\frac{\underline{X}(z)}{z} & =\frac{c_{0}}{z}+\frac{c_{1}}{z-z_{x 1}}+\frac{c_{2}}{z-z_{x 2}}+\cdots+\frac{c_{N}}{z-z_{x N}}} \\
 	\Rightarrow \underline{X}(z) &= c_0 + \sum_{n=1}^{N} c_n \frac{z}{z-p_n} \quad c_0=0, \text{wenn } b_0=0
 \end{align*}
-Sonderfall: n-fache Polstellen bei z=0:
+Sonderfall: $n$-fache Polstellen bei $z=0$:
 \begin{align*}
 	\underline{X}(z) = \frac{\sum_{m=0}^{M} b_m \cdot  z^m}{a_N \cdot z^N} = \sum_{m=0}^{M} \frac{b_m}{a_N} \cdot z^{m-N}
 \end{align*}
@@ -513,8 +519,8 @@ LTI-System verändert \textbf{nur} Amplitude und Phase von $x(t)$.\\
 Normierte Frequenz $\Omega_1 = \omega T$ bleibt gleich.
 
 \begin{tabular}{cc}
-	Gegeben: & $x(n) = \hat{x} \cdot \sin(\Omega_1n+\varphi_x)$\\
-	Gesucht: & $y(n) = \hat{y} \cdot \sin(\Omega_1n+\varphi_y)$
+	Gegeben: & $x(n) = \hat{x} \cdot \sin(\Omega_1n+\varphi_x)+x_0$\\
+	Gesucht: & $y(n) = \hat{y} \cdot \sin(\Omega_1n+\varphi_y)+x_0$
 \end{tabular}
 \begin{gather*}
 \boxed{
