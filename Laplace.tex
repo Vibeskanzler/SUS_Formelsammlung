@@ -27,20 +27,23 @@ Sprungantwort:
 g(t) = \int_0^t h(\tau) d\tau \quad \laplace\ \quad \boxed{\underline{G}(s) = \frac{\underline{H}(s)}{s}}
 \]
 
-\subsection{Zusammenhang LPT $\leftrightarrow$ FT}
+\subsection{P/N-Diagramm: Systemeigenschaften}\label{pn_diagramm_lpt}
 \begin{itemize}
-		\item Konvergenzbereich (Kb): Halbebene rechts vom am \underline{weitesten} rechts liegenden Pol.
-	\item Wenn $\omega$-Achse $\in$ Kb: FT von $\underline{X}(s)$ existiert:
+	\item \textbf{Stabilität}: \textbf{Alle} Pole von $\underline{H}(s)$ liegen links der\\ $\omega$-Achse.
+	\item \textbf{Minimalphasiges} System: \textbf{Alle} Nullstellen liegen links der $\omega$-Achse.
+\end{itemize}
+
+\subsubsection{Zusammenhang LPT $\leftrightarrow$ FT}
+Weitere Infos siehe Kap. \ref{fgang_pn}.
+\begin{itemize}
+	\item Konvergenzbereich (Kb): Halbebene rechts vom am \underline{weitesten} rechts liegenden Pol.
+	\item Wenn $\omega$-Achse $\in$ Kb, dann \underline{existiert} eine FT von $\underline{X}(s)$:
 	\[
 	\mathcal{F}\{x(t)\} = X(\omega) = X(s) \big|_{s=j\omega} = \mathcal{L}\{x(t)\} \big|_{s=j\omega}
 	\]
+	$\Rightarrow$ Wenn System instabil, dann gibt es keine FT!
 \end{itemize}
-
-\subsection{P/N-Diagramm: Systemeigenschaften}
-\begin{itemize}
-	\item \textbf{Stabilität}: \textbf{Alle} Pole von $\underline{H}(s)$ liegen links der $\omega$-Achse.
-	\item \textbf{Minimalphasiges} System: \textbf{Alle} Nullstellen liegen links der $\omega$-Achse.
-\end{itemize}
+\includegraphics[width=\columnwidth]{zusammenhang_ft_lpt}
 \subsection{Partialbruchzerlegung (PBZ)}
 Für die inverse bzw. Rücktransformation in den Zeitbereich. Beispiele siehe Papula FS. S.157f.
 \begin{itemize}
@@ -77,11 +80,20 @@ Für die inverse bzw. Rücktransformation in den Zeitbereich. Beispiele siehe Pa
 	\hline Modulation & $e^{at} \, x(t)$ & $\underline{X} (s-a)$ \\
 	\hline Multiplikation & $t \cdot x(t) $ & $-\frac{d}{d s} \underline{X}(s)$ \\
 	\hline Faltung & $x_{1}(t) * x_{2}(t) $ & $ \underline{X}_{1}(s) \cdot \underline{X}_{2}(s)$ \\
-	\hline Differentiation $t$ & $ \frac{d}{dt} x(t) $ & $ s\cdot \underline{X}(s)-x(0)$ \\
+	\hline Differentiation $t$ & $ \frac{d}{dt} x(t) $ & $ s\cdot \underline{X}(s)-x(0^-)$ \\
 	\hline Integration $t$ & $\int_{0}^{t} x(\tau) \, d\tau $ & $ \frac{1}{s} \underline{X}(s)$ \\
 	\hline Integration $s$ & $\frac{1}{t} \cdot x(t) $ & $ \int_{s}^{\infty} \underline{X}(s) \, ds$ \\
 	\hline
 \end{tabularx}
+
+\subsubsection{Grenzwertsätze}
+\begin{itemize}
+	\item Anfangswertsatz 
+	$$x(0+) = \lim_{s\to\infty} s\cdot \underline{X}(s)$$
+	\item Endwertsatz 
+	$$x(\infty) = \lim_{s\to 0} s\cdot \underline{X}(s)$$
+\end{itemize}
+
 \clearpage
 \end{multicols*}
 \begin{table}[h!]

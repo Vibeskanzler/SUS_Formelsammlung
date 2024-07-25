@@ -161,14 +161,14 @@ Ausgang $y(t)$ durch Faltung bestimmen:
 \subsection{Frequenzgang}
   \begin{itemize}
       \item{\textbf{Frequenzgang}}\\
-      \small{$\underline{H}(w)$ existiert nur, wenn $\omega$-Achse $\in$ Kb. (stabil)\\ im PN-Diagramm bzw. alle Pole links der $\omega$-Achse.}
           \[
               \underline{H}(\omega) = \frac{1}{\underline{A}_{11}} =
               \frac{\underline{Y}(\omega)}{\underline{X}(\omega)} =
               \frac{\underline{U_2}(\omega)}{\underline{U_1}(\omega)} = |\underline{H}(\omega)|\cdot e^{j\varphi_H(\omega)}
           \]
-      \item{\textbf{Amplitudengang}}, Betragsfrequenzgang\\
-      \small{LTI-System ändert Eingangssignal um Faktor $A(\omega)$}.
+      \item{\textbf{Amplitudengang}}, Betragsfrequenzgang
+      
+      {\small LTI-System ändert Eingangssignal um Faktor $A(\omega)$}.
           \[
               A(\omega) = |\underline{H}(\omega)| =
               \frac{|\underline{Y}(\omega)|}{|\underline{X}(\omega)|}
@@ -207,7 +207,8 @@ Ausgang $y(t)$ durch Faltung bestimmen:
   \end{itemize}
 
   \begin{itemize}\small
-      \item{\textbf{Erweiterung der KWR}}\\
+      \item{\textbf{Erweiterung der KWR}}
+      
       KWR: komplexe Wechselstromrechnung. \\
           Die harmonische Exponentialfunktion $e^{j\omega t}$ ist ein
           \\Sonderfall von $e^{st}$ mit $s=j\omega+\sigma$, wenn $\sigma=0$.
@@ -252,7 +253,7 @@ Ausgang $y(t)$ durch Faltung bestimmen:
 \end{itemize}
   
 \subsubsection{Gebrochen-rationale Ü-Fkt.}
-\small{Grad \textbf{N} des Nennerpolynoms: Ordnung des LTI-Systems =\\ Anzahl unabhäng. Energiespeicher ($L, C$).\\
+{\small Grad \textbf{N} des Nennerpolynoms: Ordnung des LTI-Systems =\\ Anzahl unabhäng. Energiespeicher ($L, C$). \\
 \textbf{Kausales} System, wenn Nennergrad $N\ge M$ Z\"ahlergrad}.
 \[
 H(s)=\frac{\sum_{m=0}^{M} b_{m} \cdot s^{m}}{\sum_{n=0}^{N} a_{n} \cdot s^{n}}
@@ -267,17 +268,20 @@ $\rightarrow$ Ü-Funktion im Bildbereich (System 2.Ordnung):
 =\frac{b_2 s^2+b_1 s+b_0}{a_2 s^2 +a_1 s +a_0}
 \]
 \subsection{Pol-Nullstellen-Diagramm}
-\small{Grafische Darstellung der s-Ebene: P/N-Diagramm.\\
+{\small Grafische Darstellung der s-Ebene. (siehe Kap. \ref{pn_diagramm_lpt})\\
 $K$: Maßstabs-/Verstärkungsfaktor.}
 	\[
 	 \underline{H}(s) =\frac{b_M}{a_N} \frac{\prod_{o=1}^{M} (s-z_o)}{\prod_{x=1}^{N} (s-z_x)} \text{ mit } K=\frac{b_M}{a_N}
 	\]
 \begin{itemize}
-\item $\mathfrak{Im}$-Achse = $\omega$, \quad $\mathfrak{Re}$-Achse = $\sigma$
-\item Alle Pole links der $\omega$-Achse: \textbf{stabiles} + \textbf{kausales} System.
+\item Achsen: Im\{$s$\} = $\omega$, \quad Re\{$s$\} = $\sigma$
+\item Kausalität: Nennergrad $N$ $\ge$ Zählergrad $M$.
+\item \textbf{Alle} Pole links der $\omega$-Achse: \textbf{stabiles} + \textbf{kausales} LTI-System.
 \item Pole \& Nullstellen sind entweder reell (nur auf Re-Achse) oder \textbf{paarweise} komplex-konjungiert.
 \end{itemize}
-\subsubsection{Frequenzgang aus dem P/N-Diagramm}
+\subsubsection{Frequenzgang aus dem P/N-Diagramm}\label{fgang_pn}
+      \small{$\underline{H}(\omega)$ existiert nur, wenn im PN-Diagramm $\omega$-Achse $\in$ Kb (siehe Kap. \ref{pn_diagramm_lpt}) bzw. alle Pole links der $\omega$-Achse (stabiles System).} \\
+      
 \textbf{Näherungsweise} Bestimmung:
 \begin{itemize}
 \item An der $\omega$-Achse von 0 nach oben entlang gehen.
