@@ -369,18 +369,23 @@ $K$: Maßstabs-/Verstärkungsfaktor.}
  	Durch \textbf{Spiegelung} an der x-Achse (Abszisse). 
  \end{itemize}
  
- \subsubsection{Vorgehen}
+ \subsubsection{Leitfaden}
  \begin{enumerate}
- 	\item Ü-Fkt. des LTI-Systems aufstellen.\\
+ 	\item Gesuchte Ü-Fkt. des LTI-Systems aufstellen.\\
  	Bsp.: Spannungs-Ü-Fkt: $$\underline{H}(s)=\frac{1}{\underline{A}_{11}} = \frac{\underline{U}_2}{\underline{U}_1}$$
  	
  	\item Konstante Faktoren $K$ vor dem Bruch stellen!
  	\item Bauteilelemente in Zeitkonstanten $T=RC$ bzw.  $T=\dfrac{L}{R}$ ausdrücken. {\small $\rightarrow$ Zeitkonstante $T, \tau$ $\neq $ Periodendauer $T$}
  	\item Ü-Fkt. in bekannte Einzelglieder trennen, \\in Normalform mit $T$ ausdrücken $\rightarrow$ siehe Kap. \ref{tabelle_glieder}.\\
  	Bsp.: PDT$_1$-Glied: $$\underline{H}(s)=K\,\frac{1+sT_1}{1+sT_2}$$
- 	\item Berechnen der Eck-/Grenzkreisfrequenzen $\omega_0 = \dfrac{1}{T}$ und jeweils im Bode-Diagramm eintragen.
+ 	\textbf{Anmerkung}: Dämpfungsgrad $\vartheta=D$, siehe\\ weitere Bezeichnungen in Kap. \ref{elementare_uglieder} und Kap. \ref{lpt_tabelle}.
+ 	\item Berechnen der Eck-/Kenn-/Grenzkreisfrequenzen $\omega_0 = \dfrac{1}{T}$ und jeweils im Bode-Diagramm eintragen.\\
+ 	\small{Merke: kleine $T$ $\rightarrow$ große $\omega_0$}.
+ 	
  	\item Amplitudengang:
- 	$\underline{H}(s)$ mit $\omega_0=\frac{1}{T}$ \textbf{umformen}:\\ $\Rightarrow$ \textbf{Wichtig}: höchste Potenz von $s$ \textbf{ohne} Vorfaktoren!\\
+ 	$\underline{H}(s)$ mit $\omega_0=\frac{1}{T}$ \textbf{umformen}:
+ 	
+ 	$\Rightarrow$ \textbf{Wichtig}: höchste Potenz von $s$ \textbf{ohne} Vorfaktoren!\\
  	Ersetze $s=j\omega$. \quad Merke:  $\omega\neq\omega_0$.\\
  	
   	Betragsbildung: Zähler und Nenner jeweils Betrag setzen, $j$ fallen lassen.
@@ -424,10 +429,11 @@ $K$: Maßstabs-/Verstärkungsfaktor.}
  
  
 \end{multicols*}
+\subsubsection{Kettenschaltung, Inverse Übertragungsfunktion}
 \begin{center}
-	\includegraphics[page=1,width=\textwidth]{Systeme/Bode_Diagramm_Foliensatz}
+	\includegraphics[page=1,width=0.97\textwidth]{Systeme/Bode_Diagramm_Foliensatz}
 \end{center}
-\subsection{Elementare \"Ubertragungsglieder}
+\subsection{Elementare \"Ubertragungsglieder}\label{elementare_uglieder}
 \begin{center}
 \raggedright
 \includegraphics[page=1,width=0.95\columnwidth]{Systeme/GliederHuberEigenschaften}\\
