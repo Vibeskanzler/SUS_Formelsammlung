@@ -65,11 +65,8 @@ Für die inverse bzw. Rücktransformation in den Zeitbereich. Beispiele siehe Pa
 \end{itemize}
 \small \textbf{Beachte}: Wenn Zählergrad $>$ Nennergrad, muss vor der PBZ eine \textbf{Polynomdivision} durchgeführt werden!
 \normalsize
-%\subsection{Systemantwort von LTI Systemen}
-%\includegraphics[width=0.98\columnwidth]{Bilder/LTI_Systemantworten.png}
-%\clearpage
 \subsection{Eigenschaften der LPT}
-\renewcommand{\arraystretch}{1.7}
+\renewcommand{\arraystretch}{1.8}
 \begin{tabularx}{\columnwidth}{|X|X|X|}
 	\hline
 	& $\mathbf{x(t)}$ & \underline{$\mathbf{X}$}$\mathbf{(s)}$\\
@@ -78,21 +75,22 @@ Für die inverse bzw. Rücktransformation in den Zeitbereich. Beispiele siehe Pa
 	\hline Skalierung $s$ & $\frac{1}{a} \, x(\frac{t}{a})$ & $\underline{X}(as)$ \\
 	\hline Verschiebung	& $x(t-t_0)$ & $e^{-s \cdot t_0} \underline{X}(s)$ \\
 	\hline Modulation & $e^{at} \, x(t)$ & $\underline{X} (s-a)$ \\
-	\hline Multiplikation & $t \cdot x(t) $ & $-\frac{d}{d s} \underline{X}(s)$ \\
 	\hline Faltung & $x_{1}(t) * x_{2}(t) $ & $ \underline{X}_{1}(s) \cdot \underline{X}_{2}(s)$ \\
 	\hline Differentiation $t$ & $ \frac{d}{dt} x(t) $ & $ s\cdot \underline{X}(s)-x(0^-)$ \\
+	\hline Differentiation $s$ & $t \cdot x(t) $ & $-\frac{d}{d s} \underline{X}(s)$ \\
 	\hline Integration $t$ & $\int_{0}^{t} x(\tau) \, d\tau $ & $ \frac{1}{s} \underline{X}(s)$ \\
 	\hline Integration $s$ & $\frac{1}{t} \cdot x(t) $ & $ \int_{s}^{\infty} \underline{X}(s) \, ds$ \\
+	\hline Anfangswertsatz & \multicolumn{2}{c|}{$x(t=0) = \lim_{s\to\infty}\, s\cdot \underline{X}(s)$} \\
+	\hline Endwertsatz & \multicolumn{2}{c|}{$x(t\rightarrow\infty) = \lim_{s\to 0}\, s\cdot \underline{X}(s)$} \\
 	\hline
 \end{tabularx}
-
-\subsubsection{Grenzwertsätze}
-\begin{itemize}
-	\item Anfangswertsatz 
-	$$x(0+) = \lim_{s\to\infty} s\cdot \underline{X}(s)$$
-	\item Endwertsatz 
-	$$x(\infty) = \lim_{s\to 0} s\cdot \underline{X}(s)$$
-\end{itemize}
+\subsubsection{Ableitungen}
+vgl. Kap. \ref{lpt_dgl_ableitung}.
+\begin{align*}
+	\dot{x}(t) \ &\laplace\ s\cdot\underline{X}(s)-x(0)\\
+	\ddot{x}(t) \ &\laplace\ s^2\cdot\underline{X}(s)-s\cdot x(0)-\dot{x}(0)\\
+	x^{(3)}(t) \ &\laplace\ s^3\cdot\underline{X}(s)-s^2\cdot x(0)-s\cdot \dot{x}(0) - \ddot{x}(0)
+\end{align*}
 
 \clearpage
 \end{multicols*}
@@ -244,11 +242,11 @@ Für die inverse bzw. Rücktransformation in den Zeitbereich. Beispiele siehe Pa
 	\item Periodischer Schwingfall:\\
 	$a^2<b^2 \quad \leftrightarrow \quad 0<\vartheta<1$
 	
-	\item Abklingkonstante:\\
+	\item Abklingkonstante [$s$]:\\
 	$a=\delta =\dfrac{\vartheta}{T} = \vartheta\,\omega_0 = \dfrac{R}{2L}$
 	
 	\item Resonanz-Kreisfrequenz:\\
-	$b=\omega_0=\dfrac{1}{T} =\dfrac{1}{\sqrt{LC}}$
+ 	$b=\omega_0=\dfrac{1}{T} =\dfrac{1}{\sqrt{LC}}$
 	
 	\item Eigen-Kreisfrequenz:\\
 	$\omega_d = \sqrt{b^2-a^2} \\

@@ -84,32 +84,28 @@
                         -\underline{I}_2
                     \end{pmatrix}
                 \end{align*}
-                \item{Kettenform rückwärts/ Kettenmatrix \textbf{B}:}
-                    \begin{align*}
-                        \begin{split}
-                            \underline{U}_2 &= \underline{B}_{11}\cdot\underline{U}_1 + \underline{B}_{12}\cdot-\underline{I}_1\\
-                            \underline{I}_2 &= \underline{B}_{21}\cdot\underline{U}_1 + \underline{B}_{22}\cdot-\underline{I}_1
-                        \end{split}
-                    \qquad
-                    \begin{pmatrix}
-                        \underline{U}_2\\
-                        \underline{I}_2
-                    \end{pmatrix} = \textbf{\underline{B}}\cdot
-                    \begin{pmatrix}
-                        \underline{U}_1 \\
-                        -\underline{I}_1
-                    \end{pmatrix}
-                    \end{align*}
+%                \item{Kettenform rückwärts/ Kettenmatrix \textbf{B}:}
+%                    \begin{align*}
+%                        \begin{split}
+%                            \underline{U}_2 &= \underline{B}_{11}\cdot\underline{U}_1 + \underline{B}_{12}\cdot-\underline{I}_1\\
+%                            \underline{I}_2 &= \underline{B}_{21}\cdot\underline{U}_1 + \underline{B}_{22}\cdot-\underline{I}_1
+%                        \end{split}
+%                    \qquad
+%                    \begin{pmatrix}
+%                        \underline{U}_2\\
+%                        \underline{I}_2
+%                    \end{pmatrix} = \textbf{\underline{B}}\cdot
+%                    \begin{pmatrix}
+%                        \underline{U}_1 \\
+%                        -\underline{I}_1
+%                    \end{pmatrix}
+%                    \end{align*}
     \end{itemize}
    \normalsize
-\subsubsection{Parameterumrechnung}
-{\small
-\input{parameterumrechnung} }
-%\includegraphics[width=\columnwidth]{Zweipole/matrizen_umrechnung}
-\columnbreak
+   
 \subsubsection{Matrizenrechnung}
 siehe Papula FS S.204f.
-   \[ A\cdot B = C \rightarrow  \begin{bmatrix}
+\[  [\operatorname{\underline{A}}]\cdot [\operatorname{\underline{B}}] = [\underline{C}] \rightarrow  \begin{bmatrix}
 	a_{11} & a_{12}\\ 
 	a_{21} & a_{22} 
 \end{bmatrix}
@@ -123,11 +119,103 @@ siehe Papula FS S.204f.
 	c_{11} & c_{12}\\ 
 	c_{21} & c_{22}   
 \end{bmatrix} \] 
-Bsp.: $c_{21}=a_{21}\cdot b_{11} + a_{22} \cdot b_{21}$\\
-\setlength{\parindent}{0pt}
+Bsp.: $c_{21}=a_{21}\cdot b_{11} + a_{22} \cdot b_{21}$
+\[ \det(A)=a_{11}\cdot a_{22} - a_{12} \cdot a_{21} \] 
+$\det(A)=0 \rightarrow$ nicht inventierbar.
+\subsubsection{Parameterumrechnung}
+{ \renewcommand{\arraystretch}{1.6}
+	\arraycolsep=1.3pt
+\begin{tabular}{|c|c|c|c|c|c|}
+	\hline
+	 & geg. \underline{$\mathbf{A}$}& geg. \underline{$\mathbf{Z}$} & geg. \underline{$\mathbf{Y}$} & geg. \underline{$\mathbf{H}$} & geg. \underline{$\mathbf{C}$}\\
+	\hline
+	\makecell{ges. \\ \underline{$\mathbf{A}$}}& $\begin{matrix}
+		\underline{A}_{11} & \underline{A}_{12} \\
+		\underline{A}_{21} & \underline{A}_{22}
+	\end{matrix}$ & $\begin{matrix}
+		\frac{Z_{11}}{Z_{21}} & \frac{\det Z}{Z_{21}} \\
+		\frac{1}{Z_{21}} & \frac{Z_{22}}{Z_{21}}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{-Y_{22}}{Y_{21}} & \frac{-1}{Y_{21}} \\
+	\frac{-\det Y}{Y_{21}} & \frac{-Y_{11}}{Y_{21}}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{-\det H}{H_{21}} & \frac{-H_{11}}{H_{21}} \\
+	\frac{-H_{22}}{H_{21}} & \frac{-1}{H_{21}}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{1}{C_{21}} & \frac{C_{22}}{C_{21}} \\
+	\frac{C_{11}}{C_{21}} & \frac{\det C}{C_{21}}
+	\end{matrix}$\\
+	\hline
+	\makecell{ges. \\ \underline{$\mathbf{Z}$}}& $\begin{matrix}
+		\frac{A_{11}}{A_{21}} & \frac{\det A}{Z_{21}} \\
+		\frac{1}{A_{21}} & \frac{A_{22}}{A_{21}}
+	\end{matrix}$ & $\begin{matrix}
+		\underline{Z}_{11} & \underline{Z}_{12} \\
+		\underline{Z}_{21} & \underline{Z}_{22}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{Y_{22}}{\det Y} & \frac{-Y_{12}}{\det Y} \\
+	\frac{-Y_{21}}{\det Y} & \frac{Y_{11}}{\det Y}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{\det H}{H_{22}} & \frac{H_{12}}{H_{22}} \\
+	\frac{-H_{21}}{H_{22}} & \frac{1}{H_{22}}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{1}{C_{11}} & \frac{-C_{12}}{C_{11}} \\
+	\frac{C_{21}}{C_{11}} & \frac{\det C}{C_{11}}
+	\end{matrix}$\\
+	\hline
+	\makecell{ges. \\ \underline{$\mathbf{Y}$}}& $\begin{matrix}
+		\frac{A_{22}}{A_{12}} & \frac{-\det A}{A_{12}} \\
+		\frac{-1}{A_{12}} & \frac{A_{11}}{A_{12}}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{Z_{22}}{\det Z} & \frac{-Z_{12}}{\det Z} \\
+	\frac{-Z_{21}}{\det Z} & \frac{Z_{11}}{\det Z}
+	\end{matrix}$  & $\begin{matrix}
+	\underline{Y}_{11} & \underline{Y}_{12} \\
+	\underline{Y}_{21} & \underline{Y}_{22}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{1}{H_{11}} & \frac{-H_{12}}{H_{11}} \\
+	\frac{H_{21}}{H_{11}} & \frac{\det H}{H_{11}}
+	\end{matrix}$   & $\begin{matrix}
+	\frac{\det C}{C_{22}} & \frac{C_{12}}{C_{22}} \\
+	\frac{-C_{21}}{C_{22}} & \frac{1}{C_{22}}
+	\end{matrix}$\\
+	\hline
+	\makecell{ges. \\ \underline{$\mathbf{H}$}} & $\begin{matrix}
+		\frac{A_{12}}{A_{22}} & \frac{\det A}{A_{22}} \\
+		\frac{-1}{A_{22}} & \frac{A_{21}}{A_{22}}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{\det Z}{Z_{22}} & \frac{Z_{12}}{Z_{22}} \\
+	\frac{-Z_{21}}{Z_{22}} & \frac{1}{Z_{22}}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{1}{Y_{11}} & \frac{-Y_{12}}{Y_{11}} \\
+	\frac{Y_{21}}{Y_{11}} & \frac{\det Y}{Y_{11}}
+	\end{matrix}$ & $\begin{matrix}
+		\underline{H}_{11} & \underline{H}_{12} \\
+		\underline{H}_{21} & \underline{H}_{22}
+	\end{matrix}$& $\begin{matrix}
+	\frac{C_{22}}{\det C} & \frac{-C_{12}}{\det C} \\
+	\frac{-C_{21}}{\det C} & \frac{C_{11}}{\det C}
+	\end{matrix}$\\
+	\hline
+	\makecell{ges. \\ \underline{$\mathbf{C}$}}& $\begin{matrix}
+		\frac{A_{21}}{A_{11}} & \frac{-\det A}{A_{11}} \\
+		\frac{-1}{A_{11}} & \frac{A_{12}}{A_{11}}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{1}{Z_{11}} & \frac{-Z_{12}}{Z_{11}} \\
+	\frac{Z_{21}}{Z_{11}} & \frac{\det Z}{Z_{11}}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{\det Y}{Y_{22}} & \frac{Y_{12}}{Y_{22}} \\
+	\frac{-Y_{21}}{Y_{22}} & \frac{1}{Y_{22}}
+	\end{matrix}$ & $\begin{matrix}
+	\frac{H_{22}}{\det H} & \frac{-H_{12}}{\det H} \\
+	\frac{-H_{21}}{\det H} & \frac{H_{11}}{\det H}
+	\end{matrix}$ & $\begin{matrix}
+	\underline{C}_{11} & \underline{C}_{12} \\
+	\underline{C}_{21} & \underline{C}_{22}
+	\end{matrix}$ \\
+	\hline
+\end{tabular} }
 
-Determinante:\quad  wenn $\det(A)=0 \rightarrow$ nicht inventierbar.
-   \[ \det(A)=a_{11}\cdot a_{22} - a_{12} \cdot a_{21} \]
 \subsection{Betriebsarten, Bezugspfeilsystem}
 \begin{minipage}{0.5\columnwidth}
 	\small
@@ -162,7 +250,7 @@ Symmetrisches Bezugspfeilsystem im Bild.
 		\hline
 \end{tabularx}\\
 \begin{itemize}[leftmargin=*]
-	\item Umkehrbares (reziprokes) ZT: nur 3 Parameter.
+	\item Umkehrbares (reziprokes) ZT: nur 3 Parameter, Ursache und Wirkung tauschen Torseiten $\rightarrow$ gleiches Verhalten.
 	\item (Widerstands-)symmetrisches ZT: Eingangswiderstände in beiden Betriebsarten gleich, Ein- und Ausgang vertauschbar.
 	\item Umkehrbares und symmetrisches ZT = längssymmetrisch: nur 2 Parameter.
 	\item Passives ZT aus R,L,C,M-Bauteilen ist immer umkehrbar.
@@ -348,7 +436,8 @@ VCVS: Spannungsgesteuerte\\ Spannungsquelle
 \end{minipage}
  \vspace{1em}
 
-\renewcommand{\arraystretch}{1.1}
+{	\renewcommand{\arraystretch}{1.2}
+	\arraycolsep=1.3pt
 \begin{tabular}{|c|c|c|c|c|}
 	\hline
 	& VCVS& VCCS & CCVS & CCCS\\
@@ -387,7 +476,7 @@ VCVS: Spannungsgesteuerte\\ Spannungsquelle
 		\alpha & 0
 	\end{matrix}$ & & &\\
 	\hline
-\end{tabular}
+\end{tabular} }
 \subsubsection{Lineare gesteuerte Quellen}
 Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln!\\
     \begin{minipage}{0.5\columnwidth}
@@ -406,9 +495,6 @@ Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln!\\
         CCCS:& $\underline{I}=\beta\cdot \underline{I}_1$
     \end{tabular}
     \end{minipage}
-   
- \columnbreak
- 
 
 \subsubsection{Ersatzschaltbilder (ESB)}
 \begin{itemize}
@@ -430,8 +516,8 @@ Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln!\\
 \end{itemize}
 
 \subsection{Beschaltete Zweitore}
-\subsubsection{Ein- und Ausgangsimpedanz an Seite 1/2}
-{\footnotesize $Z_V$: Last an Tor 2 $\rightarrow$ Eingangsimpedanz, Betrieb von Seite 1\\ $Z_i$: Last an Tor 1 $\rightarrow$ Ausgangsimpedanz, Betrieb von Seite 2}\\
+\subsubsection{Ein- und Ausgangsimpedanz an Tor 1/2}
+{\footnotesize $Z_V$: Last an Tor 2 $\rightarrow$ Eingangsimpedanz $Z_{e1}$, Betrieb von Seite 1\\ $Z_i$: Last an Tor 1 $\rightarrow$ Ausgangsimpedanz $Z_{e2}$, Betrieb von Seite 2}\\
 \setlength{\parindent}{0pt}
 \begin{minipage}{0.5\columnwidth}
 \includegraphics[width=\columnwidth]{Zweipole/Eingangsimpedanz}
@@ -440,7 +526,8 @@ Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln!\\
 	\includegraphics[width=\columnwidth]{Zweipole/Ausgangsimpedanz}
 \end{minipage}
 	\renewcommand{\arraystretch}{1.8}
-\begin{tabularx}{\columnwidth}{|X|l|l|}
+	\arraycolsep=1.4pt
+\begin{tabular}{|c|l|l|}
 
 	\hline  & Last an Tor 2 & Last an Tor 1 \\
 	\hline$Z$ & $ \underline{Z}_{e1} =  \underline{Z}_{11}-\frac{\underline{Z}_{12} \underline{Z}_{21}}{\underline{Z}_{22}+\underline{Z}_{V}}$ & $\underline{Z}_{e 2}=\underline{Z}_{22}-\frac{\underline{Z}_{12} \underline{Z}_{21}}{\underline{Z}_{11}+\underline{Z}_{i}}$ \\
@@ -453,7 +540,7 @@ Alle Darstellungen sind äquivalent und lassen sich ineinander umwandeln!\\
 	\hline
 	$C$ & $\underline{Y}_{e1}=\underline{C}_{11}-\frac{C_{12} \underline{C}_{21}}{\underline{C}_{22}+\underline{Y}_{V}}$ & $\underline{Z}_{e 2}=\underline{C}_{22}-\frac{\underline{C}_{12} \underline{C}_{21}}{\underline{C}_{11}+\underline{Y}_{i}}$ \\
 	\hline
-\end{tabularx}
+\end{tabular}
 
 %    \begin{flalign*}
 %        \boldsymbol{Z}\rightarrow&\  \underline{Z}_{e1} = \underline{Z}_{11}-\frac{\underline{Z}_{12}\underline{Z}_{21}}{\underline{Z}_{22}+\underline{Z}_V}\\
@@ -555,10 +642,11 @@ siehe Ausgangsimpedanz $Z_{e2} = Z_A$ (Quelle an Tor 1).
 	$Z_{01}$: Leerlauf - Tor 1\\
 	$Z_{k1}$: Kurzschluss - Tor 1
 	\end{itemize}
-
 	\begin{align*}
 		\underline{Z}_{w1} &= \sqrt{\underline{Z}_{k1}\cdot\underline{Z}_{01}}\\
-		&=\sqrt{\frac{\underline{A}_{11}\cdot\underline{A}_{12}}{\underline{A}_{21}\cdot\underline{A}_{22}}}
+		&=\sqrt{\frac{\underline{A}_{11}\cdot\underline{A}_{12}}{\underline{A}_{21}\cdot\underline{A}_{22}}}\\
+		\underline{Z}_{w2} &= \sqrt{\underline{Z}_{k2}\cdot\underline{Z}_{02}}\\
+		&=\sqrt{\frac{\underline{A}_{22}\cdot\underline{A}_{12}}{\underline{A}_{21}\cdot\underline{A}_{11}}}
 	\end{align*}
 \end{minipage}
 

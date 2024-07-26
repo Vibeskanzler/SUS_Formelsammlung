@@ -23,17 +23,16 @@ mit Lösungsformeln aus GE1, GE2.
 	
 \end{itemize}
 
-\subsubsection{Laplace-Transformation der DGL}
+\subsubsection{Laplace-Transformation der DGL}\label{lpt_dgl_ableitung}
 \begin{enumerate}
 	\item DGL aufstellen mit Bauteilgleichungen f\"ur $R,L,C$. Maschen- und Knotensatz anwenden.
 	\item LPT der DGL durchführen:
-	\[
-	 \dot{x}(t) \ \laplace\ s\cdot\underline{X}(s)-x(0^+)
-	\]
-	\[
-	\ddot{x}(t) \ \laplace\ s^2\cdot\underline{X}(s)-s\cdot x(0^+)-\frac{dx}{dt}(0^+)
-	\]
-	Anfangszustand $i_L, u_C \neq 0$ zum Schaltzeitpunkt $x(0^+)$ wird autom. \textbf{berücksichtigt}.
+\begin{align*}
+	\dot{x}(t) \ &\laplace\ s\cdot\underline{X}(s)-x(0)\\
+	\ddot{x}(t) \ &\laplace\ s^2\cdot\underline{X}(s)-s\cdot x(0)-\frac{dx}{dt}(0)\\
+	x^{(3)}(t) \ &\laplace\ s^3\cdot\underline{X}(s)-s^2\cdot x(0)-s\cdot \frac{d}{dt}x(0) - \frac{d^2}{dt}x(0)
+\end{align*}
+	Anfangszustand $i_L, u_C \neq 0$ zum Schaltzeitpunkt $x(0)$ wird autom. \textbf{berücksichtigt}.
 	\item Auflösen nach gesuchter Größe.
 	\item Rücktransformation in Zeitbereich mit \textbf{Tabelle}.
 \end{enumerate}
