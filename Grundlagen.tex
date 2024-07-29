@@ -26,17 +26,17 @@ a^2 - b^2 = (a + b)(a - b)\\
 
 
 \subsection{Logarithmische Maße/Pegel}
-\textbf{Feld}größe $F_n$: Spannung, Strom (jeweils Effektivwerte)\\
+\textbf{Feld}größe $F_n$: Spannung, Strom\\
 \textbf{Leistungs}größe $P_n$: Energie, Leistung
 \begin{itemize}[leftmargin=*]
-	\item \textbf{relativer Pegel}/Maß in Dezibel [dB]
+	\item \textbf{relativer Pegel}/Maß $a$ in Dezibel [dB]
 	      \begin{flalign*}
-		      a \,[\si{dB}]   & = 20 \cdot \log_{} \dfrac{F_2}{F_1}  & a \,[\si{dB}]   & = 10 \cdot \log_{}  \frac{P_2}{P_1}       & \\
+		      a \,[\si{dB}]   & = 20 \cdot \lg_{} \dfrac{F_2}{F_1}  & a \,[\si{dB}]   & = 10 \cdot \lg_{}  \frac{P_2}{P_1}       & \\
 		      \frac{F_2}{F_1} & =  10^{\frac{a[\si{dB}]}{20\si{dB}}} & \frac{P_2}{P_1} & =   10^{\frac{a[\si{dB}]}{10\si{dB}}}     &
 	      \end{flalign*}
-	\item \textbf{absoluter Pegel} mit Bezugsgrößen $ F_0, P_0 $
+	\item \textbf{absoluter Pegel} $L$ mit Bezugsgrößen $ F_0, P_0 $
 	      \begin{flalign*}
-		      L \,[\si{dB}]   & = 20 \cdot \log_{} \dfrac{F_1}{F_0}  & L \,[\si{dB}]   & = 10 \cdot \log_{}  \frac{P_1}{P_0}   & \\
+		      L \,[\si{dB}]   & = 20 \cdot \lg_{} \dfrac{F_1}{F_0}  & L \,[\si{dB}]   & = 10 \cdot \lg_{}  \frac{P_1}{P_0}   & \\
 		      \frac{F_1}{F_0} & =  10^{\frac{L[\si{dB}]}{20\si{dB}}} & \frac{P_1}{P_0} & =   10^{\frac{L[\si{dB}]}{10\si{dB}}} &
 	      \end{flalign*}
 	      \renewcommand\arraystretch{1.4}
@@ -46,7 +46,7 @@ a^2 - b^2 = (a + b)(a - b)\\
 		      \hline
 		      dBm, dB(mW) & $ P_0 = 1mW $ & $ L_{\texttt{P/mW}}$ \\
 		      dBW, dB(W)  & $ P_0 = 1W $  & $ L_{\texttt{P/W}}$  \\
-		      dBV, dB(V)  & $ P_0 = 1V $  & $ L_{\texttt{V}}$  \\
+		      dBV, dB(V)  & $ F_0 = 1V $  & $ L_{\texttt{V}}$ \\
 		      \hline
 	      \end{tabularx}
 %	\item \textbf{relativer Pegel / Maß}\\

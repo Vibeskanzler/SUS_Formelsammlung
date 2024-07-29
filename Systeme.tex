@@ -23,7 +23,7 @@
               \int\displaylimits_{t-5}^{t}x(\tau)d\tau
           \]
  \textbf{Kausale} gebr. rationale Fkt.: Nennergrad $\ge$ Zählergrad.\\
- Falls $h(t)$ ab $t=0:$ Falls $t<0 \rightarrow h(t)=0$.\\
+ Impulsantwort $h(t)$ kausal, falls $t<0 \rightarrow h(t)=0$.\\
  Signal beginnt ab $t=0$ $\rightarrow$ Kausal, da rechtsseitig.
  
   \item {\textbf{(BIBO-)Stabilit\"at}}\\
@@ -53,20 +53,28 @@
 		 {\small Zeitvariant: z.B. $y(t)=t\cdot \sin(t)$}
   \item{\textbf{Linearit\"at}}\\
 		  {\small
-		      Lineares System: Superpositionsprinzip gilt $\rightarrow$ siehe Ausblendeeigenschaft, Zerlegung in gerades/ungerades Signal.
+		      Lineares System: Superpositionsprinzip gilt mit 
+		      \begin{itemize}
+		      	\item Additivität: $S\{x_1(t)\} + S\{x_2(t)\} = S\{x_1(t)+x_2(t)\}$ 
+		      	\item Homogenität: $S\{c\cdot x(t)\}=c \cdot S\{x(t)\}$
+		      \end{itemize}
+		      Eingang: Zerlegung in (un-)gerade Teilsignale.\\
+		      Ausgang: Superposition der Einzelantworten.
 		  }
 \end{enumerate}
 \normalsize
-\subsection{LTI-Systeme}
+\subsection{LTI-Systeme im Zeitbereich}
 \subsubsection{Beschreibung}
+ \small
 LTI-Systeme: Linear Time Invariant.\\
 Operatoren: $+, -, \frac{d}{dt}, \int, t-t_0$ (Verz\"ogerung)\\
 
-Beschreibung des Ein- und Ausgangsverhalten im
-\begin{itemize}[leftmargin=*]
-	\item Zeitbereich $x(t)$: DGL, Signalflussplan, Impulsantwort
-	\item Frequenz- $\underline{X}(\omega)$ / Bildbereich $\underline{X}(s)$: Übertragungs-Fkt., Frequenzgang, Bode- und P/N-Diagramm.
-\end{itemize}
+%Beschreibung E/A-Verhalten im
+%\begin{itemize}[leftmargin=*]
+%	\item Zeitbereich $x(t)$: DGL, Signalflussplan, Impulsantwort
+%	\item Frequenz- $\underline{X}(\omega)$ / Bildbereich $\underline{X}(s)$: Übertragungs-Fkt., Frequenzgang, Bode- und P/N-Diagramm.
+%\end{itemize}
+\normalsize
 \subsubsection{Differenzialgleichung (DGL)}
 \begin{itemize}[leftmargin=*]
 	\small
@@ -116,12 +124,12 @@ Beschreibung des Ein- und Ausgangsverhalten im
 		\hline
 		{
 			\begin{align*}	
-				\varepsilon(n) &= \int_{-\infty}^{\infty} \delta(t) \, dt
+				\varepsilon(n) &= \int_{-\infty}^{t} \delta(\tau) \, d\tau
 			\end{align*}
 		} &
 		{
 			\begin{align*}	
-			g(t) &= \int_{-\infty}^{\infty} h(t) \, dt
+			g(t) &= \int_{-\infty}^{t} h(\tau) \, d\tau
 			\end{align*}
 		}\\
 		\hline
@@ -156,65 +164,62 @@ Ausgang $y(t)$ durch Faltung bestimmen:
   \end{itemize}
 \end{mdframed}
 \clearpage
-\subsection{Frequenzgang}
+\subsection{LTI-Systeme im Frequenzbereich}
+\subsubsection{Frequenzgang}
   \begin{itemize}
-      \item{\textbf{Frequenzgang}}\\
+      \item{\textbf{Frequenzgang}} für $U_2/U_1$:
           \[
               \underline{H}(\omega) = \frac{1}{\underline{A}_{11}} =
               \frac{\underline{Y}(\omega)}{\underline{X}(\omega)} =
               \frac{\underline{U_2}(\omega)}{\underline{U_1}(\omega)} = |\underline{H}(\omega)|\cdot e^{j\varphi_H(\omega)}
           \]
-      \item{\textbf{Amplitudengang}}, Betragsfrequenzgang
+      \item{\textbf{Amplitudengang}}, Betragsfrequenzgang:
       
-      {\small LTI-System ändert Eingangssignal um Faktor $A(\omega)$}.
+      {\small Amplitudenänderung des Eingangs um Faktor $H(\omega)$}.
           \[
-              A(\omega) = |\underline{H}(\omega)| =
+              H(\omega) = |\underline{H}(\omega)| =
               \frac{|\underline{Y}(\omega)|}{|\underline{X}(\omega)|}
               \begin{cases}
                   > 1 & \text{Verst\"arkung}\\
                   < 1 & \text{D\"ampfung}
               \end{cases}
           \]
-      \item{\textbf{Phasengang}}, Phasenfrequenzgang\\
+      \item{\textbf{Phasengang}}, Phasenfrequenzgang:
+      
+      {\small Winkeländerung des Eingangs um Phase $\varphi(\omega)$,\\ Signalverzögerung}.
           \[
               \varphi_H(\omega) = \text{arg}\{\underline{H}(\omega)\} =
               \varphi_Y(\omega) - \varphi_X(\omega)
           \]
           \[
-              \varphi_H = \text{arctan}\left(\frac{\mathfrak{Im}}{\mathfrak{Re}}\right)
+              \varphi_H = \text{arctan}\left(\frac{\text{Im}}{\text{Re}}\right)
           \]
   \end{itemize}
-  \subsection{Übertragungsfunktion (Ü-Fkt.)}\label{ufkt}
-  \begin{itemize}      
-      \item{\textbf{Eigenfunktion}}\\
-          \[
-              y(t) = \lambda\cdot x(t)
-              \begin{cases}
-                  x(t): & \text{Eigenfunktion}\\
-                  \lambda: & \text{Eigenwert}(\lambda\in\mathbb{C})
-              \end{cases}
-          \]
-            Jede komplexe Exponentialfunktion $x(t) = \e^{st}$ ist\\ Eigenfunktion
-          jedes beliebigen LTI-Systems $S$:
-          \[
-          y(t) = S\left\{ \e^{st} \right\} = \lambda\cdot \e^{st}
-          \]
-          \[
-          \lambda = \underline{H}(s) = \int_{-\infty}^{+\infty} h(\tau)\  \e^{-st} d\tau
-          \]
-  \end{itemize}
-
-  \begin{itemize}\small
-      \item{\textbf{Erweiterung der KWR}}
+  \subsubsection{Übertragungsfunktion (Ü-Fkt.)}\label{ufkt}
+  \begin{itemize}[leftmargin=*]      
+      \item{\textbf{Eigenfunktion, komplexe Exponentialfkt.}}
       
-      KWR: komplexe Wechselstromrechnung. \\
-          Die harmonische Exponentialfunktion $e^{j\omega t}$ ist ein
-          \\Sonderfall von $e^{st}$ mit $s=j\omega+\sigma$, wenn $\sigma=0$.
+    $x(t)= \e^{st}$ ist Eigenfunktion eines LTI-Systems $S$.\\
+    Eigenwert $\lambda$ ist die Übertragungsfunktion $\underline{H}(s)$.
+          \[
+          y(t) = \lambda \cdot x(t) = S\left\{ \e^{st} \right\} = \underline{H}(s)\cdot \e^{st}
+          \]
+      	Übertragungsfunktion der Impulsantwort:
+          \[
+          \lambda = \underline{H}(s) = \int_{-\infty}^{+\infty} h(\tau) \cdot  \e^{-s\tau} \, d\tau
+          \]
+        	Harmonische $e$-Fkt. $e^{j\omega t}$:
+          \textbf{Sonderfall} von $e^{st}$ mit\\ $s=j\omega+\sigma$ für $\mathbf{\sigma=0}$ $\rightarrow$ \textbf{Frequenzgang} $\underline{H}(\omega)$.
+          
+      \item{\textbf{Veranschaulichung der Eigenfunktion}}
+      
+      $x(t)=e^{st}$ mit $s=\sigma + j\omega $:
+          \small
           \[
               \sigma \triangleq \text{Amplitude}
               \begin{cases}
                   \sigma \leq 0 & \text{exponentiell abklingend}\\
-                  \sigma = 0 & \text{konstante Amplitude}\\
+                  \sigma = 0 & \text{\textbf{konstante} Amplitude}\\
                   \sigma \geq 0 & \text{exponentiell zunehmend}
               \end{cases}
           \]
@@ -228,34 +233,23 @@ Ausgang $y(t)$ durch Faltung bestimmen:
           \]
           \normalsize
   
-% \[
-%   \boxed{
-%   \begin{circuitikz}[scale=1,transform shape]
-%       \draw(0,0) to[generic] node[anchor=east,yshift=-20pt]{$\underline{Z}(s)\mathrm{=}R$} (2,0);
-%       \draw(3,0) to[L] node[anchor=east,yshift=-20pt, xshift=5pt]{$\underline{Z}(s)\mathrm{=}s\cdot L$} (5,0);
-%       \draw(6,0) to[C, l=] node[anchor=east, yshift=-20pt, xshift=6pt]{$\underline{Z}(s)\mathrm{=}\frac{1}{s\cdot C}$} (8,0);
-%   \end{circuitikz}
-%   }
-% \]
-
-\item \textbf{komplexe \"Ubertragungsfunktion}
-  \footnotesize
-  \[
-      \underline{H}(s)=\frac{\underline{Y}(s)}{\underline{X}(s)}=\frac{\underline{U_2}(s)}{\underline{U_1}(s)}=\frac{\text{komplexer
-      Zeiger Ausgang}}{\text{komplexer Zeiger
-      Eingang}}
-  \]
-  \normalsize
-  Übertragungsfunktion $H(s)$ mit komplexer Frequenz
-  $s=\sigma+j\omega$ $\rightarrow$ Ersetze $jw$ durch $s$.
-\end{itemize}
+\item \textbf{\"Ubertragungsfunktion}
+  mit $s=\sigma+j\omega$
   
+\small Zur Anwendung der komplexen Wechselstromrechnung:
+  \[
+      \underline{H}(s)=\frac{\underline{Y}(s)}{\underline{X}(s)}=\frac{\underline{U_2}(s)}{\underline{U_1}(s)}
+  \]
+\normalsize
+\end{itemize}
+
 \subsubsection{Gebrochen-rationale Ü-Fkt.}
-{\small Grad \textbf{N} des Nennerpolynoms: Ordnung des LTI-Systems =\\ Anzahl unabhäng. Energiespeicher ($L, C$). \\
-\textbf{Kausales} System, wenn Nennergrad $N\ge M$ Z\"ahlergrad}.
+{\small Grad \textbf{N} des Nennerpolynoms = Ordnung des LTI-Systems, \\ Anzahl unabhäng. Energiespeicher ($L, C$).\\
+\textbf{Kausales} System, wenn Nennergrad $N\ge$ Z\"ahlergrad $M$}.
 \[
-H(s)=\frac{\sum_{m=0}^{M} b_{m} \cdot s^{m}}{\sum_{n=0}^{N} a_{n} \cdot s^{n}}
+\underline{H}(s)=\frac{\sum_{m=0}^{M} \, b_{m} \cdot s^{m}}{\sum_{n=0}^{N} \, a_{n} \cdot s^{n}}
 \]
+
 Beispiel: DGL 2.Ordnung im Zeitbereich:
 \[
 a_2\ddot{y}(t)+a_1\dot{y}(t)+a_0 y(t)=b_2\ddot{x}(t)+b_1\dot{x}(t)+b_0 x(t)
@@ -265,7 +259,7 @@ $\rightarrow$ Ü-Funktion im Bildbereich (System 2.Ordnung):
 \underline{H}(s)=\frac{\underline{Y}(s)}{\underline{X}(s)}=\frac{b_2 s^2+b_1 s+b_0}{a_2 s^2 +a_1 s +a_0}
 =\frac{b_2 s^2+b_1 s+b_0}{a_2 s^2 +a_1 s +a_0}
 \]
-\subsection{Pol-Nullstellen-Diagramm}\label{pn_diagramm_systeme}
+\subsubsection{Pol-Nullstellen-Diagramm}\label{pn_diagramm_systeme}
 {\small Grafische Darstellung der s-Ebene. (siehe Kap. \ref{pn_diagramm_lpt})\\
 $K$: Maßstabs-/Verstärkungsfaktor.}
 	\[
@@ -331,9 +325,11 @@ $K$: Maßstabs-/Verstärkungsfaktor.}
         \begin{itemize}
 	        \item Voraussetzung: Rückwirkungsfreiheit (mit Trennverstärker) zwischen $\underline{H}_A(s)$ und $\underline{H}_B(s)$.
         	\item \textbf{Bodediagramm}: \textit{Addition} der einzelnen Glieder beim Amplituden- und Phasengang.
+        	\item Im Zeitbereich: $y(t)=h_A(t) * h_B(t)$ (siehe Faltung).
         \end{itemize}      
     \item \textbf{Parallelschaltung}\\
-        \textit{Summe} der einzelnen Ü-Glieder.
+        \textit{Summe} der einzelnen Ü-Glieder.\\
+        Im Zeitbereich: $y(t)=h_A(t) + h_B(t)$.
         \[
             \boxed{\underline{H}_{e}(s)=\underline{H}_{B}(s) + \underline{H}_{A}(s)}
         \]
