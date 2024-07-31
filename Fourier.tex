@@ -123,11 +123,12 @@ $t_v$ < 0: Phasenwinkel des Spektrums werden\\ mit
 zunehmender Frequenz größer.
 
 \subsection{FR und LTI-Systeme}
-{\small LTI-Systeme verändern Betrag und Phase aller harmonischen Komponenten eines Eingangssignals = lineare Verzerrung.\\
+{\small LTI-System verändert \textbf{nur} Betrag und Phase aller harmonischen Komponenten eines Eingangssignals = lineare Verzerrung.\\
 Sie fügen \underline{keine} neuen Frequenzen hinzu.}
 \[
 	y(t) = \sum_{k=-\infty}^{\infty} \underbrace{\underline{H}(k\omega_1)\cdot\underline{c}_{xk}}_{\underline{c}_{yk}} \cdot e^{j\omega_1 k t}
 \]
+{\small Treten im Ausgang Frequenzen auf, die nicht im Eingangssignal enthalten sind, so handelt es sich \textbf{nicht} um ein LTI-System $\rightarrow$ nicht-lineare Verzerrung.}
 \subsection{FR-Tabelle - Bischoff}
 \begin{itemize}[leftmargin=*]
 	\item normierte Pulsbreite $p=\dfrac{|\Delta t|}{T} = \frac{\texttt{Länge Zeit}}{\texttt{Periodendauer}}$

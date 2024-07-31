@@ -297,7 +297,7 @@ $K$: Maßstabs-/Verstärkungsfaktor.}
 	|\underline{H}(\omega)|=\frac{\prod_{o=1}^{M}\text{alle Längen } |c_o,i|}{\prod_{p=1}^{N}\text{alle Längen } |c_p,i|}
 	\]
 	\[
-	\varphi_H(w)=(\text{Summe } \angle \underline{c}_{o,i}{\omega})-(\text{Summe } \angle \underline{c}_{p,i}{\omega})
+	\varphi_H(\omega)=(\text{Summe } \angle \underline{c}_{o,i}{\omega})-(\text{Summe } \angle \underline{c}_{p,i}{\omega})
 	\]
 \end{itemize}
 \textbf{Minimal}phasiges System:
@@ -370,30 +370,34 @@ $K$: Maßstabs-/Verstärkungsfaktor.}
  	Bsp.: Spannungs-Ü-Fkt: $$\underline{H}(s)=\frac{1}{\underline{A}_{11}} = \frac{\underline{U}_2}{\underline{U}_1}$$
  	
  	\item Konstante Faktoren $K$ vor dem Bruch stellen!
- 	\item Bauteilelemente in Zeitkonstanten $T=RC$ bzw.  $T=\dfrac{L}{R}$ ausdrücken. {\small $\rightarrow$ Zeitkonstante $T, \tau$ $\neq $ Periodendauer $T$}
- 	\item Ü-Fkt. in bekannte Einzelglieder trennen, \\in Normalform mit $T$ ausdrücken $\rightarrow$ siehe Kap. \ref{tabelle_glieder}.\\
- 	Bsp.: PDT$_1$-Glied: $$\underline{H}(s)=K\,\frac{1+sT_1}{1+sT_2}$$
- 	\textbf{Anmerkung}: Dämpfungsgrad $\vartheta=D$, siehe\\ weitere Bezeichnungen in Kap. \ref{elementare_uglieder} und Kap. \ref{lpt_tabelle}.
- 	\item Berechnen der Eck-/Kenn-/Grenzkreisfrequenzen $\omega_0 = \dfrac{1}{T}$ und jeweils im Bode-Diagramm eintragen.\\
- 	\small{Merke: kleine $T$ $\rightarrow$ große $\omega_0$}.
+ 	\item Bauteilelemente in Zeitkonstanten $T=RC$ bzw.  $T=\dfrac{L}{R}$ ausdrücken. {\small Zeitkonstante $T, \tau$ $\neq $ Periodendauer $T$}
+ 	\item Ü-Fkt. in bekannte Glieder trennen $\rightarrow$ siehe Kap. \ref{tabelle_glieder}. \\
+ 	In Normalform mit $T$ oder $s$ ausdrücken (siehe 6.) \\
+ 	Bsp.: PDT$_1$-Glied: 
+ 	$$\underline{H}(s)=K\,\frac{1+sT_1}{1+sT_2}=K\,\frac{T_1(\frac{1}{T_1}+s)}{T_2(\frac{1}{T_2}+s)}$$
+ 	\textbf{Anmerkung}: Dämpfungsgrad $\vartheta=D$, siehe\\ weiterer Zusammenhang in Kap. \ref{elementare_uglieder} und Kap. \ref{lpt_tabelle}.
+ 	\item Berechnen der Eck-/Grenz(kreis-)frequenzen $\omega_{g} = \dfrac{1}{T}$ und jeweils im Bode-Diagramm eintragen. $\omega_g = \omega_0$\\
+ 	Merke: kleine $T$ $\rightarrow$ große $\omega_g$.
  	
- 	\item Amplitudengang:
- 	$\underline{H}(s)$ mit $\omega_0=\frac{1}{T}$ \textbf{umformen}:
+ 	\item \textbf{Amplitudengang}:
+ 	$\underline{H}(s)$ in $\omega_{g,n}=\frac{1}{T_n}$ ausdrücken:
  	
  	$\Rightarrow$ \textbf{Wichtig}: höchste Potenz von $s$ \textbf{ohne} Vorfaktoren!\\
- 	Ersetze $s=j\omega$. \quad Merke:  $\omega\neq\omega_0$.\\
+ 	Ersetze $s=j\omega$. \quad Merke:  $\omega\neq\omega_g$.\\
  	
-  	Betragsbildung: Zähler und Nenner jeweils Betrag setzen, $j$ fallen lassen.
+  	\underline{Berechnung} über Betragsbildung: Zähler und Nenner jeweils im Betrag setzen, $j$ fallen lassen.
  	$$ |\underline{H}(\omega)| = \frac{|\underline{Z}|}{|\underline{N}|} = \frac{\sqrt{\text{Re}^2+\text{Im}^2}}{\sqrt{\text{Re}^2+\text{Im}^2}} $$
  	
- 	Allgm. Berechnung in $dB$, Grenzfallbestimmung mit: 
- 	$$H(\omega) = 20\cdot\log_{10}|\underline{H}(\omega)| \text{ für }\omega=0 \text{ und } \omega \rightarrow \infty $$
- 	Zeichnen: Geradennäherung der Glieder in Kap. \ref{tabelle_glieder}.\\
+ 	Allgemeine Berechnung in $dB$:
+ 	$$H(\omega) = 20\cdot\log_{10}|\underline{H}(\omega)|$$
+ 	Grenzfallbestimmung für $\omega=0$ und $\omega \rightarrow \infty$.\\
+ 	
+  	\underline{Zeichnen}: Geradennäherung der Glieder in Kap. \ref{tabelle_glieder}.\\
  	
  	Polstelle:  Steigung nach unten $-20dB$/Dek.\\
  	Nullstelle: Steigung nach oben $+20dB$/Dek.
  	
- 	\item Phasengang allgemein:
+ 	\item \textbf{Phasengang} allgemein:
  	$$\varphi(\omega) = \arctan \left( \frac{\text{Imaginärteil}}{\text{Realteil}} \right)$$
  	Zeichnen: Geradennäherung der Glieder in Kap. \ref{tabelle_glieder}.\\
  	Vorzeichen $\pm K$: Beginn bei $\varphi_{+K}=0$\textdegree \, oder $\varphi_{-K}=180$\textdegree.\\
