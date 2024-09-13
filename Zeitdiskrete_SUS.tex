@@ -222,7 +222,7 @@ U_a(\omega) &= 2\pi \cdot \sum_{k=-\infty}^{+\infty} \underline{c}_k \cdot \delt
 \subsection{Zeitdiskrete LTI-Systeme}
 \subsubsection{Systemeigenschaften}
 \begin{itemize}
-	\item \textbf{Linear}: System mit Ü-Fkt. $\underline{H}(z)$ beschreibbar.
+%	\item \textbf{Linear}: System mit Ü-Fkt. $\underline{H}(z)$ beschreibbar.
 	\item \textbf{Kausal}:
 	      Anzahl der Pole (Grad des Nenners)  $N\ge M$\\
 	      Anzahl der Nullstellen (Grad des Zählers),\\
@@ -230,7 +230,7 @@ U_a(\omega) &= 2\pi \cdot \sum_{k=-\infty}^{+\infty} \underline{c}_k \cdot \delt
 	\item \textbf{Stabil}:
 	      Einheitskreis (EK) $\in$ Konvergenzbereich (Kb),\\
 	   absolute Summierbarkeit: $ \sum_{n=-\infty}^{\infty}|h(n))| < \infty $,\\
-	   \textbf{Alle} Pole $\in$ EK.
+	   \textbf{Alle} Pole innderhalb des EK.
 	\item \textbf{minimalphasiges} LTI-System: \textbf{Alle} Nullstellen $\in$ EK.
 \end{itemize}
 
@@ -580,5 +580,7 @@ Normierte Frequenz $\Omega_1 = \omega T$ bleibt gleich.
 			\includegraphics[width=0.8\columnwidth]{Bilder/Rekursive_Systeme_SG}
 		\end{minipage}
 	}
-	\item ARMA: Auto-Regressive Moving Average\\ $\rightarrow$ transversal-rekursives System.
+	\item allgemeine Systeme, \textbf{ARMA}: 
+	
+	Auto-Regressive Moving Average $\rightarrow$ transversal-	rekursives System.
 \end{itemize}

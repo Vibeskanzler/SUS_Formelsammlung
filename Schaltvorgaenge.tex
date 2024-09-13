@@ -41,23 +41,23 @@ mit Lösungsformeln aus GE1, GE2.
 \begin{enumerate}
 	\item \textbf{Bedingung}: Alle $C$ ungeladen, Alle $L$ stromlos.
 	\[ 
-	 u_c(0+) = i_L(0+) = 0
+	 u_c(0+)=0,\quad i_L(0+) = 0
 	 \]
 
-	\item Eingang $x(t)$ mit LPT in Bildbereich $\underline{X}(\omega)$.
+	\item Eingang $x(t)$ mit LPT in Bildbereich $\underline{X}(s)$.
     \item $\underline{H}(s)$ aus Schaltung \underline{nach}
-        Schaltvorgang mit erweiteter KWR bestimmen. Ersetze $s = j\omega $.
+        Schaltvorgang mit erweiteter KWR bestimmen.
     \item Ausgang im Bildbereich berechnen: $\underline{Y}(s) =
         \underline{X}(s)\cdot \underline{H}(s)$
     \item Rücktransformation in Zeitbereich mit \textbf{Tabelle}.
     
 \end{enumerate}
-\subsubsection{Geladene Energiespeicher mit LPT}
+\subsubsection{Vorgeladene Energiespeicher mit LPT}
 \begin{enumerate}
     \item Ersatzschaltbild (ESB) für Schaltkreis nach dem
         Schaltvorgang im Bildbereich erstellen:
         \begin{itemize}
-        	\item VZ beachten! VZ-Änderung im Zeitbereich auch im Bildbereich gültig!
+        	\item Vorzeichen (VZ) beachten! VZ-Änderung im Zeitbereich auch im Bildbereich gültig!
             \item Induktivitäten mit Anfangsstrom:
             
                 \includegraphics[width=0.4\textwidth]{Bilder/ESB_Fuer_stromfuehrende_Induktivitaet}
@@ -80,6 +80,8 @@ mit Lösungsformeln aus GE1, GE2.
     \item Rücktransformation in Zeitbereich mit \textbf{Tabelle}.
 \end{enumerate}
 \subsection{Quellenumwandlung}
+
+siehe Kap. \ref{lpt_tabelle} $\rightarrow$ Korrespondenz Nr.10:
 \begin{gather*}
 	\text{Stromquelle: }i_q(t)\cdot \varepsilon(t) \quad \laplace \quad \frac{I_q(s)}{s}\\
 	\text{Spannungsquelle: }u_q(t)\cdot \varepsilon(t) \quad \laplace \quad \frac{U_q(s)}{s}

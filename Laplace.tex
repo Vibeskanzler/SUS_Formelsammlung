@@ -46,12 +46,12 @@ Weitere Infos siehe Kap. \ref{fgang_pn}.
 \includegraphics[width=\columnwidth]{zusammenhang_ft_lpt}
 \subsection{Partialbruchzerlegung (PBZ)}
 Für die inverse bzw. Rücktransformation in den Zeitbereich. Beispiele siehe Papula FS. S.157f.
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
 	\item Einfache Polstellen:
 		\begin{align*}
 		\underline{X}(s) &= \frac{\underline{Z}(s)}{\underline{N}(s)} = \sum_{n=1}^{N} \frac{A_n}{(s - p_n)}
 	\end{align*}
-	\item Doppelte/k-fache Polstellen:
+	\item Doppelte/$k$-fache Polstellen:
 	\begin{align*}
 			\underline{X}(s) &= \frac{\underline{Z}(s)}{\underline{N}(s)} = \frac{\underline{Z}(s)}{(s - p_n)^k} \\
 			&= \frac{A_1}{s - p_{n}} + \frac{A_2}{(s - p_{n})^2} + \cdots + \frac{A_k}{(s - p_{n})^k}
@@ -59,8 +59,9 @@ Für die inverse bzw. Rücktransformation in den Zeitbereich. Beispiele siehe Pa
 	\item \textbf{Komplexe} Polstellen:
 		\begin{align*}
 		\underline{X}(s) = \frac{\underline{Z}(s)}{\underline{N}(s)} 
-		&= \frac{\underline{Z}(s)}{(s -p_{1})(s - p_{1}^*)}\\
-		&= \frac{B \, s+C}{(s -p_{1})(s - p_{1}^*)}\\ &= \frac{B \, s+C}{(s -jp_{1})(s +jp_{1})}
+		&= \frac{\underline{Z}(s)}{(s -p_{1})(s - p_{1}^*)}
+		= \frac{B \cdot s+C}{(s -p_{1})(s - p_{1}^*)}\\ 
+		&= \frac{B \cdot s+C}{(s -jp_{1})(s +jp_{1})}
 	\end{align*}
 \end{itemize}
 \small \textbf{Beachte}: Wenn Zählergrad $>$ Nennergrad, muss vor der PBZ eine \textbf{Polynomdivision} durchgeführt werden!

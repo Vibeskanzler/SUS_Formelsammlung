@@ -27,12 +27,12 @@
           {\small Ma{\ss} f\"ur die \"Ahnlichkeit
           zweier Energiesignale.}
               \[
-                  r_{xy}(\tau) = \int_{-\infty}^{\infty}x(t)\cdot y(t+\tau) dt
+                  r_{xy}(\tau) = \int_{-\infty}^{\infty}x(t)\cdot y(t+\tau) \, dt
               \]
       \item{\textbf{Signaloperationen}}\\
         {\small Manipulation/Transformation mit folgenden Parametern:}
             \[ \boxed{
-				f(t) = A \cdot f(\pm b \cdot (t \mp t_0)) \leftrightarrow A \cdot f\left(\frac{t\mp t_0}{b}\right)
+				f(t) = A \cdot f(\pm b \cdot (t - t_0)) \leftrightarrow A \cdot f\left(\frac{t - t_0}{b}\right)
 				}
 			\]
 		 \renewcommand{\labelitemii}{$\bullet$}
@@ -103,7 +103,10 @@ Verschoben, Start bei $t_0$:
                  0 & \text{f\"ur } \vert t\rvert > \frac{T}{2}
              \end{cases}
           \]
-          Darstellbar durch:\\ $1\cdot  \operatorname{rect}(t) = \varepsilon\cdot\left( t+\frac{1}{2} \right)-\varepsilon\cdot\left( t-\frac{1}{2} \right)$
+          Darstellbar durch Sprungfkt. $\varepsilon$:
+          $$\hat{u} \cdot  \operatorname{rect}\left( \frac{t}{T} \right) = \hat{u} \left[  \varepsilon\cdot\left( t+\frac{T}{2} \right)-\varepsilon\cdot\left( t-\frac{T}{2} \right) \right]
+          $$
+          
           \item{Komplexe Exponentialfunktion $e^{st}$}\\
           siehe Kap. \ref{ufkt}.
           \[ x(t)=\underline{A}\cdot e^{st} = \underline{A}\cdot e^{(\sigma+j\omega)t} = |\underline{A}|\cdot e^{j\varphi} \cdot e^{(\sigma+j\omega)t}

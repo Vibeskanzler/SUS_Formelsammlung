@@ -6,7 +6,7 @@
 	$k=0$: Gleichanteil, Mittelwert.\\
 	$k=1$: Grundschwingung, 1.Harmonische.\\
 	$k=n$: $n$.Harmonische, ($n-1$).Oberschwingung.}
-	\begin{itemize}
+	\begin{itemize}[leftmargin=*]
 		\item Synthese, trigonometrische Form:
 		      \[
 			      x(t) = \frac{a_0}{2} + \sum_{k=1}^\infty [a_k\cdot \cos(k\omega_1 t)+ b_k\cdot \sin(k\omega_1 t)]
@@ -21,11 +21,11 @@
 		      \end{align*}
 
 		\item Analyse, trigonometrische Form:
-		\begin{gather*}
-		      	\text{Gleichanteil: }\frac{a_0}{2}= A_0 = \frac{1}{T}\int_{t_0}^{T+t_0} x(t)dt\\
-			      a_k = \frac{2}{T}\int_{t_0}^{T+t_0} x(t)\cdot \cos(k\omega_1 t)\,dt \\
-			      b_k = \frac{2}{T}\int_{t_0}^{T+t_0} x(t)\cdot \sin(k\omega_1 t)\,dt
-		\end{gather*}
+		\begin{align*}
+		      	\frac{a_0}{2}&= A_0 = \frac{1}{T}\int_{t_0}^{T+t_0} x(t)dt\\
+			      a_k &= \frac{2}{T}\int_{t_0}^{T+t_0} x(t)\cdot \cos(k\omega_1 t)\,dt \\
+			      b_k &= \frac{2}{T}\int_{t_0}^{T+t_0} x(t)\cdot \sin(k\omega_1 t)\,dt
+		\end{align*}
 		\item Umwandlung Harmonisch $\Leftrightarrow$ Trigonometrisch:
 		\begin{gather*}
 			A_0 = \frac{a_0}{2} = \underline{c}_0 \quad
@@ -407,7 +407,7 @@ $T_D$: Signaldauer \quad $\omega_B$: Bandbreite des zugeh. Spektrums\\
 	\hline & $x(t)$ & $\mathbf{\underline{X}(\omega)}$ \\
 	\hline Linearität & $A x_{1}(t)+B x_{2}(t)$ & $A \underline{X}_{1}(\omega)+B \underline{X}_{2}(\omega)$ \\
 	\hline  Verschiebung & $x(t-t_0)$ & $e^{-j \omega t_0} \underline{X}(\omega)$ \\
-	\hline Modulation & $e^{j \omega_{0} t} x(t)$ & $\underline{X}\left(\omega-\omega_{0}\right)$ \\
+	\hline Modulation & $e^{j \omega_{0} t} \cdot x(t)$ & $\underline{X}\left(\omega-\omega_{0}\right)$ \\
 	\hline 
 		\small Differentiation im Frequenzbereich
 	 & $t \cdot x(t)$ & $j \dfrac{d \underline{X}(\omega)}{d \omega}$ \\
@@ -451,9 +451,9 @@ $T_D$: Signaldauer \quad $\omega_B$: Bandbreite des zugeh. Spektrums\\
 	\]
 	
 	$x(t)$ reell \& gerade $\leftrightarrow$\\ $\underline{X}(\omega)$  reell \& gerade
-	$$\underline{X}(\omega) = 2\int_0^\infty x(t)\cos(\omega t)\,dt$$
+	$$\underline{X}(\omega) = 2 \cdot \int_0^\infty x(t) \cdot \cos(\omega t)\,dt$$
 	$x(t)$ reell \& ungerade $\leftrightarrow$ $\underline{X}(\omega)$ imaginär \& ungerade
-	$$\underline{X}(\omega) = -2j\int_0^\infty x(t)\sin(\omega t)\,dt$$
+	$$\underline{X}(\omega) = -2j \cdot \int_0^\infty x(t) \cdot \sin(\omega t)\,dt$$
 \end{mdframed}
 
 \subsection{Korrespondenzen der FT}
